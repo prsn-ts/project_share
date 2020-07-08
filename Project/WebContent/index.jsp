@@ -9,6 +9,5 @@
 <body>
 	<p>첫번째 인덱스 페이지<p>
 	<p>안녕하세요</p>
-	<p>gggg</p>
 </body>
 </html>

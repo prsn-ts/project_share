@@ -13,57 +13,52 @@
 </head>
 <body>
 	<!-- header --> 
-	<div class="jumbotron text-center mb-0"> 
+	<div class="jumbotron py-5 text-center mb-0"> 
 		<h1>오늘의 레시피</h1> 
 		<p>오늘의 레시피는 과연?</p> 
 	</div> 
 	<!-- Topbar -->
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-3 static-top shadow">
-        <a href="#" class="navbar-brand">네비 바</a> 
-        <!-- Toggle Button --> 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> 
-       		<span class="navbar-toggler-icon"></span> 
-        </button>
+    	<div class="container">
 	        <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
 	       	 	<ul class="navbar-nav"> 
-	        		<li class="nav-item"><a href="#" class="navbar-brand nav-link">메뉴1</a></li> 
-	       		 	<li class="nav-item"><a href="#" class="navbar-brand nav-link">메뉴2</a></li>
-	       		 	<li class="nav-item"><a href="#" class="navbar-brand nav-link">메뉴3</a></li> 
+	        		<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">요리</a></li> 
+	       		 	<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">나만의 조리법</a></li>
+	       		 	<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">매거진</a></li> 
 	     	    </ul> 
 	        </div>
-	
-        <!-- Topbar Navbar -->
-        <ul class="navbar-nav ml-auto">
-
-            <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-	                <a class="dropdown-item" href="#">
-	                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-	                  Profile
+	        <!-- Topbar Navbar -->
+	        <ul class="navbar-nav ml-auto">
+	            <!-- Nav Item - User Information -->
+	            <li class="nav-item dropdown no-arrow">
+	                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+	                  <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
 	                </a>
-	                <a class="dropdown-item" href="#">
-	                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-	                  Settings
-	                </a>
-	                <a class="dropdown-item" href="#">
-	                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-	                  Activity Log
-	                </a>
-                <div class="dropdown-divider"></div>
-	                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-	                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-	                  Logout
-	                </a>
-              	</div>
-            </li>
-          </ul>
-        </nav>
+	                <!-- Dropdown - User Information -->
+	                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+		                  <a class="dropdown-item" href="#">
+		                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+		                    Profile
+		                  </a>
+		                  <a class="dropdown-item" href="#">
+		                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+		                    Settings
+		                  </a>
+		                  <a class="dropdown-item" href="#">
+		                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+		                    Activity Log
+		                  </a>
+	                  <div class="dropdown-divider"></div>
+		                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+		                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+		                    Logout
+		                  </a>
+	               	</div>
+	            </li>
+	        </ul>
+	    </div> 
+    </nav>
         <!-- End of Topbar -->
 	<div class="container">
 		<div id="carouselExampleCaptions" class="carousel slide mb-4" data-ride="carousel">

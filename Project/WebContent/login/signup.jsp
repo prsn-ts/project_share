@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+request.setCharacterEncoding("utf-8");
 	//폼 전송되는 가입할 회원의 정보를 읽어온다.
 	String id=request.getParameter("id");
 	String pwd=request.getParameter("pwd");
@@ -22,13 +23,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%if(isSuccess){ %>
-	<p> 
-		<strong><%=id %></strong> 회원님 가입 되었습니다. 
-		<a href="login_form.jsp">로그인 하러 가기</a>
-	</p>
-<%}else{ %>
-	<p> 가입이 실패 했습니다. <a href="signup_form.jsp">다시 가입</a></p>
-<%} %>
+<h1>알림</h1>
+	<%if(isSuccess){ %>
+		<p> 
+			<strong><%=id %></strong> 회원가입 완료
+			<a href="login_form.jsp">확인</a> 
+		</p>
+	<%}else{ %>
+		<p>
+			글 저장이 실패 되었습니다. 
+			<a href="signup_form.jsp">다시 작성하기</a>
+		</p>
+	<%} %>
 </body>
 </html>

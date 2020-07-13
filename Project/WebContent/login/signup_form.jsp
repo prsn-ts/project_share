@@ -6,10 +6,6 @@
 <head>
 
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
 
   <title>Register</title>
 
@@ -43,7 +39,7 @@
                 </div>
                 <div class="form-group">
                   	<label for="pwd">비밀번호</label>
-                    <input type="password" class="form-control form-control-user" id="pwd" name="pwd" placeholder="Password">
+                    <input type="text" class="form-control form-control-user" id="pwd" name="pwd" placeholder="Password">
                   
                 </div>
                 

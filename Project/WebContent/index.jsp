@@ -15,7 +15,8 @@
 	<div class="row">
 		<div class="col">로고 이미지</div>
 		<div class="col">검색창</div>
-		<div class="col">로그인창</div>
+		<div class="col" ><a href="login/login_form.jsp">로그인창</a></div>
+		
 	</div>
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 	  <a class="navbar-brand" href="#">오늘은 뭐먹지?</a>

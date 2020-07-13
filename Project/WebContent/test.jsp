@@ -92,16 +92,7 @@
             <p class="card-body h5">평소 간장을 베이스로 한 계란장조림을 만들어 먹는 편인데요. TV알토란에서 고추장을 베이스로 계란 장조림을 만들길래 저도 만들어 봤는데 우왕! 진짜 맛있어요. 뜨끈한 밥에 비벼 먹으니 밥도둑이 따로 없네요</p>
           </div>
         </div>
-		<div class="card mb-4">
-		  <div class="row">
-   			 <div class="col-sm">
-   				  One of three columns
-   			 </div>
-  		  <div class="col-sm">
-    			  One of three columns
-   			 </div>
-  		 </div>
-</div>
+		
         <!-- Blog Post -->
         <div class="card mb-4">
           <div class="card-body">
@@ -109,8 +100,12 @@
             	 <small class="text-muted">Ingredients</small>
             </h2>
             <p class="card-text">
-            
-            	<ul>
+            	<div class="row">
+            		<div class="col-sm">
+            	<div class="card mb-4">
+		 	 <div class="row">
+   			 <div class="col-sm">
+   				  <ul>
             	<b>[재료]</b>
             		<li>달걀 : 10개</li>
             		<li>양파 : 1개</li>
@@ -118,11 +113,25 @@
             		<li>쪽파 또는 대파 : 약간</li>
             		<li>멸치육수 : 1.5컵</li>
             	</ul>
-            	
-            	<ul>
-            		<li>ddd</li>
-            	</ul>
-            </p>
+   				 </div>
+	  		  <div class="col-sm">
+	  		  	<ul>
+	  		  	<b>[재료]</b>
+	    			  <li>고추장 2T</li>
+	    			  <li>고춧가루 3T</li>
+	    			  <li>진간장 4T</li>
+	    			  <li>설탕 2T</li>
+	    			  <li>물엿 3T</li>
+	    			  <li>참기름 2T</li>
+	    			  <li>깨 1T</li>
+	    			  <li>후추 1ts</li>
+	    	   </ul>
+   				 </div>
+  			 </div>
+				</div>
+            	</div>
+            </div>
+            </div>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
@@ -130,15 +139,7 @@
             <a href="#">Start Bootstrap</a>
           </div>
         </div>
-
-        <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+	
 
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
@@ -151,13 +152,18 @@
         </ul>
 
       </div>
-
     
-       
+       <div class="card mb-1">
+          <img class="card-img-top" src="img/testimg.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">밥도둑 반찬 고추장 달걀조림 만들기<br>알토란 레시피</h2>
+            <p class="card-body h5">평소 간장을 베이스로 한 계란장조림을 만들어 먹는 편인데요. TV알토란에서 고추장을 베이스로 계란 장조림을 만들길래 저도 만들어 봤는데 우왕! 진짜 맛있어요. 뜨끈한 밥에 비벼 먹으니 밥도둑이 따로 없네요</p>
+          </div>
+        </div>
+
+
 
       </div>
-
-    </div>
     <!-- /.container -->
 
 <!-- footer --> 

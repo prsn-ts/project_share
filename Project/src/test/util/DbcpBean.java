@@ -2,16 +2,16 @@ package test.util;
 /*
  *  [Data Base Connection Pool Bean ]
  *  
- *  ¾Æ·¡ÀÇ Å¬·¡½º°¡ µ¿ÀÛ ÇÏ·Á¸é
+ *  ï¿½Æ·ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ï¿½
  *  
- *  1. Servers/context.xml ¹®¼­¿¡ DB Á¢¼Ó Á¤º¸°¡ ÀÖ¾î¾ß ÇÑ´Ù.
+ *  1. Servers/context.xml ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DB ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ ï¿½Ñ´ï¿½.
  *  
  *  <Resource name="jdbc/myoracle" auth="Container"
               type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
               url="jdbc:oracle:thin:@localhost:1521:xe"
               username="scott" password="tiger" maxTotal="20" maxIdle="10"
               maxWaitMillis="-1"/>
-    2. ÇÁ·ÎÁ§Æ®ÀÇ WEB-INF/web.xml ¹®¼­¿¡ ¾Æ·¡ÀÇ ¼³Á¤ÀÌ ÀÖ¾î¾ß ÇÑ´Ù.
+    2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ WEB-INF/web.xml ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ ï¿½Ñ´ï¿½.
     <resource-ref>
 		<description>Oracle Datasource example</description>
 		<res-ref-name>jdbc/myoracle</res-ref-name>
@@ -19,15 +19,15 @@ package test.util;
 		<res-auth>Container</res-auth>
 	</resource-ref>
 	
-	3.  WEB-INF/lib/ Æú´õ¿¡ ojdbc6.jar ÆÄÀÏÀ» ³Ö¾î¼­ ¶óÀÌºê·¯¸®¸¦ »ç¿ëÇÒ ÁØºñ¸¦ ÇØ¾ßÇÑ´Ù.
+	3.  WEB-INF/lib/ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ojdbc6.jar ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾î¼­ ï¿½ï¿½ï¿½Ìºê·¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Øºï¿½ ï¿½Ø¾ï¿½ï¿½Ñ´ï¿½.
 	
-	À§ÀÇ 3°¡Áö ¼³Á¤À» ÇÑ ÈÄ¿¡
+	ï¿½ï¿½ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ä¿ï¿½
 	
-	- new DbcpBean().getConn() ¸Þ¼Òµå¸¦ È£ÃâÇÏ¸é Connection Pool ¿¡¼­
-	Connection °´Ã¼°¡ ÇÏ³ª ¸®ÅÏµÈ´Ù.
+	- new DbcpBean().getConn() ï¿½Þ¼Òµå¸¦ È£ï¿½ï¿½ï¿½Ï¸ï¿½ Connection Pool ï¿½ï¿½ï¿½ï¿½
+	Connection ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½ï¿½ï¿½ÏµÈ´ï¿½.
 	
-	- Dao ¿¡¼­ Connection °´Ã¼¸¦ »ç¿ëÇÑ ÈÄ .close() ¸Þ¼Òµå¸¦ È£ÃâÇÏ¸é
-	ÀÚµ¿À¸·Î Connection Pool ¿¡ Connection °´Ã¼°¡ ¹ÝÈ¯µÈ´Ù.
+	- Dao ï¿½ï¿½ï¿½ï¿½ Connection ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ .close() ï¿½Þ¼Òµå¸¦ È£ï¿½ï¿½ï¿½Ï¸ï¿½
+	ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ Connection Pool ï¿½ï¿½ Connection ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½È¯ï¿½È´ï¿½.
  */
 
 import java.sql.Connection;
@@ -36,23 +36,17 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class DbcpBean {
-	//ÇÊµå
 	private Connection conn;
-	//»ý¼ºÀÚ
 	public DbcpBean() {
-		//Connection °´Ã¼ÀÇ ÂüÁ¶°ªÀ» ¾ò¾î¿Í¼­ ÇÊµå¿¡ ÀúÀåÇÏ´Â ÀÛ¾÷À» ÇÑ´Ù.
 		try {
 			Context initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
-			// jdbc/myoracle ÀÌ¶ó´Â ÀÌ¸§ÀÇ DataSource(Connection Pool)¿¡¼­
 			DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
-			// Connection °´Ã¼¸¦ ÇÏ³ª °¡Áö°í ¿Â´Ù.
 			conn = ds.getConnection();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	//Connection °´Ã¼¸¦ ¸®ÅÏÇØÁÖ´Â ¸Þ¼Òµå
 	public Connection getConn() {
 		return conn;
 	}

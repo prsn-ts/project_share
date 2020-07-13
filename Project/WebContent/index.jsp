@@ -63,96 +63,96 @@
         <!-- End of Topbar -->
 	<div class="container">
 		<div id="carouselExampleCaptions" class="carousel slide mb-4" data-ride="carousel">
-		  <ol class="carousel-indicators">
-		    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-		    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-		    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-		  </ol>
-		  <div class="carousel-inner">
-		    <div class="carousel-item active">
-		      <img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="d-block w-100" style="height: 400px" alt="...">
-		      <div class="carousel-caption d-none d-md-block">
-		        <h5>First slide label</h5>
-		        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-		      </div>
-		    </div>
-		    <div class="carousel-item">
-		      <img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="d-block w-100" style="height: 400px"  alt="...">
-		      <div class="carousel-caption d-none d-md-block">
-		        <h5>Second slide label</h5>
-		        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		      </div>
-		    </div>
-		    <div class="carousel-item">
-		      <img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="d-block w-100" style="height: 400px" alt="...">
-		      <div class="carousel-caption d-none d-md-block">
-		        <h5>Third slide label</h5>
-		        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-		      </div>
-		    </div>
-		  </div>
-		  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-		    <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
-		    <span class="sr-only">Previous</span>
-		  </a>
-		  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-		    <span class="carousel-control-next-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
-		    <span class="sr-only">Next</span>
-		  </a>
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+				<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="d-block w-100" style="height: 400px" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>First slide label</h5>
+						<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="d-block w-100" style="height: 400px"  alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Second slide label</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="d-block w-100" style="height: 400px" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h5>Third slide label</h5>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
+				<span class="sr-only">Next</span>
+			</a>
 		</div>
 	</div>
 	<div class="container">
-		<div class="card-deck mb-4">
-		  <div class="card">
-		    <img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="card-img-top first_card" class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">자네 오늘은 쭈꾸미 볶음 어떤가?</h5>
-		      <p class="card-text">쭈꾸미볶음 + 콜라 = 기적의 맛.</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		<div class="card-deck mb-4 h-100">
+			<div class="card">
+				<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="card-img-top first_card" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">자네 오늘은 쭈꾸미 볶음 어떤가?</h5>
+					<p class="card-text">쭈꾸미볶음 + 콜라 = 기적의 맛.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+		    <div class="card">
+				<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
+					<p class="card-text">팥빙수가 짱이제</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
 		    </div>
-		  </div>
-		  <div class="card">
-		    <img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
-		      <p class="card-text">팥빙수가 짱이제</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-		    </div>
-		  </div>
-		  <div class="card">
-		    <img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/29/70e9d1b6edcf0c81e377b6f01bfee06f1.jpg" class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">다시마 칼국수</h5>
-		      <p class="card-text">냠냠?</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-		    </div>
-		  </div>
+			<div class="card">
+				<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/29/70e9d1b6edcf0c81e377b6f01bfee06f1.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">다시마 칼국수</h5>
+					<p class="card-text">냠냠?</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
 		</div>
-		<div class="card-deck">
-		  <div class="card">
-		    <img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="card-img-top first_card" class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">자네 오늘은 쭈꾸미 볶음 어떤가?</h5>
-		      <p class="card-text">쭈꾸미볶음 + 콜라 = 기적의 맛.</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		<div class="card-deck mb-4 h-100">
+			<div class="card">
+				<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="card-img-top first_card" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">자네 오늘은 쭈꾸미 볶음 어떤가?</h5>
+					<p class="card-text">쭈꾸미볶음 + 콜라 = 기적의 맛.</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
+		    <div class="card">
+				<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
+					<p class="card-text">팥빙수가 짱이제</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
 		    </div>
-		  </div>
-		  <div class="card">
-		    <img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
-		      <p class="card-text">팥빙수가 짱이제</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-		    </div>
-		  </div>
-		  <div class="card">
-		    <img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/29/70e9d1b6edcf0c81e377b6f01bfee06f1.jpg" class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">다시마 칼국수</h5>
-		      <p class="card-text">냠냠?</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-		    </div>
-		  </div>
+			<div class="card">
+				<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/29/70e9d1b6edcf0c81e377b6f01bfee06f1.jpg" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">다시마 칼국수</h5>
+					<p class="card-text">냠냠?</p>
+					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<footer>

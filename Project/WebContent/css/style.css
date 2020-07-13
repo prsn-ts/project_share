@@ -1,1 +1,9 @@
-
+/* 푸터 부분 */
+footer .intro .f_link a{
+	font-size:12px; 
+	color:#999; 
+	text-decoration: none;
+}
+footer .intro .f_link span{
+	color:#ddd;
+}

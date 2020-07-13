@@ -7,6 +7,7 @@
 <title>index.jsp</title>
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -154,6 +155,28 @@
 		  </div>
 		</div>
 	</div>
-	<footer>푸터 내용</footer>
+	<footer>
+		<div class="row">
+		    <div class="col intro">
+		    	<p class="f_link">
+		    		<a href="#">회사소개</a>
+		    		<span>|</span>
+		    		<a href="#">광고문의</a>
+		    		<span>|</span>
+		    		<a href="#">개인정보처리방침</a>
+		    		<span>|</span>
+		    		<a href="#">이용약관</a>
+		    		<span>|</span>
+		    		<a href="#">고객센터</a>
+		    	</p>
+		    </div>
+		    <div class="col">
+		      2 of 3
+		    </div>
+		    <div class="col">
+		      3 of 3
+	    	</div>
+  		</div>
+	</footer>
 </body>
 </html>

@@ -23,7 +23,7 @@
 	        <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
 	       	 	<ul class="navbar-nav"> 
 	        		<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">요리</a></li> 
-	       		 	<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">나만의 조리법</a></li>
+	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/test.jsp" class="navbar-brand nav-link font-weight-bolder">나만의 조리법</a></li>
 	       		 	<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">매거진</a></li> 
 	     	    </ul> 
 	        </div>
@@ -103,7 +103,7 @@
 	<div class="container">
 		<div class="card-deck mb-4">
 		  <div class="card">
-		    <img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="card-img-top first_card"" class="card-img-top" alt="...">
+		    <img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="card-img-top first_card" class="card-img-top" alt="...">
 		    <div class="card-body">
 		      <h5 class="card-title">자네 오늘은 쭈꾸미 볶음 어떤가?</h5>
 		      <p class="card-text">쭈꾸미볶음 + 콜라 = 기적의 맛.</p>
@@ -129,7 +129,7 @@
 		</div>
 		<div class="card-deck">
 		  <div class="card">
-		    <img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="card-img-top first_card"" class="card-img-top" alt="...">
+		    <img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="card-img-top first_card" class="card-img-top" alt="...">
 		    <div class="card-body">
 		      <h5 class="card-title">자네 오늘은 쭈꾸미 볶음 어떤가?</h5>
 		      <p class="card-text">쭈꾸미볶음 + 콜라 = 기적의 맛.</p>

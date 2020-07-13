@@ -23,7 +23,7 @@
 	        <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
 	       	 	<ul class="navbar-nav"> 
 	        		<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">요리</a></li> 
-	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/test.jsp" class="navbar-brand nav-link font-weight-bolder">나만의 조리법</a></li>
+	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/myrecipe1.jsp" class="navbar-brand nav-link font-weight-bolder">나만의 조리법</a></li>
 	       		 	<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">매거진</a></li> 
 	     	    </ul> 
 	        </div>

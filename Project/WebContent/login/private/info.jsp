@@ -57,7 +57,7 @@
 					<a href="updateform.jsp">개인정보 수정</a><br />
 					<hr>
 					<a href="javascript:deleteConfirm()">탈퇴</a>
-                </div>
+                </div>            
               </div>
             </div>
           </div>
@@ -68,6 +68,13 @@
     </div>
 
   </div>
-
+<script>
+	function deleteConfirm(){
+		var isDelete=confirm("<%=id%> 회원님 탈퇴 하시겠습니까?");
+		if(isDelete){
+			location.href="delete.jsp";
+		}
+	}
+</script>
 </body>
 </html>

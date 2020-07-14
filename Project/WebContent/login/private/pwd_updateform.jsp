@@ -28,15 +28,15 @@
 	<form class="user" action="pwd_update.jsp" method="post" id="myForm">
 		<div class="form-group">
 			<label for="pwd">기존 비밀번호</label>
-			<input type="password" class="form-control form-control-user" name="pwd" id="pwd" placeholder="id"/>
+			<input type="password" class="form-control form-control-user" name="pwd" id="pwd" placeholder="Password"/>
 		</div>
 		<div class="form-group">
 			<label for="newPwd">새 비밀번호</label>
-			<input type="password" class="form-control form-control-user" name="newPwd" id="newPwd" placeholder="Password"/>
+			<input type="password" class="form-control form-control-user" name="newPwd" id="newPwd" placeholder="NewPassword"/>
 		</div>
 		<div class="form-group">
 			<label for="newPwd2">새 비밀번호 확인</label>
-			<input type="password" class="form-control form-control-user" name="newPwd2" id="newPwd2" placeholder="Password"/>
+			<input type="password" class="form-control form-control-user" name="newPwd2" id="newPwd2" placeholder="NewPassword"/>
 		</div>
 		<button type="submit" class="btn btn-primary btn-user btn-block">수정하기</button>
 	</form>

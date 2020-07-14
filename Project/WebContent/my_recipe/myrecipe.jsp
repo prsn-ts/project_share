@@ -19,9 +19,6 @@
 </head>
 
 <body>
-
-  
-
   <!-- Page Content -->
   <div class="container">
 
@@ -37,13 +34,13 @@
 
       <div class="col-lg-6 col-md-6 mb-6">
         <div class="card h-100">
-          <img class="card-img-top" src="img/testimg.jpg" alt="">
+          <img class="card-img-top" src="../img/testimg.jpg" alt="">
           <div class="card-body">
             <h4 class="card-title">알토란 레시피</h4>
             <p class="card-text">밥도둑 반찬 고추장 달걀조림 만들기! </p>
           </div>
           <div class="card-footer">
-            <a href="myrecipe_toran.jsp" class="btn btn-primary">레시피 보러가기!</a>
+            <a href="sub_myrecipe.jsp" class="btn btn-primary">레시피 보러가기!</a>
           </div>
         </div>
       </div>

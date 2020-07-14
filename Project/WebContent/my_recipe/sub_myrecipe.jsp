@@ -70,22 +70,22 @@
 	
 	    <!-- Blog Post -->
 	    <div class="card mb-4">
-	      <img class="card-img-top" src="img/testimg.jpg" alt="Card image cap">
-	      <div class="card-body">
-	        <h2 class="card-title">밥도둑 반찬 고추장 달걀조림 만들기<br>알토란 레시피</h2>
-	        <p class="card-body h5">평소 간장을 베이스로 한 계란장조림을 만들어 먹는 편인데요. TV알토란에서 고추장을 베이스로 계란 장조림을 만들길래 저도 만들어 봤는데 우왕! 진짜 맛있어요. 뜨끈한 밥에 비벼 먹으니 밥도둑이 따로 없네요</p>
-	      </div>
+			<img class="card-img-top" src="img/testimg.jpg" alt="Card image cap">
+			<div class="card-body">
+				<h2 class="card-title">밥도둑 반찬 고추장 달걀조림 만들기<br>알토란 레시피</h2>
+				<p class="card-body h5">평소 간장을 베이스로 한 계란장조림을 만들어 먹는 편인데요. TV알토란에서 고추장을 베이스로 계란 장조림을 만들길래 저도 만들어 봤는데 우왕! 진짜 맛있어요. 뜨끈한 밥에 비벼 먹으니 밥도둑이 따로 없네요</p>
+			</div>
 	    </div>
-	 <div class="card mb-4">
-	 	  <div class="row">
+		<div class="card mb-4">
+			  <div class="row">
 			      <div class="col-sm">
 				      One of three columns
 				  </div>
 			  <div class="col-sm">
-	  		      One of three columns
-	 		  </div>
+		 		      One of three columns
+				  </div>
 		  </div>
-	 </div>
+		</div>
 	 
 	    <!-- Blog Post -->
 	    <div class="card mb-4">
@@ -109,22 +109,22 @@
 	    </div>
 	
 	    <div class="card" style="width: 18rem;">
-	  <img src="..." class="card-img-top" alt="...">
-	  <div class="card-body">
-	      <h5 class="card-title">Card title</h5>
-	      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-	      <a href="#" class="btn btn-primary">Go somewhere</a>
-	  </div>
-	 </div>
+			<img src="..." class="card-img-top" alt="...">
+			<div class="card-body">
+			    <h5 class="card-title">Card title</h5>
+			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			    <a href="#" class="btn btn-primary">Go somewhere</a>
+			</div>
+		</div>
 	
 	    <!-- Pagination -->
 	    <ul class="pagination justify-content-center mb-4">
-	      <li class="page-item">
-	        <a class="page-link" href="#">&larr; Older</a>
-	      </li>
-	      <li class="page-item disabled">
-	        <a class="page-link" href="#">Newer &rarr;</a>
-	      </li>
+			<li class="page-item">
+				<a class="page-link" href="#">&larr; Older</a>
+			</li>
+			<li class="page-item disabled">
+				<a class="page-link" href="#">Newer &rarr;</a>
+			</li>
 	    </ul>
 	    
 	</div>

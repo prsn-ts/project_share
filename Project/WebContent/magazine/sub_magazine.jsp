@@ -7,32 +7,19 @@
 <title>index.jsp</title>
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<!-- header --> 
-	<div class="jumbotron py-0 text-center mb-0">
-	<div class="row ">
-	<a href="magazine.jsp"  >
-	<style>
-	 img.relative { 
-        position: relative;
-        left: 700px;
-        top: 80px;
-      }
-      </style>
-	 <img src="images/seoul.png" class="relative" style="width:100px; height:100px;">
-	</div>
-	
+	<div class="jumbotron py-5 text-center mb-0"> 
 		<h1>매거진</h1> 
 		<p>유용한 정보들이 한가득!!</p> 
 	</div>
-
-		<!-- Topbar -->
-		
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-3 static-top shadow">
+	<!-- Topbar -->	
+	<nav class="navbar navbar-expand navbar-light bg-white topbar mb-3 static-top shadow">
     	<div class="container">
 	        <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
 	       	 	<ul class="navbar-nav"> 
@@ -73,26 +60,27 @@
 	        </ul>
 	    </div> 
     </nav>
-        <!-- End of Topbar -->
+    <!-- End of Topbar -->
 	
-	<style>
-	img { display: block; margin: 0px auto; }
-	</style>
-	<img src="images/milk1.png" style="width:750px; height:550px;">
-	
-	<div class="text-center">
-	<h5 class="card-title">우유의 효과1</h5>
-	<p class="card-text">키가 쑥쑥 자란다!!!</p>
+	<!-- content part -->
+	<div class="container">
+		<div class="text-center">
+			<img class="img-fluid" src="../images/milk1.png" >
+			<h5 class="card-title">우유의 효과1</h5>
+			<p class="card-text">키가 쑥쑥 자란다!!!</p>
+		</div>
+		
+		<div class="text-center">
+			<img class="img-fluid" src="../images/milk2.png">
+			<h5 class="card-title">우유의 효과2</h5>
+			<p class="card-text">골다골증 예방한다!!!!!</p>
+		</div>
 	</div>
+	<!-- //content part -->
 	
-	<img src="images/milk2.png" style="width:750px; height:550px;">
-	
-	<div class="text-center">
-	<h5 class="card-title">우유의 효과2</h5>
-	<p class="card-text">골다골증 예방한다!!!!!</p>
-	</div>
-	
-
+	<!-- 푸터 부분 -->
+	<footer>푸터 부분</footer>
+	<!-- //푸터 부분 -->
 </body>
 </html>
 

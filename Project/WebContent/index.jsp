@@ -22,7 +22,7 @@
 		<h1>오늘의 레시피</h1> 
 		<p>오늘의 레시피는 과연?</p> 
 	</div> 
-	<!-- Topbar -->
+	<!-- Topbar 네이바-->
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-3 static-top shadow">
     	<div class="container">
 	        <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
@@ -80,7 +80,7 @@
            	<%} %>
 	    </div> 
     </nav>
-        <!-- End of Topbar -->
+        <!-- End of Topbar 네이바 끝-->
 	<div class="container">
 		<div id="carouselExampleCaptions" class="carousel slide mb-4" data-ride="carousel">
 			<ol class="carousel-indicators">

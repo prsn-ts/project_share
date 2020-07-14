@@ -13,6 +13,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<%
+	//id 라는 키값으로 세션에 저장된 문자열이 있는지 읽어와 본다.
+	String id=(String)session.getAttribute("id");
+%>
 	<!-- header --> 
 	<div class="jumbotron py-5 text-center mb-0"> 
 		<h1>오늘의 레시피</h1> 
@@ -28,17 +32,32 @@
 	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/magazine/magazine.jsp" class="navbar-brand nav-link font-weight-bolder">매거진</a></li> 
 	     	    </ul> 
 	        </div>
+	        <%if(id == null){ %>
+	        	<ul class="navbar-nav ml-auto">
+	            	<li class="nav-item dropdown no-arrow">     
+	                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+	                  <a href="${pageContext.request.contextPath}/login/login_form.jsp">로그인</a>
+	                  <a href="${pageContext.request.contextPath}/login/signup_form.jsp">회원가입</a>
+	                  </span>            
+	                </li>
+	            </ul>
+	        <%} %>
 	        <!-- Topbar Navbar -->
+	        <%if(id != null){ %>
 	        <ul class="navbar-nav ml-auto">
-	            <!-- Nav Item - User Information -->
-	            <li class="nav-item dropdown no-arrow">
+	            	
+	            	<!-- Nav Item - User Information -->
+	            	<li class="nav-item dropdown no-arrow">
 	                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+	                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=id %></span>
 	                  <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
 	                </a>
+	            
 	                <!-- Dropdown - User Information -->
+	                
 	                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-		                  <a class="dropdown-item" href="#">
+		                  <a class="dropdown-item" href="login/private/info.jsp">
+		                  	<%=id %>
 		                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 		                    Profile
 		                  </a>
@@ -51,13 +70,14 @@
 		                    Activity Log
 		                  </a>
 	                  <div class="dropdown-divider"></div>
-		                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+		                  <a class="dropdown-item" href="${pageContext.request.contextPath}/login/logout.jsp">
 		                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 		                    Logout
 		                  </a>
 	               	</div>
 	            </li>
 	        </ul>
+           	<%} %>
 	    </div> 
     </nav>
         <!-- End of Topbar -->

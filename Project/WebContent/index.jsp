@@ -157,7 +157,7 @@
 	</div>
 	<footer>
 		<div class="row">
-		    <div class="col intro">
+		    <div class="col-md intro">
 		    	<p class="f_link">
 		    		<a href="#">회사소개</a>
 		    		<span>|</span>
@@ -169,11 +169,25 @@
 		    		<span>|</span>
 		    		<a href="#">고객센터</a>
 		    	</p>
+		    	<p class="f_info">
+		    		대표 : 김아무개/ E : aaabbbccc@naver.com / F : 02) 000-xxxx <br />
+		    		서울 금천구 가산동 371-50 에이스하이엔드타워 3차 1106-1호 <br />
+		    		문의전화(운영시간 평일 09:00~17:00) <br />
+		    		서비스 이용문의 : 070-oooo-xxxx <br />
+		    	</p>
+		    	<p class="f_info">
+		    		(주)에이콘 아카데미 / 사업자등록번호 117-22-33333 / 통신판매업신고 <br />
+		    		제 2020-서울강남-0001호 / 벤처기업확인 / 사업자정보확인 <br />
+		    		서울지방중소기업청 제 000000001-2-00003호 <br />
+		    	</p>
+		    	<p class="f_info">
+		    		Copyright 2020 김아무개. All Rights Reserved.
+		    	</p>
 		    </div>
-		    <div class="col">
+		    <div class="col-md">
 		      2 of 3
 		    </div>
-		    <div class="col">
+		    <div class="col-md">
 		      3 of 3
 	    	</div>
   		</div>

@@ -64,7 +64,7 @@ public class LoginDao {
 						+ " WHERE id=? AND pwd=?";
 				pstmt = conn.prepareStatement(sql);
 				//? 에 바인딩 할 값이 있으면 바인딩한다.
-				pstmt.setString(1, dto.getPwd2());
+				pstmt.setString(1, dto.getNewPwd());
 				pstmt.setString(2, dto.getId());
 				pstmt.setString(3, dto.getPwd());
 				//sql  문 수행하고 update or insert or delete 된 row 의 갯수 리턴받기 

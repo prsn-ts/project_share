@@ -14,7 +14,6 @@
   <title>SB Admin 2 - Login</title>
 
   <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
@@ -51,10 +50,12 @@
                  	 <%-- 원래 가려던 목적지 정보를 url 이라는 파라미터 명으로 가지고 간다 --%>
 					<input type="hidden" name="url" value="<%=url %>" />
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="id"  placeholder="Enter id...">
+                	  <label for="id">아이디</label>
+                      <input type="text" class="form-control form-control-user" name="id" id="id"  placeholder="Enter id...">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="pwd" placeholder="Password">
+                      <label for="pwd">비밀번호</label>
+                      <input type="password" class="form-control form-control-user"  name="pwd" id="pwd" placeholder="Password">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">

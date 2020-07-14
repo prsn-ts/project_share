@@ -6,18 +6,18 @@ public class LoginDto {
 	private String email;
 	private String profile;
 	private String regdate;
-	private String pwd2;
+	private String newPwd;
 	
 	public LoginDto() {}
 
-	public LoginDto(String id, String pwd, String email, String profile, String regdate, String pwd2) {
+	public LoginDto(String id, String pwd, String email, String profile, String regdate, String newPwd) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
 		this.email = email;
 		this.profile = profile;
 		this.regdate = regdate;
-		this.pwd2 = pwd2;
+		this.newPwd = newPwd;
 	}
 
 	public String getId() {
@@ -60,13 +60,12 @@ public class LoginDto {
 		this.regdate = regdate;
 	}
 
-	public String getPwd2() {
-		return pwd2;
+	public String getNewPwd() {
+		return newPwd;
 	}
 
-	public void setPwd2(String pwd2) {
-		this.pwd2 = pwd2;
+	public void setNewPwd(String newPwd) {
+		this.newPwd = newPwd;
 	}
-	
-	
-}
+
+}	

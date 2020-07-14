@@ -1,4 +1,4 @@
-package LoginDto;
+package test.login.dto;
 
 public class LoginDto {
 	private String id;

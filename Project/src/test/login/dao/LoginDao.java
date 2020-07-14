@@ -1,10 +1,10 @@
-package LoginDao;
+package test.login.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import LoginDto.LoginDto;
+import test.login.dto.LoginDto;
 import test.util.DbcpBean;
 
 public class LoginDao {

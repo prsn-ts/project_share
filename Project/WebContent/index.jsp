@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -204,8 +205,18 @@
 		    		Copyright 2020 김아무개. All Rights Reserved.
 		    	</p>
 		    </div>
-		    <div class="col-md">
-		      2 of 3
+		    <div class="col-md banner">
+		    	<div class="container">
+			    	<div class="up_banner">
+			    		SNS 공유
+			    	</div>
+			    	<div class="down_banner">
+			    		<a href=""><img src="https://recipe1.ezmember.co.kr/img/btm_sns_1.gif" alt="" /></a>
+			    		<a href=""><img src="https://recipe1.ezmember.co.kr/img/btm_sns_2.gif" alt="" /></a>
+			    		<a href=""><img src="https://recipe1.ezmember.co.kr/img/btm_sns_3.gif" alt="" /></a>
+			    		<a href=""><img src="https://recipe1.ezmember.co.kr/img/btm_sns_4_1.gif" alt="" /></a>
+			    	</div>
+		    	</div>
 		    </div>
 		    <div class="col-md">
 		      3 of 3

@@ -8,7 +8,10 @@
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css" />
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<!-- 글씨체 관련 -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<!-- 아이콘 관련 -->
+<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -24,7 +27,7 @@
 		<p>오늘의 레시피는 과연?</p> 
 	</div> 
 	<!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-3 static-top shadow">
+    <nav class="navbar navbar-expand navbar-light topbar mb-3 static-top shadow">
     	<div class="container">
 	        <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
 	       	 	<ul class="navbar-nav"> 
@@ -83,43 +86,48 @@
     </nav>
         <!-- End of Topbar -->
 	<div class="container">
-		<div id="carouselExampleCaptions" class="carousel slide mb-4" data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-				<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="d-block w-100" style="height: 400px" alt="...">
-					<div class="carousel-caption d-none d-md-block">
-						<h5>First slide label</h5>
-						<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="d-block w-100" style="height: 400px"  alt="...">
-					<div class="carousel-caption d-none d-md-block">
-						<h5>Second slide label</h5>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="d-block w-100" style="height: 400px" alt="...">
-					<div class="carousel-caption d-none d-md-block">
-						<h5>Third slide label</h5>
-						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-					</div>
-				</div>
+		<div class="carousel_all">
+			<div class="carousel_title">
+				<a href="#">카루셀테스트</a>
 			</div>
-			<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
-				<span class="sr-only">Next</span>
-			</a>
+			<div id="carouselExampleCaptions" class="carousel slide mb-4" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+					<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+					<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="d-block w-100" style="height: 400px" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>First slide label</h5>
+							<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="d-block w-100" style="height: 400px"  alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Second slide label</h5>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="d-block w-100" style="height: 400px" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Third slide label</h5>
+							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+						</div>
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
 		</div>
 	</div>
 	<div class="container">
@@ -179,31 +187,33 @@
 	<footer>
 		<div class="row">
 		    <div class="col-md intro">
-		    	<p class="f_link">
-		    		<a href="#">회사소개</a>
-		    		<span>|</span>
-		    		<a href="#">광고문의</a>
-		    		<span>|</span>
-		    		<a href="#">개인정보처리방침</a>
-		    		<span>|</span>
-		    		<a href="#">이용약관</a>
-		    		<span>|</span>
-		    		<a href="#">고객센터</a>
-		    	</p>
-		    	<p class="f_info">
-		    		대표 : 김아무개/ E : aaabbbccc@naver.com / F : 02) 000-xxxx <br />
-		    		서울 금천구 가산동 371-50 에이스하이엔드타워 3차 1106-1호 <br />
-		    		문의전화(운영시간 평일 09:00~17:00) <br />
-		    		서비스 이용문의 : 070-oooo-xxxx <br />
-		    	</p>
-		    	<p class="f_info">
-		    		(주)에이콘 아카데미 / 사업자등록번호 117-22-33333 / 통신판매업신고 <br />
-		    		제 2020-서울강남-0001호 / 벤처기업확인 / 사업자정보확인 <br />
-		    		서울지방중소기업청 제 000000001-2-00003호 <br />
-		    	</p>
-		    	<p class="f_info">
-		    		Copyright 2020 김아무개. All Rights Reserved.
-		    	</p>
+		    	<div class="container">
+			    	<p class="f_link">
+			    		<a href="#">회사소개</a>
+			    		<span>|</span>
+			    		<a href="#">광고문의</a>
+			    		<span>|</span>
+			    		<a href="#">개인정보처리방침</a>
+			    		<span>|</span>
+			    		<a href="#">이용약관</a>
+			    		<span>|</span>
+			    		<a href="#">고객센터</a>
+			    	</p>
+			    	<p class="f_info">
+			    		대표 : 김아무개/ E : aaabbbccc@naver.com / F : 02) 000-xxxx <br />
+			    		서울 금천구 가산동 371-50 에이스하이엔드타워 3차 1106-1호 <br />
+			    		문의전화(운영시간 평일 09:00~17:00) <br />
+			    		서비스 이용문의 : 070-oooo-xxxx <br />
+			    	</p>
+			    	<p class="f_info">
+			    		(주)에이콘 아카데미 / 사업자등록번호 117-22-33333 / 통신판매업신고 <br />
+			    		제 2020-서울강남-0001호 / 벤처기업확인 / 사업자정보확인 <br />
+			    		서울지방중소기업청 제 000000001-2-00003호 <br />
+			    	</p>
+			    	<p class="f_info">
+			    		Copyright 2020 김아무개. All Rights Reserved.
+			    	</p>
+		    	</div>
 		    </div>
 		    <div class="col-md banner">
 		    	<div class="container">
@@ -211,15 +221,17 @@
 			    		SNS 공유
 			    	</div>
 			    	<div class="down_banner">
-			    		<a href=""><img src="https://recipe1.ezmember.co.kr/img/btm_sns_1.gif" alt="" /></a>
-			    		<a href=""><img src="https://recipe1.ezmember.co.kr/img/btm_sns_2.gif" alt="" /></a>
-			    		<a href=""><img src="https://recipe1.ezmember.co.kr/img/btm_sns_3.gif" alt="" /></a>
-			    		<a href=""><img src="https://recipe1.ezmember.co.kr/img/btm_sns_4_1.gif" alt="" /></a>
+			    		<div><a href="#"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i><br /><span class="sns_text">페이스북</span></a></div>
+			    		<div><a href="#"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i><br /><span class="sns_text">인스타그램</span></a></div>
+			    		<div><a href="#"><i class="fa fa-youtube-play fa-3x" aria-hidden="true"></i><br /><span class="sns_text">유튜브</span></a></div>
+			    		<div><a href="#"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i><br /><span class="sns_text">트위터</span></a></div>
+			    		<div><a href="#"><i class="fa fa-quora fa-3x" aria-hidden="true"></i><br /><span class="sns_text">쿼라</span></a></div>
+			    		<div><a href="#"><i class="fa fa-medium fa-3x" aria-hidden="true"></i><br /><span class="sns_text">미디엄</span></a></div>
 			    	</div>
 		    	</div>
 		    </div>
 		    <div class="col-md">
-		      3 of 3
+				로고 이미지
 	    	</div>
   		</div>
 	</footer>

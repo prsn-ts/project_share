@@ -77,19 +77,21 @@
 	
 	
 	
-	
+	<div style="background-color: #CEECF5">
 	<div class="container">
+		<div style="background-color: white">
 	<div class="row row-cols-1 row-cols-md-3">
+	<div class="card-deck">
+	
+
 	<div class="col mb-4">
-		<div class="card-deck">
 		  <div class="card h-100">
 		    <a href="mag1.jsp">
-		    <img src="images/one.png"
-		    class="card-img-top first_card"" class="card-img-top" alt="...">
+		    <img src="images/magazine1.png" 
+		    class="card-img-top" alt="...">
 		    <div class="card-body" >
-		      <h5 class="card-title">자네 오늘은 우유한잔 어떤한가?</h5>
-		      <p class="card-text">맛도좋고 몸에좋은 우유????</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		      <h5 class="card-title">우유가 성장기 아이들에게 좋다?</h5>
+		      <p class="card-text">맛도좋고 몸에좋은 우유!</p>
 		      </a>
 		    </div>
 		  </div>
@@ -99,12 +101,11 @@
 		  <div class="col mb-4">
 		  <div class="card h-100" >
 		  <a href="http://www.naver.com">
-		    <img src="images/two.png" 
+		    <img src="images/magazine2.png" 
 		    class="card-img-top" alt="...">
 		    <div class="card-body">
-		      <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
-		      <p class="card-text">팥빙수가 짱이제</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		      <h5 class="card-title">녹차의 숨겨진 효능</h5>
+		      <p class="card-text">피부관리에 짱짱하다</p>
 		       </a>
 		    </div>
 		  </div>
@@ -113,12 +114,11 @@
 		  <div class="col mb-4">
 		  <div class="card h-100">
 		   <a href="http://www.naver.com">
-		    <img src="images/three.png" 
+		    <img src="images/magazine3.png" 
 		    class="card-img-top" alt="...">
 		    <div class="card-body">
-		      <h5 class="card-title">다시마 칼국수</h5>
-		      <p class="card-text">냠냠?</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		      <h5 class="card-title">심현관 질환에 좋은두부</h5>
+		      <p class="card-text">그 외의 숨겨진 효능들</p>
 		      </a>
 		    </div>
 		  </div>
@@ -127,12 +127,11 @@
 		  <div class="col mb-4">
 		  <div class="card h-100">
 		  <a href="http://www.naver.com">
-		    <img src="images/four.png" 
+		    <img src="images/magazine4.png" 
 		    class="card-img-top" alt="...">
 		    <div class="card-body">
-		      <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
-		      <p class="card-text">팥빙수가 짱이제</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		      <h5 class="card-title">두뇌발달에 효과적인 달걀</h5>
+		      <p class="card-text">우리아이들에게 먹여보자</p>
 		       </a>
 		    </div>
 		  </div>
@@ -141,12 +140,11 @@
 		  <div class="col mb-4">
 		  <div class="card h-100">
 		  <a href="http://www.naver.com">
-		    <img src="images/one.png" 
+		    <img src="images/magazine5.png" 
 		    class="card-img-top" alt="...">
 		    <div class="card-body">
-		      <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
-		      <p class="card-text">팥빙수가 짱이제</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		      <h5 class="card-title">피부미용에 효과적인 과일</h5>
+		      <p class="card-text">간식은 과자대신 과일로!</p>
 		       </a>
 		    </div>
 		  </div>
@@ -155,18 +153,87 @@
 		  <div class="col mb-4">
 		  <div class="card h-100">
 		  <a href="http://www.naver.com">
-		    <img src="images/one.png"
+		    <img src="images/magazine6.png"
 		    class="card-img-top" alt="...">
 		    <div class="card-body">
-		      <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
-		      <p class="card-text">팥빙수가 짱이제</p>
-		      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		      <h5 class="card-title">노화예방에는 등푸른생선이 제격!</h5>
+		      <p class="card-text">우리 부모님들에게 선물해보자</p>
 		       </a>
 		    </div>
 		  </div>
 		  </div>
 		  
+		  <div class="col mb-4">
+		  <div class="card h-100">
+		  <a href="http://www.naver.com">
+		    <img src="images/magazine6.png"
+		    class="card-img-top" alt="...">
+		    <div class="card-body">
+		      <h5 class="card-title">노화예방에는 등푸른생선이 제격!</h5>
+		      <p class="card-text">우리 부모님들에게 선물해보자</p>
+		       </a>
+		    </div>
+		  </div>
+		  </div>
 		  
+		  <div class="col mb-4">
+		  <div class="card h-100">
+		  <a href="http://www.naver.com">
+		    <img src="images/magazine6.png"
+		    class="card-img-top" alt="...">
+		    <div class="card-body">
+		      <h5 class="card-title">노화예방에는 등푸른생선이 제격!</h5>
+		      <p class="card-text">우리 부모님들에게 선물해보자</p>
+		       </a>
+		    </div>
+		  </div>
+		  </div>		  		  
+		  
+		  <div class="col mb-4">
+		  <div class="card h-100">
+		  <a href="http://www.naver.com">
+		    <img src="images/magazine6.png"
+		    class="card-img-top" alt="...">
+		    <div class="card-body">
+		      <h5 class="card-title">노화예방에는 등푸른생선이 제격!</h5>
+		      <p class="card-text">우리 부모님들에게 선물해보자</p>
+		       </a>
+		    </div>
+		  </div>
+		  </div>		  
+		  
+		  <div class="col mb-4">
+		  <div class="card h-100">
+		  <a href="http://www.naver.com">
+		    <img src="images/magazine6.png"
+		    class="card-img-top" alt="...">
+		    <div class="card-body">
+		      <h5 class="card-title">노화예방에는 등푸른생선이 제격!</h5>
+		      <p class="card-text">우리 부모님들에게 선물해보자</p>
+		       </a>
+		    </div>
+		  </div>
+		  </div>
+		  		  
+	<div class="col mb-4">
+		  <div class="card h-100">
+		    <a href="mag1.jsp">
+		    <img src="images/magazine1.png" 
+		    class="card-img-top" alt="...">
+		    <div class="card-body" >
+		      <h5 class="card-title">우유가 성장기 아이들에게 좋다?</h5>
+		      <p class="card-text">맛도좋고 몸에좋은 우유!</p>
+		      </a>
+		    </div>
+		  </div>
+		  </div>
+		  </div>
+		 		  
+		  
+		  </div>
+		  </div>
+		  </div>
+		  </div>
 		</div>
 	</div>
 	<footer>푸터 내용</footer>

@@ -36,6 +36,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">회원 정보</h1>
                   </div>
+                  	<form action="${pageContext.request.contextPath}/file/private/upload.jsp" method="post" enctype="multipart/form-data">
                  	<table class="table">
 						<tr>
 							<th>아이디</th>
@@ -46,6 +47,10 @@
 							<td><a href="pwd_updateform.jsp">수정하기</a></td>
 						</tr>
 						<tr>
+							<th>프로필</th>
+							<td><input type="file" name="myFile" id="myFile"/><button type="submit">업로드</button></td>
+						</tr>
+						<tr>
 							<th>이메일</th>
 							<td><%=dto.getEmail() %></td>
 						</tr>
@@ -54,6 +59,7 @@
 							<td><%=dto.getRegdate() %></td>
 						</tr>
 					</table>
+					</form>
 					<a href="updateform.jsp">개인정보 수정</a><br />
 					<hr>
 					<a href="javascript:deleteConfirm()">탈퇴</a>

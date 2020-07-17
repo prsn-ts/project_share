@@ -1,5 +1,3 @@
-<%@page import="test.profile.dao.ProFileDao"%>
-<%@page import="test.profile.dto.ProFileDto"%>
 <%@page import="test.file.dao.FileDao"%>
 <%@page import="test.file.dto.FileDto"%>
 <%@page import="java.util.Map"%>
@@ -57,7 +55,7 @@
         //폼전송된 아이템이 존재 한다면 
         if (formItems != null && formItems.size() > 0) {
            //파일 정보를 담을 Dto 객체 생성
-           ProFileDto dto=new ProFileDto();
+           FileDto dto=new FileDto();
            //로그인된 아이디(파일의 작성자)
            String id=(String)session.getAttribute("id");
            dto.setWriter(id);
@@ -83,7 +81,7 @@
                       //파일 사이즈도 담는다(파일의 사이즈를 알아야 저장할 수 있다.)
                       dto.setFileSize(item.getSize());
                     
-                }/*
+                }
                 
                 else{//폼 필드라면 
                 
@@ -92,15 +90,15 @@
                       String title=item.getString("utf-8");
                       dto.setTitle(title);
                    }
-                }//if*/
+                }//if
             }//for
             //DB 에 파일 정보를 저장한다.
-            isSuccess=ProFileDao.getInstance().insert(dto);
+            isSuccess=FileDao.getInstance().insert(dto);
         }//if
         
     } catch (Exception ex) {
-     
-        System.out.println("업로드 처리중에 오류가 났습니다!");
+    
+    	System.out.println(ex.getMessage());
     }
    
 %>
@@ -113,9 +111,9 @@
 <body>
 <div class="container">
 	<%if(isSuccess){ %>
-		<p>파일을 업로드 했습니다 <a href="${pageContext.request.contextPath}/login/private/info.jsp">확인</a></p>
+		<p>파일을 업로드 했습니다 <a href="../list.jsp">확인</a></p>
 	<%}else{ %>
-		<p>파일 업로드 실패! <a href="${pageContext.request.contextPath}/login/private/info.jsp">다시 시도</a></p>
+		<p>파일 업로드 실패! <a href="upload_form.jsp">다시 시도</a></p>
 	<%} %>
 </div>
 </body>

@@ -1,3 +1,5 @@
+<%@page import="test.login.dao.LoginDao"%>
+<%@page import="test.login.dto.LoginDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,6 +22,15 @@
 <%
 	//id 라는 키값으로 세션에 저장된 문자열이 있는지 읽어와 본다.
 	String id=(String)session.getAttribute("id");
+	
+	//LoginDto 클래스 정의
+	LoginDto  dto = null;
+
+	//로그인 되어 있는 경우
+	if(id != null){
+		//프로필의 정보를 가져오기 위한 처리
+		dto = LoginDao.getInstance().getData(id);
+	}
 %>
 	<!-- header --> 
 	<div class="jumbotron py-5 text-center mb-0"> 
@@ -33,7 +44,7 @@
 	       	 	<ul class="navbar-nav"> 
 	        		<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">요리</a></li> 
 	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/my_recipe/myrecipe.jsp" class="navbar-brand nav-link font-weight-bolder">나만의 조리법</a></li>
-	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/magazine/magazine.jsp" class="navbar-brand nav-link font-weight-bolder">매거진</a></li> 
+	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/magazine/magazine.jsp" class="navbar-brand nav-link font-weight-bolder">매거진</a></li>
 	     	    </ul> 
 	        </div>
 	        <%if(id == null){ %>
@@ -54,7 +65,11 @@
 	            	<li class="nav-item dropdown no-arrow">
 	                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=id %></span>
-	                  <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+						<%if(dto.getProfile()==null){ %>
+							<img class="nav-profile" id="profileImage" src="${pageContext.request.contextPath}/images/noprofile.jpg">
+						<%}else{ %>
+							<img class="nav-profile" id="profileImage" src="${pageContext.request.contextPath}<%=dto.getProfile()%>">
+						<%} %>	                  
 	                </a>
 	            
 	                <!-- Dropdown - User Information -->

@@ -5,6 +5,10 @@
 nav {
 	background: #1DD8A8;
 }
+nav .nav-profile{
+	border-radius: 50%!important;
+	width: 60px; height: 60px;
+}
 
 /* content 부분 */
 .carousel_all{

@@ -53,7 +53,6 @@
         //폼전송된 아이템이 존재 한다면 
         if (formItems != null && formItems.size() > 0) {
            
-           
             //반복문 돌면서 FileItem 객체를 불러온다. 
             for (FileItem item : formItems) {
                
@@ -66,7 +65,6 @@
                    //파일 시스템에 저장할 전체 경로를 구성한다.
                     String filePath = 
                        uploadPath + File.separator + saveFileName;
-                   System.out.println(filePath);
                    //파일을 파일시스템에 저장한다.
                     File storeFile = new File(filePath);
                     item.write(storeFile);
@@ -80,10 +78,9 @@
             }//for
             
         }//if
-        System.out.println(formItems);
     } catch (Exception ex) {
      
-        System.out.println(ex.getMessage());
+      System.out.println(ex.getMessage());
     }
    
 %>

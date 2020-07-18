@@ -13,10 +13,6 @@
 <meta charset="UTF-8">
 <title>/users/private/info.jsp</title>
 <style>
-	.text-center.clearfix{
-		position:relative;
-	}
-	
 	/* 이미지를 작은 원형으로 만든다. */
 	#profileImage{
 		width: 50px;
@@ -27,6 +23,7 @@
 		float: left;
     	margin: 10px;
 	}
+	/* 텍스트 세로 가운데 정렬 */
 	.text-center h1{
 		position: absolute;
 	    top: 0;
@@ -58,9 +55,9 @@
               <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
               <div class="col-lg-6">
                 <div class="p-5">
-                  <div class="text-center clearfix">
+                  <div class="text-center clearfix" style="position:relative;">
                   	<%if(dto.getProfile()==null){ %>
-						<img id="profileImage" src="${pageContext.request.contextPath}/images/yellowbird.png" alt="" />
+						<img id="profileImage" src="${pageContext.request.contextPath}/images/noprofile.jpg" alt="" />
 					<%}else{ %>
 						<img id="profileImage" src="${pageContext.request.contextPath}<%=dto.getProfile() %>" alt="" />
 					<%} %>

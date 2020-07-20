@@ -8,7 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <!-- CSS --> 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
-<!-- JS --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<!-- JS --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
 </head> 
@@ -131,14 +132,11 @@
 	<!-- /.container -->
 
 	<!-- footer --> 
-	<div class="jumbotron text-center mt-5 mb-0"> 
-		<h3 class="text-secondary">나만의 페이지</h3> 
-		<p>Homepage is powered by 
-			<span class="text-primary">3조</span> / Designed by 
-			<span class="text-primary">3조</span>
-		</p> 
-	</div>
-	<!-- footer end--> 
+		<%-- jsp:include(footer) --%>
+		<jsp:include page="../include/footer.jsp">
+			<jsp:param value="sub_myrecipe" name="thisPage"/>
+		</jsp:include>
+	<!-- footer end-->
 	
 </body> 
 </html>​

@@ -186,7 +186,14 @@ img.relative {
 		  		</div>
 		    </div>
 		</div>
-	</div>	
-	<footer>푸터 내용</footer>
+	</div>
+	
+	<!-- footer --> 
+		<%-- jsp:include(footer) --%>
+		<jsp:include page="../include/footer.jsp">
+			<jsp:param value="magazine" name="thisPage"/>
+		</jsp:include>
+	<!-- footer end-->
+	
 </body>
 </html>

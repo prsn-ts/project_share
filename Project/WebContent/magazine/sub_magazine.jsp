@@ -78,9 +78,12 @@
 	</div>
 	<!-- //content part -->
 	
-	<!-- 푸터 부분 -->
-	<footer>푸터 부분</footer>
-	<!-- //푸터 부분 -->
+	<!-- footer --> 
+		<%-- jsp:include(footer) --%>
+		<jsp:include page="../include/footer.jsp">
+			<jsp:param value="sub_magazine" name="thisPage"/>
+		</jsp:include>
+	<!-- footer end-->
 </body>
 </html>
 

@@ -25,7 +25,7 @@
 %>
   <!-- Page Content -->
   <div class="container">
-
+	
     <!-- header --> 
 	<div class="jumbotron py-5 text-center mb-0"> 
 		<h1>나만의 레시피</h1> 
@@ -91,11 +91,14 @@
     </nav>
         <!-- End of Topbar 네이바 끝-->
     <!-- Page Features -->
+    	
     <div class="row text-center">
-
+		
       <div class="col-lg-6 col-md-6 mb-6">
         <div class="card h-100">
+        	<a href="sub_myrecipe.jsp">
           <img class="card-img-top" src="${pageContext.request.contextPath}/img/testimg.jpg" alt="">
+          	</a>
           <div class="card-body">
             <h4 class="card-title">알토란 레시피</h4>
             <p class="card-text">밥도둑 반찬 고추장 달걀조림 만들기! </p>

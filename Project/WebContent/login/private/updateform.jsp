@@ -95,16 +95,6 @@
 <script src="${pageContext.request.contextPath}/js/jquery.form.min.js"></script>
 <script>
 	//프로필 사진을 삭제하기위한 버튼을 누를 시 동작하기
-	/*
-		전체 설명. profile_delete 버튼 클릭 시 profile_delete.jsp의 폼 전송이 되야함.
-		폼 전송 후에 profile_delete.jsp 페이지에서 id, email, profile 파라미터를 가져온다.
-		profile 파라미터가 null이 아닐 경우 null 값으로 바꾼다.
-		LoginDto 객체를 생성 후 dto에 id, email, profile 파라미터의 값을 담고
-		LoginDao 객체를 생성 후에 profile_delete 메소드를 만들고 DB profile 값을 null로 바꾼다. 
-	*/
-	//form의 action 값을  profile_delete.jsp로 바꾸는 방법.
-	//1. form action 값 가져온다.(이거 방법을 찾아봐야함.)
-	//2. 값을 jquery로 profile_delete.jsp 이렇게 바꾼다.
 	$(".profile_delete").on("click", function(){
 		//profile_delete 버튼을 눌렀을 때 폼 액션 값을 profile_delete.jsp 바꿔준다.
 		$(".user").attr("action", "profile_delete.jsp");

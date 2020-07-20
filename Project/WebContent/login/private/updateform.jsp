@@ -24,12 +24,23 @@
 	}
 	/* 이미지를 작은 원형으로 만든다. */
 	#profileImage{
-		display: none;
 		width: 50px;
 		height: 50px;
 		border: 1px solid #cecece;
 		border-radius: 50%;
 		curser: pointer;
+		float: left;
+    	margin: 10px;
+	}
+	/* 텍스트 세로 가운데 정렬 */
+	.text-center h1{
+		position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    height: 50%;
+	    margin: auto;
 	}
 </style>
 <!-- Custom fonts for this template-->
@@ -49,13 +60,13 @@
           <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
           <div class="col-lg-7">
             <div class="p-5">
-              <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">회원정보 변경</h1>
-                <%if(dto.getProfile()==null){ %>
-					<img id="profileImage" src="${pageContext.request.contextPath}/images/yellowbird.png" alt="" />
+              <div class="text-center clearfix" style="position:relative;">
+              	<%if(dto.getProfile()==null){ %>
+					<img id="profileImage" src="${pageContext.request.contextPath}/images/noprofile.jpg" alt="" />
 				<%}else{ %>
 					<img id="profileImage" src="${pageContext.request.contextPath}<%=dto.getProfile() %>" alt="" />
 				<%} %>
+                <h1 class="h4 text-gray-900">회원정보 변경</h1>
               </div>
 				<form class="user" action="update.jsp" method="post">
 					<%-- 프로필 이미지를 DB에 저장하기 위해 hidden type으로 설정. --%>

@@ -4,5 +4,6 @@ CREATE TABLE login(
 	pwd VARCHAR2(100) NOT NULL,
 	email VARCHAR2(100),
 	profile VARCHAR2(100), -- 프로필 이미지 경로를 저장할 칼럼
+	saveFileName VARCHAR2(200), -- 프로필 이미지 실제 이름을 저장할 칼럼
 	regdate DATE
 );

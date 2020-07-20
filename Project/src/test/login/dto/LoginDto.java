@@ -7,10 +7,11 @@ public class LoginDto {
 	private String profile;
 	private String regdate;
 	private String newPwd;
+	private String saveFileName; //프로필의 실제 이름을 저장할 필드
 	
 	public LoginDto() {}
 
-	public LoginDto(String id, String pwd, String email, String profile, String regdate, String newPwd) {
+	public LoginDto(String id, String pwd, String email, String profile, String regdate, String newPwd, String saveFileName) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
@@ -18,6 +19,15 @@ public class LoginDto {
 		this.profile = profile;
 		this.regdate = regdate;
 		this.newPwd = newPwd;
+		this.saveFileName = saveFileName;
+	}
+
+	public String getSaveFileName() {
+		return saveFileName;
+	}
+
+	public void setSaveFileName(String saveFileName) {
+		this.saveFileName = saveFileName;
 	}
 
 	public String getId() {

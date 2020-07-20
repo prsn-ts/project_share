@@ -56,7 +56,7 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center clearfix" style="position:relative;">
-                  	<%if(dto.getProfile()==null){ %>
+                  	<%if(dto.getSaveFileName()==null){ %>
 						<img id="profileImage" src="${pageContext.request.contextPath}/images/noprofile.jpg" alt="" />
 					<%}else{ %>
 						<img id="profileImage" src="${pageContext.request.contextPath}<%=dto.getProfile() %>" alt="" />

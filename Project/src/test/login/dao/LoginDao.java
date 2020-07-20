@@ -16,7 +16,7 @@ public class LoginDao {
 		}
 		return dao;
 	}
-	//DB에 프로필 값을 null로 세팅하는 메소드
+	//DB에 프로필 경로와 실제 이름을 null로 세팅하는 메소드
 	public boolean profile_delete(LoginDto dto) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -25,12 +25,13 @@ public class LoginDao {
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문 준비하기
 			String sql = "UPDATE login"
-					+ " SET profile=?"
+					+ " SET profile=?, saveFileName=?"
 					+ " WHERE id=?";
 			pstmt = conn.prepareStatement(sql);
 			//? 에 바인딩 할 값이 있으면 바인딩한다.
 			pstmt.setString(1, dto.getProfile());
-			pstmt.setString(2, dto.getId());
+			pstmt.setString(2, dto.getSaveFileName());
+			pstmt.setString(3, dto.getId());
 			//sql 문 수행하고 update or insert or delete 된 row 의 개수 리턴받기
 			flag = pstmt.executeUpdate();
 		} catch (Exception e) {
@@ -99,13 +100,14 @@ public class LoginDao {
 				conn = new DbcpBean().getConn();
 				//실행할 sql 문 준비하기 
 				String sql = "UPDATE login"
-						+ " SET email=?, profile=?"
+						+ " SET email=?, profile=?, saveFileName=?"
 						+ " WHERE id=?";
 				pstmt = conn.prepareStatement(sql);
 				//? 에 바인딩 할 값이 있으면 바인딩한다.
 				pstmt.setString(1, dto.getEmail());
 				pstmt.setString(2, dto.getProfile());
-				pstmt.setString(3, dto.getId());
+				pstmt.setString(3, dto.getSaveFileName());
+				pstmt.setString(4, dto.getId());
 				//sql  문 수행하고 update or insert or delete 된 row 의 갯수 리턴받기 
 				flag = pstmt.executeUpdate();
 			} catch (Exception e) {
@@ -207,7 +209,7 @@ public class LoginDao {
 				//Connection 객체의 참조값 얻어오기 
 				conn = new DbcpBean().getConn();
 				//실행할 sql 문 준비하기
-				String sql = "SELECT pwd,email,profile,regdate"
+				String sql = "SELECT pwd,email,profile,saveFileName,regdate"
 						+ " FROM login"
 						+ " WHERE id=?";
 				pstmt = conn.prepareStatement(sql);
@@ -222,6 +224,7 @@ public class LoginDao {
 					dto.setPwd(rs.getString("pwd"));
 					dto.setEmail(rs.getString("email"));
 					dto.setProfile(rs.getString("profile"));
+					dto.setSaveFileName(rs.getString("saveFileName"));
 					dto.setRegdate(rs.getString("regdate"));
 				}
 			} catch (Exception e) {

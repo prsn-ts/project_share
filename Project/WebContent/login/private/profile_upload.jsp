@@ -47,6 +47,9 @@
     //WebContent 안에서 이미지 파일이 저장된 경로
     String imageSrc="";
     
+    //WebContent 안에서 이미지 파일이 저장된 실제 이름
+    String saveFileName="";
+    
     try {
         //폼전송된 아이템 목록 얻어오기 
         List<FileItem> formItems = upload.parseRequest(request);
@@ -61,7 +64,7 @@
                    //전송된 원본 파일명을 얻어온다. 
                     String orgFileName = new File(item.getName()).getName();
                    //저장할 파일명 구성(파일명 앞에 time stamp 를 출력해서 겹치지 않게 한다)
-                   String saveFileName = System.currentTimeMillis()+orgFileName;
+                   saveFileName = System.currentTimeMillis()+orgFileName;
                    //파일 시스템에 저장할 전체 경로를 구성한다.
                     String filePath = 
                        uploadPath + File.separator + saveFileName;
@@ -84,4 +87,4 @@
     }
    
 %>
-{"imageSrc":"<%=imageSrc %>"}
+{"imageSrc":"<%=imageSrc %>","saveFileName":"<%=saveFileName %>"}

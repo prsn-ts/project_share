@@ -61,7 +61,7 @@
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center clearfix" style="position:relative;">
-              	<%if(dto.getProfile()==null){ %>
+              	<%if(dto.getSaveFileName()==null){ %>
 					<img id="profileImage" src="${pageContext.request.contextPath}/images/noprofile.jpg" alt="" />
 				<%}else{ %>
 					<img id="profileImage" src="${pageContext.request.contextPath}<%=dto.getProfile() %>" alt="" />
@@ -71,9 +71,13 @@
 				<form class="user" action="update.jsp" method="post">
 					<%-- 프로필 이미지를 DB에 저장하기 위해 hidden type으로 설정. --%>
 					<input type="hidden" name="profile" id="profile" value="<%=dto.getProfile()%>"/>
+					<%-- 프로필 이미지의 실제 이름을 DB에 저장하기 위해 hidden type으로 설정. --%>
+					<input type="hidden" name="profile_name" id="profile_name" value="<%=dto.getSaveFileName() %>"/>
+					<%-- id를 disabled로 설정했기 때문에 id에 해당하는 value값을 hidden으로 전송하기 --%>
+					<input type="hidden" id="id" name="id" value="<%=dto.getId()%>"/>
 					<div class="form-group">
 						<label for="id">아이디</label>
-						<input type="text" class="form-control form-control-user" id="id" value="<%=dto.getId()%>" disabled/>
+						<input type="text" class="form-control form-control-user" id="id" name="id" value="<%=dto.getId()%>" disabled/>
 					</div>
 					<div class="form-group">
 						<label for="">이메일</label>
@@ -127,11 +131,13 @@
 	
 	//폼이 ajax 로 제출될 수 있도록 플러그인을 동작 시킨다.
 	$("#profileForm").ajaxForm(function(data){
-		//프로필 이미지를 업데이트 한다. data => {imageSrc:"/upload/xxx.jpg"}
+		//프로필 이미지를 업데이트 한다. data => {imageSrc:"/upload/xxx.jpg","saveFileName":"xxx.jpg"}
 		$("#profileImage")
 		.attr("src","${pageContext.request.contextPath}"+data.imageSrc);
 		//회원정보 수정폼 전송될 때 같이 프로필 정보도 같이 전송 되도록 한다.
 		$("#profile").val(data.imageSrc); // input type="hidden"의 value값
+		//회원정보 수정폼 전송될 때 같이 프로필 정보도 같이 전송 되도록 한다.
+		$("#profile_name").val(data.saveFileName); // input type="hidden"의 value값
 	})
 </script>
 </body>

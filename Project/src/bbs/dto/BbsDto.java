@@ -1,77 +1,67 @@
 package bbs.dto;
 
 public class BbsDto {
-	private int bbsID;
-	private String bbsTitle;
-	private String id;
-	private String bbsDate;
-	private String bbsContent;
-	private int bbsAvailable;
+	private int num;
+	private String title;
+	private String content;
+	private String writer;
+	private String regdate;
 	//페이징 처리를 하기 위한 필드 
 	private int startRowNum;
 	private int endRowNum;
 
 	public BbsDto() {}
 
-	public BbsDto(int bbsID, String bbsTitle, String id, String bbsDate, String bbsContent, int bbsAvailable,
-			int startRowNum, int endRowNum) {
+	public BbsDto(int num, String title, String content, String writer, String regdate, int startRowNum,
+			int endRowNum) {
 		super();
-		this.bbsID = bbsID;
-		this.bbsTitle = bbsTitle;
-		this.id = id;	
-		this.bbsDate = bbsDate;
-		this.bbsContent = bbsContent;
-		this.bbsAvailable = bbsAvailable;
+		this.num = num;
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+		this.regdate = regdate;
 		this.startRowNum = startRowNum;
 		this.endRowNum = endRowNum;
 	}
 
-	public int getBbsID() {
-		return bbsID;
+	public int getNum() {
+		return num;
 	}
 
-	public void setBbsID(int bbsID) {
-		this.bbsID = bbsID;
+	public void setNum(int num) {
+		this.num = num;
 	}
 
-	public String getBbsTitle() {
-		return bbsTitle;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setBbsTitle(String bbsTitle) {
-		this.bbsTitle = bbsTitle;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getId() {
-		return id;
+	public String getContent() {
+		return content;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
-	public String getBbsDate() {
-		return bbsDate;
+	public String getWriter() {
+		return writer;
 	}
 
-	public void setBbsDate(String bbsDate) {
-		this.bbsDate = bbsDate;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 
-	public String getBbsContent() {
-		return bbsContent;
+	public String getRegdate() {
+		return regdate;
 	}
 
-	public void setBbsContent(String bbsContent) {
-		this.bbsContent = bbsContent;
-	}
-
-	public int getBbsAvailable() {
-		return bbsAvailable;
-	}
-
-	public void setBbsAvailable(int bbsAvailable) {
-		this.bbsAvailable = bbsAvailable;
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
 	}
 
 	public int getStartRowNum() {
@@ -89,7 +79,6 @@ public class BbsDto {
 	public void setEndRowNum(int endRowNum) {
 		this.endRowNum = endRowNum;
 	}
-
 	
 	
 }

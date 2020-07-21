@@ -166,14 +166,14 @@ public class BbsDao {
 		try {
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문 준비하기 
-			String sql = "INSERT INTO BBS"
-					+ " (bbsID,bbsTitle,id,bbsDate,bbsContent)"
-					+ " VALUES(BBS_seq.NEXTVAL, ?, ?, SYSDATE, ?)";
+			String sql = "INSERT INTO bbs"
+					+ " (num,title,content,writer,regdate)"
+					+ " VALUES(BBS_seq.NEXTVAL, ?, ?,?, SYSDATE)";
 			pstmt = conn.prepareStatement(sql);
 			//? 에 바인딩 할 값이 있으면 바인딩한다.
-			pstmt.setString(1, dto.getBbsTitle());
-			pstmt.setString(2, dto.getId());
-			pstmt.setString(3, dto.getBbsContent());
+			pstmt.setString(1, dto.getTitle());
+			pstmt.setString(2, dto.getContent());
+			pstmt.setString(3, dto.getWriter());
 			//sql  문 수행하고 update or insert or delete 된 row 의 갯수 리턴받기 
 			flag = pstmt.executeUpdate();
 		} catch (Exception e) {

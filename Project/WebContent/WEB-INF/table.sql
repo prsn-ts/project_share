@@ -9,13 +9,14 @@ CREATE TABLE login(
 );
 
 
-CREATE TABLE BBS (
-    bbsID NUMBER PRIMARY KEY,
-    bbsTitle VARCHAR(50),
-    id VARCHAR(20),
-    bbsDate DATE,
-    bbsContent VARCHAR(2048),
-    bbsAvailable NUMBER
+
+CREATE TABLE bbs(
+	num NUMBER PRIMARY KEY,
+	title VARCHAR2(100) NOT NULL,
+	content VARCHAR2(2048) NOT NULL,
+	writer VARCHAR2(50) NOT NULL, 
+	regdate DATE
 );
 
+CREATE SEQUENCE bbs_seq;
 

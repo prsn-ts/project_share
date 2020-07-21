@@ -86,12 +86,11 @@
 	<div class="container">
 	
 	    <!-- Blog Entries Column -->
-	    <!-- <h1 class="my-4">나만의 레시피</h1> -->
 	    <!-- 바로가기  -->
 	    <ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="index.jsp">Home</a></li>
-		<li class="breadcrumb-item"><a href="myrecipe.jsp">나만의 레시피</a></li>
-		<li class="breadcrumb-item active">레시피 목록</li>
+			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
+			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/my_recipe/myrecipe.jsp">나만의 레시피</a></li>
+			<li class="breadcrumb-item active"><a href="${pageContext.request.contextPath}/my_recipe/sub_myrecipe.jsp" style="color:gray; text-decoration:none;">레시피 목록</a></li>
 		</ol>
 	
 	    <!-- Blog Post -->

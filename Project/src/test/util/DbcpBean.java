@@ -1,17 +1,18 @@
 package test.util;
 /*
- *  [Data Base Connection Pool Bean ]
+ *  [ Data Base Connection Pool Bean ]
  *  
- *  ¾Æ·¡ÀÇ Å¬·¡½º°¡ µ¿ÀÛ ÇÏ·Á¸é
+ *  ì•„ë˜ì˜ í´ë˜ìŠ¤ê°€ ë™ì‘ í•˜ë ¤ë©´ 
  *  
- *  1. Servers/context.xml ¹®¼­¿¡ DB Á¢¼Ó Á¤º¸°¡ ÀÖ¾î¾ß ÇÑ´Ù.
+ *  1. Servers/context.xml ë¬¸ì„œì— DB ì ‘ì† ì •ë³´ê°€ ìˆì–´ì•¼ í•œë‹¤.
  *  
  *  <Resource name="jdbc/myoracle" auth="Container"
               type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
-              url="jdbc:oracle:thin:@localhost:1521:xe"
+              url="jdbc:oracle:thin:@127.0.0.1:1521:xe"
               username="scott" password="tiger" maxTotal="20" maxIdle="10"
               maxWaitMillis="-1"/>
-    2. ÇÁ·ÎÁ§Æ®ÀÇ WEB-INF/web.xml ¹®¼­¿¡ ¾Æ·¡ÀÇ ¼³Á¤ÀÌ ÀÖ¾î¾ß ÇÑ´Ù.
+    
+    2. í”„ë¡œì íŠ¸ì˜ WEB-INF/web.xml ë¬¸ì„œì— ì•„ë˜ì˜ ì„¤ì •ì´ ìˆì–´ì•¼ í•œë‹¤.
     <resource-ref>
 		<description>Oracle Datasource example</description>
 		<res-ref-name>jdbc/myoracle</res-ref-name>
@@ -19,41 +20,49 @@ package test.util;
 		<res-auth>Container</res-auth>
 	</resource-ref>
 	
-	3.  WEB-INF/lib/ Æú´õ¿¡ ojdbc6.jar ÆÄÀÏÀ» ³Ö¾î¼­ ¶óÀÌºê·¯¸®¸¦ »ç¿ëÇÒ ÁØºñ¸¦ ÇØ¾ßÇÑ´Ù.
+	3. WEB-INF/lib/ í´ë”ì— ojdbc6.jar íŒŒì¼ì„ ë„£ì–´ì„œ ë¼ì´ë¸ŒëŸ¬ë¦¬ë¥¼ ì‚¬ìš©í•  ì¤€ë¹„ë¥¼ í•´ì•¼í•œë‹¤.
 	
-	À§ÀÇ 3°¡Áö ¼³Á¤À» ÇÑ ÈÄ¿¡
+	ìœ„ì˜ 3ê°€ì§€ ì„¤ì •ì„ í•œí›„ì— 
 	
-	- new DbcpBean().getConn() ¸Ş¼Òµå¸¦ È£ÃâÇÏ¸é Connection Pool ¿¡¼­
-	Connection °´Ã¼°¡ ÇÏ³ª ¸®ÅÏµÈ´Ù.
+	- new DbcpBean().getConn() ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•˜ë©´ Connection Pool ì—ì„œ 
+	Connection ê°ì²´ê°€ í•˜ë‚˜ ë¦¬í„´ëœë‹¤. 
 	
-	- Dao ¿¡¼­ Connection °´Ã¼¸¦ »ç¿ëÇÑ ÈÄ .close() ¸Ş¼Òµå¸¦ È£ÃâÇÏ¸é
-	ÀÚµ¿À¸·Î Connection Pool ¿¡ Connection °´Ã¼°¡ ¹İÈ¯µÈ´Ù.
+	- Dao ì—ì„œ Connection ê°ì²´ë¥¼ ì‚¬ìš©í•œí›„ .close() ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•˜ë©´ 
+	  ìë™ìœ¼ë¡œ Connection Pool ì— Connection ê°ì²´ê°€ ë°˜í™˜ëœë‹¤.
+	
  */
 
 import java.sql.Connection;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class DbcpBean {
-	//ÇÊµå
+	//í•„ë“œ
 	private Connection conn;
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public DbcpBean() {
-		//Connection °´Ã¼ÀÇ ÂüÁ¶°ªÀ» ¾ò¾î¿Í¼­ ÇÊµå¿¡ ÀúÀåÇÏ´Â ÀÛ¾÷À» ÇÑ´Ù.
+		//Connection ê°ì²´ì˜ ì°¸ì¡°ê°’ì„ ì–»ì–´ì™€ì„œ í•„ë“œì— ì €ì¥í•˜ëŠ” ì‘ì—…ì„ í•œë‹¤.
 		try {
 			Context initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
-			// jdbc/myoracle ÀÌ¶ó´Â ÀÌ¸§ÀÇ DataSource(Connection Pool)¿¡¼­
+			// jdbc/myoracle ì´ë¼ëŠ” ì´ë¦„ì˜ DataSource(Connection Pool) ì—ì„œ 
 			DataSource ds = (DataSource)envContext.lookup("jdbc/myoracle");
-			// Connection °´Ã¼¸¦ ÇÏ³ª °¡Áö°í ¿Â´Ù.
+			// Connection ê°ì²´ë¥¼ í•˜ë‚˜ ê°€ì§€ê³  ì˜¨ë‹¤.  
 			conn = ds.getConnection();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	//Connection °´Ã¼¸¦ ¸®ÅÏÇØÁÖ´Â ¸Ş¼Òµå
+	//Connection ê°ì²´ë¥¼ ë¦¬í„´í•´ì£¼ëŠ” ë©”ì†Œë“œ
 	public Connection getConn() {
 		return conn;
 	}
 }
+
+
+
+
+
+

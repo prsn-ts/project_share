@@ -1,0 +1,58 @@
+/* header 부분 */
+.jumbotron{
+	background: #f0f0f0;
+}
+nav {
+	background: #1DD8A8;
+}
+nav .nav-profile{
+	border-radius: 50%!important;
+	width: 60px; height: 60px;
+}
+
+/* content 부분 */
+.carousel_all{
+	padding: 25px 25px 25px;
+	background: #e4e4e4;
+}
+.carousel_all .carousel_title a{
+	color:white;
+	text-decoration: none;
+}
+
+/* 푸터 부분 */
+footer{
+	background:#292929;
+	font-family: 'Roboto', sans-serif;
+}
+footer .row .intro .f_link a{
+	font-size:12px; 
+	color:#999; 
+	text-decoration: none;
+}
+footer .intro .f_link span{
+	color:#ddd;
+}
+.f_info {
+	color:#999; 
+	font-size:12px;
+}
+footer .banner .up_banner{
+	width: 100%; height: 50px;
+	color: white;
+}
+footer .banner .down_banner div{
+	display: inline-block;
+	padding: 0 15px 0 0;
+	text-align: center;
+}
+footer .banner .down_banner i{
+	color: white;
+}
+footer .banner .down_banner div .sns_text {
+	font-size: 12px;
+	color:gray;
+}
+footer .banner .down_banner div a:hover {
+	text-decoration: none;
+}

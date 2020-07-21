@@ -32,6 +32,7 @@
                 <div class="form-group">
                   <label for="id">아이디</label>
                   <input type="text" class="form-control form-control-user" id="id" name="id" placeholder="id">
+				  <span id="checkResult"></span>
                 </div>
                 <div class="form-group">
                   	<label for="pwd">비밀번호</label>
@@ -65,7 +66,54 @@
     </div>
 
   </div>
-
+<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+<script>
+	//아이디 중복확인을 통과 했는지 여부
+	var canUseId=false;
+	//중복 확인 버튼을 눌렀을때 실행할 함수 등록
+	$("#id").blur(function(){
+		//입력한 아이디를 읽어온다.
+		var inputId=$("#id").val();
+		//아이디에 아무것도 입력하지않고 뗐을 시 중복확인 문자 사라지게 하기
+		if(inputId.length == 0){
+			$("#checkResult").text("");
+			//form 안에 있는 일반 버튼을 눌러도 폼이 전송 되기 때문에 폼 전송을 막아준다.
+			return false;
+		}
+		//ajax 를 이용해서 서버에 보낸후 결과를 응답 받는다.
+		$.ajax({
+			method:"GET",
+			url:"checkid.jsp",
+			data:"inputId="+inputId,
+			success:function(data){
+				//data => {isExist:true} or {isExist:false} 인 object 이다.
+				if(data.isExist){//이미 존재하는 아이디임으로 사용 불가
+					$("#checkResult")
+					.text("사용불가")
+					.css("color","red");
+					//아이디가 사용 불가 하다고 표시한다.
+					canUseId=false;
+				}else{//사용가능 
+					$("#checkResult")
+					.text("사용가능")
+					.css("color","green");
+					//아이디가 사용 가능 하다고 표시한다.
+					canUseId=true;
+				}
+ 			}
+		});
+		//form 안에 있는 일반 버튼을 눌러도 폼이 전송 되기 때문에 폼 전송을 막아준다.
+		return false;
+	});
+	//폼에 submit 이벤트가 일어났을때 호출될 함수 등록 
+	$("#myForm").on("submit", function(){
+		
+		if(!canUseId){//사용 불가한 아이디 이면 
+			alert("아이디 중복을 확인 하세요");
+			return false; //폼 제출 막기 
+		}
+	});
+</script>
 
 </body>
 

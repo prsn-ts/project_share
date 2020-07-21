@@ -24,12 +24,15 @@
 </head>
 <body>
 <%if(isSuccess){ %>
-	<p>비밀 번호를 수정했습니다. <a href="${pageContext.request.contextPath }/login/private/info.jsp">확인</a></p>
+	<script>
+		alert("비밀 번호를 수정했습니다.");
+		location.href="${pageContext.request.contextPath }/login/private/info.jsp";
+	</script>
 <%}else{ %>
-	<p>
-		이번 비밀번호가 일치 하지 않습니다.
-		<a href="${pageContext.request.contextPath }/login/private/pwd_updateform.jsp">다시 시도</a>
-	</p>
+	<script>
+		alert("현재 비밀번호가 일치 하지 않습니다.");
+		location.href="${pageContext.request.contextPath }/login/private/pwd_updateform.jsp";
+	</script>
 <%} %>
 </body>
 </html>

@@ -18,10 +18,10 @@
 </head>
 <body>
 <div class="container">
-	<p>
-		<strong><%=id %></strong> 님 탈퇴 처리 되었습니다. 
-		<a href="${pageContext.request.contextPath }/index.jsp">확인</a>
-	</p>
+	<script>
+		alert("<%=id %> 님 탈퇴 처리 되었습니다.");
+		location.href="${pageContext.request.contextPath }/index.jsp";
+	</script>
 </div>
 </body>
 </html>

@@ -29,9 +29,15 @@
 <%if(isValid){ 
 	//로그인 처리를 한다. 
 	session.setAttribute("id", id);%>
-	<p> <%=id %> 님 로그인 되었습니다. <a href="<%=url%>">확인</a></p>
+	<script>
+		alert("<%=id %> 님 로그인 되었습니다.");
+		location.href="<%=url%>";
+	</script>
 <%}else{ %>
-	<p> 아이디 혹은 비밀번호가 틀려요! <a href="login_form.jsp?url=<%=encodedUrl%>">다시 시도</a></p>
+	<script>
+		alert("아이디 혹은 비밀번호가 틀려요!");
+		location.href="login_form.jsp?url=<%=encodedUrl%>";
+	</script>
 <%} %>
 </body>
 </html>

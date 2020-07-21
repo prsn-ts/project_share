@@ -1,4 +1,7 @@
 
+<%@page import="java.util.List"%>
+<%@page import="test.bbs.dao.BbsDao"%>
+<%@page import="test.bbs.dto.BbsDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 
 	pageEncoding="UTF-8"%>
@@ -30,16 +33,16 @@
 </style>
 <body>
 <%
+	//로긴한사람이라면 id 라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
+	String id = null;
 
-		//로긴한사람이라면	 id 라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
-
-		String id = null;
-
-		if (session.getAttribute("id") != null) {
-			id = (String) session.getAttribute("id");
-		}
-
-	%>
+	if (session.getAttribute("id") != null) { //id 세션 값이 null이 아닌 경우(로그인 했을 경우)
+		id = (String) session.getAttribute("id"); //id 세션 값 대입.
+	}
+	
+	//BbsDao 객체 생성
+	List<BbsDto> list = BbsDao.getInstance().getList();
+%>
  <!-- Page Content -->
 	
     <!-- header --> 
@@ -105,7 +108,7 @@
            	<%} %>
 	    </div> 
     </nav>
-	
+
 
 
 	<!-- 게시판 -->
@@ -113,7 +116,7 @@
 	<div class="container">
 
 		<div class = "row" style="justify-content: flex-end;">
-			<a href = "write.jsp" class="btn btn-primary">글쓰기</a>
+			<a href = "private/write.jsp" class="btn btn-primary">글쓰기</a>
 				<table class="table table-striped" style="text-align:center; border:1px solid #dddddd"> 
 	
 					<thead>
@@ -133,19 +136,14 @@
 					</thead>
 	
 					<tbody>
-	
+						<%for(BbsDto tmp: list){ %>
 						<tr>
-	
-							<td>1</td>
-	
-							<td>안녕하세요</td>
-	
-							<td>홍길동</td>
-	
-							<td>2017-05-04</td>
-	
+							<td><%if(tmp.getNum()>0){%><%=tmp.getNum() %><%} %></td>
+							<td><%if(tmp.getTitle()!=null){%><%=tmp.getTitle() %><%} %></td>
+							<td><%if(tmp.getTitle()!=null){%><%=tmp.getWriter() %><%} %></td>
+							<td><%if(tmp.getTitle()!=null){%><%=tmp.getRegdate() %><%} %></td>
 						</tr>
-	
+						<%} %>
 					</tbody>
 	
 				</table>

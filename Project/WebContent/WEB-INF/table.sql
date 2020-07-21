@@ -12,7 +12,9 @@ CREATE TABLE login(
 CREATE TABLE bbs (
     num NUMBER PRIMARY KEY, -- 글 번호
     title VARCHAR(100) NOT NULL, -- 글 제목
-    Content VARCHAR(2048) NOT NULL, --글 내용
+    content VARCHAR(2048) NOT NULL, --글 내용
     writer VARCHAR(50) NOT NULL, -- 작성자
     regdate DATE -- 작성일  
 );
+
+CREATE SEQUENCE bbs_seq;  -- bbs 테이블의 num에서 사용할 시퀀스

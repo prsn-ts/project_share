@@ -26,18 +26,14 @@
 
 <body>
 
-	<%
+<%
+	//로긴한사람이라면	 id라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
+	String id = null;
 
-		//로긴한사람이라면	 id라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
-
-		String id = null;
-
-		if (session.getAttribute("id") != null) {
-
-			id = (String) session.getAttribute("id");
-		}
-
-	%>
+	if (session.getAttribute("id") != null) {
+		id = (String) session.getAttribute("id");
+	}
+%>
 	
  <!-- Page Content -->
 	
@@ -109,43 +105,26 @@
 	<!-- 게시판 -->
 
 	<div class="container">
-		<div class="form-group">
+		<div class="form-group" style="text-align: right;">
 			<form method="post" action="writeAction.jsp">
 				<table class="table table-striped"
 					style="text-align: center; border: 1px solid #dddddd">
 					<thead>
-
 						<tr>
-
 							<th colspan="2"
-
-								style="background-color: #eeeeee; text-align: center;">게시판
-
-								글쓰기 양식</th>
-
+								style="background-color: #eeeeee; text-align: center;">게시판 글쓰기 양식</th>
 						</tr>
-
 					</thead>
-
 					<tbody>
-
 						<tr>
-
-							<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50"/></td>
-
+							<td><input type="text" class="form-control" placeholder="글 제목" name="title" maxlength="50"/></td>
 						</tr>
-
 						<tr>
-
-							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height: 350px;"></textarea></td>
+							<td><textarea class="form-control" placeholder="글 내용" name="content" maxlength="2048" style="height: 350px;"></textarea></td>
 						</tr>
 					</tbody>
 				</table>
-				<%if (session.getAttribute("userID") != null) {%>	
-					<a href="write.jsp" class="btn btn-primary pull-right">글쓰기</a>
-				<%} else {%>
-					<button class="btn btn-primary pull-right" onclick="if(confirm('로그인 하세요'))location.href='${pageContext.request.contextPath}/login/login_form.jsp';" type="button" >글쓰기</button>
-				<% }%>		
+				<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
 			</form>
 		</div>
 	</div>

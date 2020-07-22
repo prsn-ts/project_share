@@ -14,7 +14,7 @@
 </head>
 
 <body>
-			<%-- jsp:include(header) --%>
+	<%-- jsp:include(header) --%>
 	<jsp:include page="../include/header.jsp">
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>

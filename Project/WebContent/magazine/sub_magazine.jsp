@@ -20,10 +20,10 @@
     <!-- End of Topbar -->
 	
 	<!-- content part -->
-	<div style="background-color: #CEECF5">
+	<div style="background-color: #E6E6E6">
 	<div class="container">
 	<div class="row row-cols-1 row-cols-md-1">
-	<div style="background-color: white">
+	<div style="background-color: #F2F2F2">
 	
 	
 		<div class="col mb-4">	

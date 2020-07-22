@@ -1,6 +1,6 @@
 /* header 부분 */
 .jumbotron{
-	background: #f0f0f0;
+	background: white;
 }
 nav {
 	background: #1DD8A8;
@@ -18,6 +18,10 @@ nav .nav-profile{
 .carousel_all .carousel_title a{
 	color:white;
 	text-decoration: none;
+}
+/* myrecipe.jsp 페이지 부분 css */
+.card_one{
+	height: 350px;
 }
 
 /* 푸터 부분 */

@@ -5,33 +5,21 @@
 <%
 	//id 라는 키값으로 세션에 저장된 문자열이 있는지 읽어와 본다.
 	String id=(String)session.getAttribute("id");
-
-	//요청 파라미터 읽어내기
-	String thisPage = request.getParameter("thisPage");
-	String save_par = thisPage;
 %>
-	<!-- index header --> 
-	<%if(save_par.equals("index")){ %>
+	<!-- index header -->
 		<div class="jumbotron py-5 text-center mb-0"> 
 			<h1>오늘의 레시피</h1> 
 			<p>오늘의 레시피는 과연?</p> 
 		</div>
-	<%} %>
-	<!-- myrecipe header --> 
-	<%if(save_par.equals("myrecipe")){ %>
-		<div class="jumbotron py-5 text-center mb-0"> 
-			<h1>나만의 레시피</h1> 
-			<p>나만의 노하우를 공유하세요!</p> 
-		</div>
-	<%} %>
+	
 	<!-- Topbar -->
-    <nav class="navbar navbar-expand navbar-light topbar mb-3 static-top shadow">
+    <nav class="navbar navbar-expand navbar-light topbar static-top shadow">
     	<div class="container">
 	        <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
 	       	 	<ul class="navbar-nav"> 
-	        		<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">요리</a></li> 
-	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/my_recipe/myrecipe.jsp" class="navbar-brand nav-link font-weight-bolder">나만의 조리법</a></li>
-	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/magazine/magazine.jsp" class="navbar-brand nav-link font-weight-bolder">매거진</a></li>
+	        		<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder text-dark">요리</a></li> 
+	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/my_recipe/myrecipe.jsp" class="navbar-brand nav-link font-weight-bolder text-dark">나만의 조리법</a></li>
+	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/magazine/magazine.jsp" class="navbar-brand nav-link font-weight-bolder text-dark">매거진</a></li>
 	     	    </ul> 
 	        </div>
 	        <%if(id == null){ %>
@@ -66,7 +54,7 @@
 	                <!-- Dropdown - User Information -->
 	                
 	                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-		                  <a class="dropdown-item" href="login/private/info.jsp">
+		                  <a class="dropdown-item" href="${pageContext.request.contextPath}/login/private/info.jsp">
 		                  	<%=id %>
 		                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 		                    Profile

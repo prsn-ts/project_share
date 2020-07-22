@@ -24,19 +24,11 @@
 </head>
 <body>
 	<%-- jsp:include(header) --%>
-	<jsp:include page="../include/header.jsp">
-		<jsp:param value="myrecipe" name="thisPage"/>
-	</jsp:include>
+	<jsp:include page="../include/header.jsp"></jsp:include>
+	<%-- //header --%>
 	
 	<!-- Page Content -->
 	<div class="container">
-	
-		<!-- 바로가기  -->
-	    <ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
-			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/my_recipe/myrecipe.jsp" style="color:gray; text-decoration:none;">나만의 레시피</a></li>
-			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/my_recipe/sub_myrecipe.jsp">레시피 목록</a></li>
-		</ol>
 		
 		<!-- Jumbotron Header -->
 		<header class="jumbotron my-4">
@@ -48,7 +40,7 @@
 		<!-- Page Features -->
 		<div class="row text-center">
 		
-		  <div class="col-lg-6 col-md-6 mb-6">
+		  <div class="card_one col-lg-3 col-md-6 mb-4">
 		    <div class="card h-100">
 		      <img class="card-img-top" src="../img/testimg.jpg" alt="">
 		      <div class="card-body">
@@ -61,7 +53,7 @@
 		    </div>
 		  </div>
 		
-		  <div class="col-lg-3 col-md-6 mb-4">
+		  <div class="card_one col-lg-3 col-md-6 mb-4">
 		    <div class="card h-100">
 		      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
 		      <div class="card-body">
@@ -74,7 +66,7 @@
 		    </div>
 		  </div>
 		
-		  <div class="col-lg-3 col-md-6 mb-4">
+		  <div class="card_one col-lg-3 col-md-6 mb-4">
 		    <div class="card h-100">
 		      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
 		      <div class="card-body">
@@ -87,7 +79,7 @@
 		    </div>
 		  </div>
 		
-		  <div class="col-lg-3 col-md-6 mb-4">
+		  <div class="card_one col-lg-3 col-md-6 mb-4">
 		    <div class="card h-100">
 		      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
 		      <div class="card-body">
@@ -100,7 +92,7 @@
 		    </div>
 		  </div>
 		  
-		  <div class="col-lg-3 col-md-6 mb-4">
+		  <div class="card_one col-lg-3 col-md-6 mb-4">
 		    <div class="card h-100">
 		      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
 		      <div class="card-body">
@@ -113,7 +105,7 @@
 		    </div>
 		  </div>
 		  
-		  <div class="col-lg-3 col-md-6 mb-4">
+		  <div class="card_one col-lg-3 col-md-6 mb-4">
 		    <div class="card h-100">
 		      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
 		      <div class="card-body">
@@ -126,7 +118,7 @@
 		    </div>
 		  </div>
 		  
-		  <div class="col-lg-3 col-md-6 mb-4">
+		  <div class="card_one col-lg-3 col-md-6 mb-4">
 		    <div class="card h-100">
 		      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
 		      <div class="card-body">
@@ -139,7 +131,7 @@
 		    </div>
 		  </div>
 		  
-		  <div class="col-lg-3 col-md-6 mb-4">
+		  <div class="card_one col-lg-3 col-md-6 mb-4">
 		    <div class="card h-100">
 		      <img class="card-img-top" src="http://placehold.it/500x325" alt="">
 		      <div class="card-body">

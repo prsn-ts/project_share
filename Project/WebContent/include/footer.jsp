@@ -5,15 +5,15 @@
 	String thisPage = request.getParameter("thisPage");
 	String save_par = thisPage;
 %>
-	<div class="jumbotron text-center mt-5 mb-0"> 
+	<div class="jumbotron text-center mb-0" style="background-color: #289f5d;"> 
 		<%if(save_par.equals("myrecipe") || save_par.equals("sub_myrecipe")){ %>
-			<h3 class="text-secondary">나만의 레시피</h3>
+			<h3 class="text-white">나만의 레시피</h3>
 		<%} %>
 		<%if(save_par.equals("magazine") || save_par.equals("sub_magazine")){ %>
-			<h3 class="text-secondary">매거진</h3>
+			<h3 class="text-white">매거진</h3>
 		<%} %>
 		<p>Homepage is powered by 
-			<span class="text-primary">3조</span> / Designed by 
-			<span class="text-primary">3조</span>
+			<span class="text-white">3조</span> / Designed by 
+			<span class="text-white">3조</span>
 		</p> 
 	</div>

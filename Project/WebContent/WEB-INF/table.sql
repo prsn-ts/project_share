@@ -9,14 +9,14 @@ CREATE TABLE login(
 );
 
 
+CREATE TABLE bbs_cafe (
+    num NUMBER PRIMARY KEY, -- 글 번호
+    title VARCHAR2(100) NOT NULL, -- 글 제목
+    content CLOB, --글 내용
+    writer VARCHAR2(100) NOT NULL,
+    viewCount NUMBER
+    regdate DATE -- 작성일  
 
-CREATE TABLE bbs(
-	num NUMBER PRIMARY KEY,
-	title VARCHAR2(100) NOT NULL,
-	content VARCHAR2(2048) NOT NULL,
-	writer VARCHAR2(50) NOT NULL, 
-	regdate DATE
-);
 
-CREATE SEQUENCE bbs_seq;
+CREATE SEQUENCE bbs_cafe_seq;  -- bbs 테이블의 num에서 사용할 시퀀스
 

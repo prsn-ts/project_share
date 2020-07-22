@@ -72,6 +72,14 @@ img.relative {
     <!-- End of Topbar -->
 	
 	<div class="container">
+	
+		<!-- 바로가기  -->
+	    <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
+			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/magazine/magazine.jsp" style="color:gray; text-decoration:none;">매거진</a></li>
+			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/magazine/sub_magazine.jsp">상세 페이지</a></li>
+		</ol>
+		
 		<div class="row">
 			<div class="col-sm mb-4">
 				<div class="card-deck h-100">

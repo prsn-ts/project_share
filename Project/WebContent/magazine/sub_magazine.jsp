@@ -64,6 +64,14 @@
 	
 	<!-- content part -->
 	<div class="container">
+	
+		<!-- 바로가기  -->
+	    <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
+			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/magazine/magazine.jsp">매거진</a></li>
+			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/magazine/sub_magazine.jsp" style="color:gray; text-decoration:none;">상세 페이지</a></li>
+		</ol>
+	
 		<div class="text-center">
 			<img class="img-fluid" src="../images/milk1.png" >
 			<h5 class="card-title">우유의 효과1</h5>

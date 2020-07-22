@@ -1,48 +1,23 @@
-
-<%@page import="java.util.List"%>
-<%@page import="test.bbs.dao.BbsDao"%>
-<%@page import="test.bbs.dto.BbsDto"%>
+<%@page import="bbs.dao.BbsDao"%>
+<%@page import="bbs.dto.BbsDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-
-	pageEncoding="UTF-8"%>
-
-<%@ page import="java.io.PrintWriter"%>
-
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<!-- 뷰포트 -->
-
-<meta name="viewport" content="width=device-width">
-
-<!-- 스타일시트 참조  -->
-
-<link rel="stylesheet" href="../css/bootstrap.css">
-
-<title>jsp 게시판 웹사이트</title>
-
-</head>
-
-<style>
-	
-</style>
-<body>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
 <%
-	//로긴한사람이라면 id 라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
-	String id = null;
-
-	if (session.getAttribute("id") != null) { //id 세션 값이 null이 아닌 경우(로그인 했을 경우)
-		id = (String) session.getAttribute("id"); //id 세션 값 대입.
-	}
-	
-	//BbsDao 객체 생성
-	List<BbsDto> list = BbsDao.getInstance().getList();
+	String id=(String)session.getAttribute("id");
+	//파라미터로 전달되는 글번호를 읽어와서
+	int num=Integer.parseInt(request.getParameter("num"));
+	//글 하나의 정보를 DB 에서 읽어와서
+	BbsDto dto=BbsDao.getInstance().getData(num);
+	//글정보를 응답한다. 
 %>
+</head>
+<body>
  <!-- Page Content -->
 	
     <!-- header --> 
@@ -108,70 +83,32 @@
            	<%} %>
 	    </div> 
     </nav>
-
-
-
 	<!-- 게시판 -->
 
 	<div class="container">
-
-		<div class = "row" style="justify-content: flex-end;">
-			<a href = "private/write.jsp" class="btn btn-primary">글쓰기</a>
-				<table class="table table-striped" style="text-align:center; border:1px solid #dddddd"> 
-	
+		<div class="form-group" style="text-align: right;">
+			
+				<table class="table table-striped"
+					style="text-align: center; border: 1px solid #dddddd">
 					<thead>
-	
 						<tr>
-	
-							<th style="background-color: #eeeeee; text-align: center;">번호</th>
-	
-							<th style="background-color: #eeeeee; text-align: center;">제목</th>
-	
-							<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-	
-							<th style="background-color: #eeeeee; text-align: center;">작성일</th>
-	
+							<th colspan="2"
+								style="background-color: #eeeeee; text-align: center;"><%=dto.getTitle() %></th>
 						</tr>
-	
 					</thead>
-	
 					<tbody>
-						<%for(BbsDto tmp: list){ %>
 						<tr>
-							<td><%if(tmp.getNum()>0){%><%=tmp.getNum() %><%} %></td>
-							<td><%if(tmp.getTitle()!=null){%><%=tmp.getTitle() %><%} %></td>
-							<td><%if(tmp.getTitle()!=null){%><%=tmp.getWriter() %><%} %></td>
-							<td><%if(tmp.getTitle()!=null){%><%=tmp.getRegdate() %><%} %></td>
+							<td>작성자 : <%=id %></td>
 						</tr>
-						<%} %>
+						<tr>
+							<td><%=dto.getContent() %></td>
+						</tr>
 					</tbody>
-	
 				</table>
-
+				<a class="btn btn-secondary" href="../list.jsp" role="button">취소</a>
+				<button type="submit" onclick="submitContents(this);" class="btn btn-primary pull-right" value="글쓰기">글쓰기</button>
+			
 		</div>
-
 	</div>
-
-	
-
-
-
-
-
-
-
-	<!-- 애니매이션 담당 JQUERY -->
-
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-	<!-- 부트스트랩 JS  -->
-
-	<script src="../js/bootstrap.js"></script>
-
-
-
 </body>
-
 </html>
-
-

@@ -12,11 +12,11 @@ CREATE TABLE login(
 CREATE TABLE bbs_cafe (
     num NUMBER PRIMARY KEY, -- 글 번호
     title VARCHAR2(100) NOT NULL, -- 글 제목
-    content CLOB, --글 내용
     writer VARCHAR2(100) NOT NULL,
+    content CLOB, --글 내용
     viewCount NUMBER
     regdate DATE -- 작성일  
-
+);
 
 CREATE SEQUENCE bbs_cafe_seq;  -- bbs 테이블의 num에서 사용할 시퀀스
 

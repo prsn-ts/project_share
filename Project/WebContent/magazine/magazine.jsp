@@ -18,10 +18,15 @@
 	<jsp:include page="../include/header.jsp"></jsp:include>
 	<%-- //header --%>
 	
-	<div class="body_part" style="background-color: #d8d8d8;">
+	<div class="magazine_part" style="background-color: #d8d8d8;">
 		<div class="container">
 			<div class="pb-4"></div>
 			<div class="row_all p-3" style="border: 1px solid #dfdfdf; background-color: #f2f2f2;">
+			
+			<div class=" my-4">
+			  <h3 style="text-shadow: 2px 2px 4px gray;">매거진</h3>
+			</div>
+			
 				<div class="row">
 					<div class="col-sm my-4">
 						<div class="card-deck h-100">

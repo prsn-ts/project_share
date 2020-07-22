@@ -18,11 +18,14 @@
     <!-- End of Topbar -->
 	
 	<!-- content part -->
-	<div style="background-color: #d8d8d8; padding:20px;">
+	<div class="sub_magazine_part" style="background-color: #d8d8d8; padding:20px;">
 		<div class="container">
-			<div class="row row-cols-1 row-cols-md-1">
-				<div style="background-color: #f2f2f2">
-					<div class="col my-4">	
+			<div class="row_all row p-3" style="border: 1px solid #dfdfdf; background-color: #f2f2f2;">
+				<div>
+					<div class="col my-4">
+						<div class=" my-4">
+							<h3 style="text-shadow: 2px 2px 4px gray;">매거진</h3>
+						</div>
 						<div class="card h-100">
 							<div align="center">
 								<img class="img-fluid" src="../images/mag1.png" style="width: 600px; height:600px;" >
@@ -86,8 +89,11 @@
 					</div>
 				</div>
 			</div>
+			<!-- //.row_all, row -->
 		</div>
+		<!-- //.container -->
 	</div>
+	<!-- //.sub_magazine_part -->
 	<!-- footer --> 
 		<%-- jsp:include(footer) --%>
 		<jsp:include page="../include/footer.jsp">

@@ -15,6 +15,8 @@ request.setCharacterEncoding("utf-8");
 	dto.setEmail(email);
 	//UsersDao 객체를 이용해서 DB 에 저장한다.
 	boolean isSuccess=LoginDao.getInstance().insert(dto);
+	System.out.println(id + pwd + email);
+	System.out.println(isSuccess);
 %>  
 <!DOCTYPE html>
 <html>

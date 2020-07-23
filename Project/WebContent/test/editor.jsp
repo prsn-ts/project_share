@@ -2,15 +2,15 @@
 <%@page import="test.login.dto.LoginDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
- <%
+   
+   <%
 	//1. GET 방식 파라미터로 전달되는 글번호를 읽어온다.
 	String id=(String)session.getAttribute("id");
- 	System.out.println(id);
 	//2. DB 에서 해당 글 정보를 얻어온다.
 	LoginDto dto=LoginDao.getInstance().getData(id);
 
-%>   
+%>  
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,8 +58,7 @@
 	<hr class="two">
 	
 		<div class="form-group" style="margin-left: 1px">
-			<label>작성자: </label>
-			<p><%=dto.getId() %></p>
+			<label>작성자: <%=dto.getId() %> </label>
 		</div>
 		
 			

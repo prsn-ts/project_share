@@ -35,8 +35,15 @@
 			
 			<div class=" my-4">
 			  <h3 style="text-shadow: 2px 2px 4px gray;">나만의 레시피</h3>
+		
+			  
+			  
 			</div>
 			
+			
+			
+			
+	
 				<!-- Page Features -->
 				<div class="row text-center">
 				
@@ -140,10 +147,10 @@
 				      </div>
 				      <div class="card-footer">
 				        <a href="#" class="btn btn-primary">Find Out More!</a>
-				      </div>
+				      </div>  
 				    </div>
 				  </div>
-				
+				  <button style="margin-left:1000px;" type="submit button" class="btn btn-outline-success" onclick="location.href='${pageContext.request.contextPath}/test/editor.jsp';">작성하기</button>
 				</div>
 				<!-- //.row -->
 			</div>
@@ -152,6 +159,7 @@
 		</div>
 		<!-- //.container -->
 	</div>
+	
 	<!-- //Page Content -->
 	
 	<!-- footer --> 

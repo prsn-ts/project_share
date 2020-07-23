@@ -406,7 +406,7 @@ public class BbsDao {
 					+ " FROM"
 					+ "     (SELECT result1.*, ROWNUM AS rnum"
 					+ "      FROM (SELECT num,title,content,writer,regdate,viewCount"
-					+ "             bbs_cafe"
+					+ "            FROM bbs_cafe"
 					+ "            WHERE title LIKE '%'||?||'%' OR content LIKE '%'||?||'%'"
 					+ "            ORDER BY num DESC) result1)"
 					+ " WHERE rnum BETWEEN ? AND ?";

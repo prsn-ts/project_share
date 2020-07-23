@@ -61,7 +61,7 @@
 	//전체 row 의 갯수를 담을 변수 
 	int totalRow=0;
 	if(!keyword.equals("")){ //만일 키워드가 넘어온다면 
-		if(condition.equals("title_name")){
+		if(condition.equals("title_content")){
 			//검색 키워드를 FileDto 객체의 필드에 담는다. 
 			dto.setTitle(keyword);
 			dto.setContent(keyword);
@@ -212,7 +212,7 @@
 					<form action="list.jsp" method="get">
 						<label for="condition">검색조건</label>
 						<select name="condition" id="condition">
-							<option value="title_name" <%if(condition.equals("title_name")){ %>selected<%} %>>제목+내용</option>
+							<option value="title_content" <%if(condition.equals("title_content")){ %>selected<%} %>>제목+내용</option>
 							<option value="title" <%if(condition.equals("title")){ %>selected<%} %>>제목</option>
 							<option value="writer" <%if(condition.equals("writer")){ %>selected<%} %>>작성자</option>
 						</select>

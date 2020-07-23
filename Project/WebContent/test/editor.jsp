@@ -26,7 +26,7 @@
 <style>
 	/* textarea 요소의 크기가 smart editor 의 크기로 결정된다. */
 	#content{
-		width: 768px;
+		width: 99.5%;
 		height: 300px;
 	}
 		
@@ -34,46 +34,73 @@
 </head>
 <body>
 
-
 	<%-- jsp:include(header) --%>
 	<jsp:include page="../include/header.jsp">
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
     <!-- End of Topbar -->
 
-	<div style="background-color:  #d8d8d8">
-	<div class="container">
-	<div style="background-color: #f2f2f2">
-	<div class="row row-cols-1 row-cols-md-0">
-
-
-<div class="container">
-
-<div class="card m-5" style="width: 60rem;">
-  <div class="card-body">
-  
-	<h2 class="card-title display-4 font-weight-bold text-success m-2">레시피 작성</h2>
-	<form action="insert.jsp" method="post">
-	
-	<hr class="two">
-	
-		<div class="form-group" style="margin-left: 1px">
-			<label>작성자: <%=dto.getId() %> </label>
+	<div class="editor_part" style="background-color:  #d8d8d8">
+		<div class="pb-4"></div>
+		<div class="container">
+			<div style="background-color: #f2f2f2">
+				<div class="row row-cols-1 row-cols-md-0">
+					<div class="container">
+					
+						<div class="card m-5">
+							<div class="card-body">
+							<h2 class="card-title display-4 font-weight-bold text-success m-2">레시피 작성</h2>
+							
+								<form action="insert.jsp" method="post">
+									<hr class="two">
+									<!-- 작성자 -->
+									<div class="form-group" style="margin-left: 1px">
+										<label for="writer">작성자:</label>
+										<input type="text" name="writer" id="writer" value="<%=dto.getId() %>" disabled/>
+									</div>
+									<!-- 제목 -->
+									<div class="form-group" style="margin-left: 1px">
+										<input type="text" name="title" id="title" placeholder="제목"/>
+									</div>
+									<!-- 서브 타이틀 -->
+									<div class="input-group input-group-sm mb-3">
+										<div class="input-group-prepend">
+										  <span class="input-group-text" id="inputGroup-sizing-sm">서브 타이틀</span>
+										</div>
+										<input class=" col" type="text" name="subTitle" aria-label="Sizing example input"
+											aria-describedby="inputGroup-sizing-sm" placeholder="해당 요리에 대한 간략한 설명을 적어주세요."/>
+									</div>
+									<!-- 대표 이미지 -->
+									<div class="input-group input-group-sm mb-3">
+										<div class="input-group-prepend">
+										  <span class="input-group-text" id="inputGroup-sizing-sm">대표 이미지 설정</span>
+										</div>
+										<input type="button" name="showImage" class="file_select btn btn-success btn-sm" value="대표 이미지 고르기">
+									</div>
+									<!-- 스마트에디터(content) 부분 -->
+									<div class="form-group ">
+										<textarea name="content" id="content" cols="30" rows="10" ></textarea>
+									</div>
+									<!-- 폼 제출 버튼 -->
+									<button type="submit" class="btn btn-outline-success" onclick="submitContents(this);">저장</button>
+								</form>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
 		</div>
-		
-			
+		<div class="pb-4"></div>	
+	</div>
+	<!-- //.editor_part -->
 	
-		<div class="form-group" style="margin-left: 1px">
-			<input type="text" name="title" id="title" placeholder="제목"/>
-		</div>
-		
-		<div class="form-group ">
-			<textarea name="content" id="content" cols="30" rows="10" ></textarea>
-		</div>
-		
-		<button type="submit button" class="btn btn-outline-success" onclick="submitContents(this);">저장</button>
-	</form>
-</div>
+	<!-- footer --> 
+	<%-- jsp:include(footer) --%>
+	<jsp:include page="../include/footer.jsp">
+		<jsp:param value="magazine" name="thisPage" />
+	</jsp:include>
+	<!-- footer end-->
+
 <%--
 	[ SmartEditor 를 사용하기 위한 설정 ]
 	
@@ -142,23 +169,5 @@
 		oEditors.getById["content"].setDefaultFont(sDefaultFont, nFontSize);
 	}
 </script>
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-			<!-- footer --> 
-		<%-- jsp:include(footer) --%>
-		<jsp:include page="../include/footer.jsp">
-			<jsp:param value="magazine" name="thisPage" />
-		</jsp:include>
-	<!-- footer end-->
-	
-</div>
 </body>
 </html>

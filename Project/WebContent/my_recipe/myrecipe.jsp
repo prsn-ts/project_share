@@ -34,18 +34,10 @@
 			<div class="row_all p-3" style="border: 1px solid #dfdfdf; background-color: #f2f2f2;">
 			
 			<div class=" my-4">
-			  <h3 style="text-shadow: 2px 2px 4px gray;">나만의 레시피</h3>
-		
-			  
-			  
+			  <h3 style="text-shadow: 2px 2px 4px gray;">나만의 레시피</h3> 
 			</div>
-			
-			
-			
-			
-	
 				<!-- Page Features -->
-				<div class="row text-center">
+				<div class="row text-center" >
 				
 				  <div class="card_one col-lg-3 col-md-6 mb-4">
 				    <div class="card h-100">
@@ -150,7 +142,7 @@
 				      </div>  
 				    </div>
 				  </div>
-				  <button style="margin-left:1000px;" type="submit button" class="btn btn-outline-success" onclick="location.href='${pageContext.request.contextPath}/test/editor.jsp';">작성하기</button>
+				  	<button type="submit" class="btn btn-outline-success" onclick="location.href='${pageContext.request.contextPath}/test/editor.jsp';">작성하기</button>
 				</div>
 				<!-- //.row -->
 			</div>

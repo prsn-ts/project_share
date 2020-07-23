@@ -6,22 +6,28 @@ public class BbsDto {
 	private String content;
 	private String writer;
 	private String regdate;
+	private int viewCount;
 	//페이징 처리를 하기 위한 필드 
 	private int startRowNum;
 	private int endRowNum;
+	private int prevNum;
+	private int nextNum;
 
 	public BbsDto() {}
 
-	public BbsDto(int num, String title, String content, String writer, String regdate, int startRowNum,
-			int endRowNum) {
+	public BbsDto(int num, String title, String content, String writer, String regdate, int viewCount, int startRowNum,
+			int endRowNum, int prevNum, int nextNum) {
 		super();
 		this.num = num;
 		this.title = title;
 		this.content = content;
 		this.writer = writer;
 		this.regdate = regdate;
+		this.viewCount = viewCount;
 		this.startRowNum = startRowNum;
 		this.endRowNum = endRowNum;
+		this.prevNum = prevNum;
+		this.nextNum = nextNum;
 	}
 
 	public int getNum() {
@@ -64,6 +70,14 @@ public class BbsDto {
 		this.regdate = regdate;
 	}
 
+	public int getViewCount() {
+		return viewCount;
+	}
+
+	public void setViewCount(int viewCount) {
+		this.viewCount = viewCount;
+	}
+
 	public int getStartRowNum() {
 		return startRowNum;
 	}
@@ -78,6 +92,22 @@ public class BbsDto {
 
 	public void setEndRowNum(int endRowNum) {
 		this.endRowNum = endRowNum;
+	}
+
+	public int getPrevNum() {
+		return prevNum;
+	}
+
+	public void setPrevNum(int prevNum) {
+		this.prevNum = prevNum;
+	}
+
+	public int getNextNum() {
+		return nextNum;
+	}
+
+	public void setNextNum(int nextNum) {
+		this.nextNum = nextNum;
 	}
 	
 	

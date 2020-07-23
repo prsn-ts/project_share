@@ -18,6 +18,105 @@ public class BbsDao {
 		}
 		return dao;
 	}
+	//글 하나의 정보를 삭제하는 메소드
+	public boolean delete(int num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int flag = 0;
+		try {
+			conn = new DbcpBean().getConn();
+			//실행할 sql 문 준비하기 
+			String sql = "DELETE FROM bbs_cafe"
+					+ " WHERE num=?";
+			pstmt = conn.prepareStatement(sql);
+			//? 에 바인딩 할 값이 있으면 바인딩한다.
+			pstmt.setInt(1, num);
+			//sql  문 수행하고 update or insert or delete 된 row 의 갯수 리턴받기 
+			flag = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		if (flag > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	//글 정보를 수정하는 메소드
+	public boolean update(BbsDto dto) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int flag = 0;
+		try {
+			conn = new DbcpBean().getConn();
+			String sql = "UPDATE bbs_cafe"
+					+ " SET title=?, content=?"
+					+ " WHERE num=?";
+			pstmt = conn.prepareStatement(sql);
+			// ? 에 값 바인딩 하기
+			pstmt.setString(1, dto.getTitle());
+			pstmt.setString(2, dto.getContent());
+			pstmt.setInt(3, dto.getNum());
+			flag = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		if (flag > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	//글 조회수 1 증가 시키는 메소드
+	public boolean addViewCount(int num) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int flag = 0;
+		try {
+			conn = new DbcpBean().getConn();
+			String sql = "UPDATE bbs_cafe"
+					+ " SET viewCount=viewCount+1"
+					+ " WHERE num=?";
+			pstmt = conn.prepareStatement(sql);
+			// ? 에 값 바인딩 하기
+			pstmt.setInt(1, num);
+			flag = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		if (flag > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	//글 하나의 정보를 리턴하는 메소드
 	public BbsDto getData(int num) {
 		//글하나의 정보를 담을 BoardDto 
@@ -30,8 +129,12 @@ public class BbsDao {
 			//Connection 객체의 참조값 얻어오기 
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문 준비하기
-			String sql = "SELECT title,content,writer,regdate"
-					+ " FROM Bbs_cafe"
+			String sql = "SELECT result1.*"
+					+ " FROM"
+					+ "     (SELECT num,writer,title,content,regdate,viewCount,"
+					+ "      LAG(num,1,0) OVER (ORDER BY num DESC) AS prevNum,"
+					+ "      LEAD(num,1,0) OVER (ORDER BY num DESC) AS nextNum"
+					+ "      FROM bbs_cafe) result1"
 					+ " WHERE num=?";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
@@ -46,6 +149,9 @@ public class BbsDao {
 				dto.setTitle(rs.getString("title"));
 				dto.setContent(rs.getString("content"));
 				dto.setRegdate(rs.getString("regdate"));
+				dto.setViewCount(rs.getInt("viewCount"));
+				dto.setPrevNum(rs.getInt("prevNum"));
+				dto.setNextNum(rs.getInt("nextNum"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -243,12 +349,13 @@ public class BbsDao {
 				//Connection 객체의 참조값 얻어오기 
 				conn = new DbcpBean().getConn();
 				//실행할 sql 문 준비하기
-				String sql = "SELECT *"
+				String sql="SELECT *"
 						+ " FROM"
-						+ "     (SELECT result1.*, ROWNUM AS rnum"
-						+ "      FROM (SELECT num,title,content,writer,regdate"
-						+ "            FROM bbs_cafe"
-						+ "            ORDER BY regdate DESC) result1)"
+						+ " (SELECT result1.*, ROWNUM AS rnum"
+						+ " FROM"
+						+ " (SELECT num,writer,title,regdate,viewCount"
+						+ " FROM bbs_cafe"
+						+ " ORDER BY num DESC) result1)"
 						+ " WHERE rnum BETWEEN ? AND ?";
 				pstmt = conn.prepareStatement(sql);
 				//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
@@ -260,10 +367,10 @@ public class BbsDao {
 				while (rs.next()) { 
 					BbsDto tmp=new BbsDto();
 					tmp.setNum(rs.getInt("num"));
-					tmp.setTitle(rs.getString("title"));
-					tmp.setContent(rs.getString("content"));
 					tmp.setWriter(rs.getString("writer"));
+					tmp.setTitle(rs.getString("title"));
 					tmp.setRegdate(rs.getString("regdate"));
+					tmp.setViewCount(rs.getInt("viewCount"));
 					//ArrayList 객체에 누적 시킨다. 
 					list.add(tmp);
 				}
@@ -298,10 +405,10 @@ public class BbsDao {
 			String sql = "SELECT *"
 					+ " FROM"
 					+ "     (SELECT result1.*, ROWNUM AS rnum"
-					+ "      FROM (SELECT num,title,content,writer,regdate"
-					+ "            FROM bbs_cafe"
+					+ "      FROM (SELECT num,title,content,writer,regdate,viewCount"
+					+ "             bbs_cafe"
 					+ "            WHERE title LIKE '%'||?||'%' OR content LIKE '%'||?||'%'"
-					+ "            ORDER BY regdate DESC) result1)"
+					+ "            ORDER BY num DESC) result1)"
 					+ " WHERE rnum BETWEEN ? AND ?";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
@@ -319,6 +426,7 @@ public class BbsDao {
 				tmp.setContent(rs.getString("content"));
 				tmp.setWriter(rs.getString("writer"));
 				tmp.setRegdate(rs.getString("regdate"));
+				dto.setViewCount(rs.getInt("viewCount"));
 				//ArrayList 객체에 누적 시킨다. 
 				list.add(tmp);
 			}
@@ -352,10 +460,10 @@ public class BbsDao {
 				String sql = "SELECT *"
 						+ " FROM"
 						+ "     (SELECT result1.*, ROWNUM AS rnum"
-						+ "      FROM (SELECT num,title,content,writer,regdate"
+						+ "      FROM (SELECT num,title,content,writer,regdate,viewCount"
 						+ "            FROM bbs_cafe"
 						+ "            WHERE title LIKE '%'||?||'%'"
-						+ "            ORDER BY regdate DESC) result1)"
+						+ "            ORDER BY num DESC) result1)"
 						+ " WHERE rnum BETWEEN ? AND ?";
 				pstmt = conn.prepareStatement(sql);
 				//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
@@ -372,6 +480,7 @@ public class BbsDao {
 					tmp.setContent(rs.getString("content"));
 					tmp.setWriter(rs.getString("writer"));
 					tmp.setRegdate(rs.getString("regdate"));
+					tmp.setViewCount(rs.getInt("viewCount"));
 					//ArrayList 객체에 누적 시킨다. 
 					list.add(tmp);
 				}
@@ -405,10 +514,10 @@ public class BbsDao {
 			String sql = "SELECT *"
 					+ " FROM"
 					+ "     (SELECT result1.*, ROWNUM AS rnum"
-					+ "      FROM (SELECT num,title,content,writer,regdate"
+					+ "      FROM (SELECT num,title,content,writer,regdate,viewCount"
 					+ "            FROM bbs_cafe"
 					+ "            WHERE writer LIKE '%'||?||'%'"
-					+ "            ORDER BY regdate DESC) result1)"
+					+ "            ORDER BY num DESC) result1)"
 					+ " WHERE rnum BETWEEN ? AND ?";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
@@ -425,6 +534,7 @@ public class BbsDao {
 				tmp.setContent(rs.getString("content"));
 				tmp.setWriter(rs.getString("writer"));
 				tmp.setRegdate(rs.getString("regdate"));
+				tmp.setViewCount(rs.getInt("viewCount"));
 				//ArrayList 객체에 누적 시킨다. 
 				list.add(tmp);
 			}
@@ -453,8 +563,8 @@ public class BbsDao {
 			conn = new DbcpBean().getConn();
 			//실행할 sql 문 준비하기 
 			String sql = "INSERT INTO bbs_cafe"
-					+ " (num,title,content,writer,regdate)"
-					+ " VALUES(BBS_seq.NEXTVAL, ?, ?,?, SYSDATE)";
+					+ " (num,title,content,writer,viewCount,regdate)"
+					+ " VALUES(bbs_cafe_seq.NEXTVAL, ?, ?,?,0, SYSDATE)";
 			pstmt = conn.prepareStatement(sql);
 			//? 에 바인딩 할 값이 있으면 바인딩한다.
 			pstmt.setString(1, dto.getTitle());

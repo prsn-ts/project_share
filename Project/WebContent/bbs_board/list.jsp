@@ -166,30 +166,27 @@
 	<!-- 게시판 -->
 
 	<div class="container">
-		<div class = "row" style="justify-content: flex-end;">
-			<a href = "private/write.jsp" class="btn btn-primary">글쓰기</a>
-				<table class="table table-striped" style="text-align:center; border:1px solid #dddddd"> 
-					<thead>
+	
+		<div class = "row" style="justify-content: flex-end;" >			
+			<a href = "private/insertform.jsp" class="btn btn-primary">글쓰기</a>
+				<table class="table table-hover" style="text-align: center;"> 
+					<thead >
 						<tr>
-							<th style="background-color: #eeeeee; text-align: center;">번호</th>
-	
-							<th style="background-color: #eeeeee; text-align: center;">제목</th>
-	
-							<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-	
-							<th style="background-color: #eeeeee; text-align: center;">작성일</th>
-	
+							<th style="width: 100px;">번호</th>
+							<th style="width: 400px;">제목</th>
+							<th style="width: 100px;">작성자</th>
+							<th style="width: 200px;">작성일</th>
+							<th style="width: 100px;">조회수</th>
 						</tr>
-	
 					</thead>
-					
 					<tbody>
 					<%for(BbsDto tmp: list){ %>
 						<tr>
 							<td><%=tmp.getNum() %></td>
-							<td><a href="private/writemain.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a></td>
+							<td><a href="detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a></td>
 							<td><%=tmp.getWriter() %></td>
 							<td><%=tmp.getRegdate() %></td>
+							<td><%=tmp.getViewCount() %></td>
 						</tr>
 					<%} %>
 					</tbody>
@@ -240,7 +237,12 @@
 	<!-- 부트스트랩 JS  -->
 
 	<script src="../js/bootstrap.js"></script>
-
+	<!-- footer --> 
+		<%-- jsp:include(footer) --%>
+		<jsp:include page="../include/footer.jsp">
+			<jsp:param value="sub_myrecipe" name="thisPage"/>
+		</jsp:include>
+	<!-- footer end-->
 
 
 </body>

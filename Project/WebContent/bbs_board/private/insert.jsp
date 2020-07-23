@@ -35,7 +35,7 @@
 	<%}else{ %>
 		<script>
 			alert("글 등록이 실패했습니다.");
-			location.href="${pageContext.request.contextPath}/board_gallery/private/write.jsp";
+			location.href="${pageContext.request.contextPath}/bbs_board/private/insertform.jsp";
 		</script>
 	<%} %>
 </body>

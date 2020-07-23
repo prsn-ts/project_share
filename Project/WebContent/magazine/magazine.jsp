@@ -33,9 +33,9 @@
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
 				    				<img src="../images/one.png" class="card-img-top first_card" class="card-img-top" alt="...">
-							        <h5 class="card-title"><a href="mag1.jsp">자네 오늘은 우유한잔 어떤한가?</a></h5>
-							        <p class="card-text"><a href="mag1.jsp">맛도좋고 몸에좋은 우유????</a></p>
-							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+							        <h5 class="card-title">자네 오늘은 우유한잔 어떤한가?</a></h5>
+							        <p class="card-text">맛도좋고 몸에좋은 우유????</a></p>
+							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
 				  		</div>
@@ -45,9 +45,9 @@
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
 				    				<img src="../images/two.png" class="card-img-top" alt="...">
-							        <h5 class="card-title"><a href="mag1.jsp">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
-							        <p class="card-text"><a href="mag1.jsp">팥빙수가 짱이제</a></p>
-							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+							        <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
+							        <p class="card-text">팥빙수가 짱이제</a></p>
+							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
 				  		</div>
@@ -57,9 +57,9 @@
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
 				    				<img src="../images/three.png" class="card-img-top" alt="...">
-							        <h5 class="card-title"><a href="mag1.jsp">다시마 칼국수</a></h5>
-							        <p class="card-text"><a href="mag1.jsp">냠냠?</a></p>
-							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+							        <h5 class="card-title">다시마 칼국수</a></h5>
+							        <p class="card-text">냠냠?</a></p>
+							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
 				  		</div>
@@ -71,9 +71,9 @@
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
 				    				<img src="../images/one.png" class="card-img-top first_card"" class="card-img-top" alt="...">
-							        <h5 class="card-title"><a href="mag1.jsp">자네 오늘은 우유한잔 어떤한가?</a></h5>
-							        <p class="card-text"><a href="mag1.jsp">맛도좋고 몸에좋은 우유????</a></p>
-							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+							        <h5 class="card-title">자네 오늘은 우유한잔 어떤한가?</a></h5>
+							        <p class="card-text">맛도좋고 몸에좋은 우유????</a></p>
+							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
 				  		</div>
@@ -83,9 +83,9 @@
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
 				    				<img src="../images/two.png" class="card-img-top" alt="...">
-							        <h5 class="card-title"><a href="mag1.jsp">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
-							        <p class="card-text"><a href="mag1.jsp">팥빙수가 짱이제</a></p>
-							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+							        <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
+							        <p class="card-text">팥빙수가 짱이제</a></p>
+							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
 				  		</div>
@@ -95,9 +95,9 @@
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
 				    				<img src="../images/three.png" class="card-img-top" alt="...">
-							        <h5 class="card-title"><a href="mag1.jsp">다시마 칼국수</a></h5>
-							        <p class="card-text"><a href="mag1.jsp">냠냠?</a></p>
-							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+							        <h5 class="card-title">다시마 칼국수</a></h5>
+							        <p class="card-text">냠냠?</a></p>
+							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
 				  		</div>
@@ -109,9 +109,9 @@
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
 				    				<img src="../images/one.png" class="card-img-top first_card"" class="card-img-top" alt="...">
-							        <h5 class="card-title"><a href="mag1.jsp">자네 오늘은 우유한잔 어떤한가?</a></h5>
-							        <p class="card-text"><a href="mag1.jsp">맛도좋고 몸에좋은 우유????</a></p>
-							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+							        <h5 class="card-title">자네 오늘은 우유한잔 어떤한가?</a></h5>
+							        <p class="card-text">맛도좋고 몸에좋은 우유????</a></p>
+							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
 				  		</div>
@@ -121,9 +121,9 @@
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
 				    				<img src="../images/two.png" class="card-img-top" alt="...">
-							        <h5 class="card-title"><a href="mag1.jsp">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
-							        <p class="card-text"><a href="mag1.jsp">팥빙수가 짱이제</a></p>
-							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+							        <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
+							        <p class="card-text">팥빙수가 짱이제</a></p>
+							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
 				  		</div>
@@ -133,9 +133,9 @@
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
 				    				<img src="../images/three.png" class="card-img-top" alt="...">
-							        <h5 class="card-title"><a href="mag1.jsp">다시마 칼국수</a></h5>
-							        <p class="card-text"><a href="mag1.jsp">냠냠?</a></p>
-							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+							        <h5 class="card-title">다시마 칼국수</a></h5>
+							        <p class="card-text">냠냠?</a></p>
+							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
 				  		</div>

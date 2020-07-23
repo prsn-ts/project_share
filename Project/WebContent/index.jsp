@@ -163,12 +163,12 @@
 			    		SNS 공유
 			    	</div>
 			    	<div class="down_banner">
-			    		<div><a href="#"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i><br /><span class="sns_text">페이스북</span></a></div>
-			    		<div><a href="#"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i><br /><span class="sns_text">인스타그램</span></a></div>
-			    		<div><a href="#"><i class="fa fa-youtube-play fa-3x" aria-hidden="true"></i><br /><span class="sns_text">유튜브</span></a></div>
-			    		<div><a href="#"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i><br /><span class="sns_text">트위터</span></a></div>
-			    		<div><a href="#"><i class="fa fa-quora fa-3x" aria-hidden="true"></i><br /><span class="sns_text">쿼라</span></a></div>
-			    		<div><a href="#"><i class="fa fa-medium fa-3x" aria-hidden="true"></i><br /><span class="sns_text">미디엄</span></a></div>
+			    		<div><a href="http://www.facebook.com/"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i><br /><span class="sns_text">페이스북</span></a></div>
+			    		<div><a href="http://www.instagram.com "><i class="fa fa-instagram fa-3x" aria-hidden="true"></i><br /><span class="sns_text">인스타그램</span></a></div>
+			    		<div><a href="http://www.youtube.com"><i class="fa fa-youtube-play fa-3x" aria-hidden="true"></i><br /><span class="sns_text">유튜브</span></a></div>
+			    		<div><a href="http://www.twitter.com"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i><br /><span class="sns_text">트위터</span></a></div>
+			    		<div><a href="http://www.quora.com"><i class="fa fa-quora fa-3x" aria-hidden="true"></i><br /><span class="sns_text">쿼라</span></a></div>
+			    		<div><a href="http://www.medium.com/"><i class="fa fa-medium fa-3x" aria-hidden="true"></i><br /><span class="sns_text">미디엄</span></a></div>
 			    	</div>
 		    	</div>
 		    </div>

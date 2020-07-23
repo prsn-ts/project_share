@@ -12,198 +12,146 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
-
 <body>
+	<%-- header --%>
 	<%-- jsp:include(header) --%>
-	<jsp:include page="../include/header.jsp">
-		<jsp:param value="index" name="thisPage"/>
-	</jsp:include>
-    <!-- End of Topbar -->
+	<jsp:include page="../include/header.jsp"></jsp:include>
+	<%-- //header --%>
 	
-	
-	<div style="background-color: #CEECF5">
-	<div class="container">
-	<div style="background-color: white">
-	<div class="row row-cols-1 row-cols-md-3">
-	
-	
-
-		  <div class="col mb-4"  >
-		  <div style="width: 350px; height:350px;">
-		  <div class="card h-100" >
-		    <a href="sub_magazine.jsp">
-		    <img src="../images/magazine1.png" 
-		    class="card-img-top" alt="...">
-		    <div class="card-body" >
-		      <h5 class="card-title">우유가 성장기 아이들에게 좋다?</h5>
-		      <p class="card-text">맛도좋고 몸에좋은 우유!</p>
-		      </a>
-		    </div>
-		  </div>
-		  </div>
-		  </div>
-		  
-		 
-		  <div class="col mb-4">
-		  <div style="width: 350px; height:350px;">
-		  <div class="card h-100" >
-		  <a href="http://www.naver.com">
-		    <img src="../images/magazine2.png" 
-		    class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">녹차의 숨겨진 효능</h5>
-		      <p class="card-text">피부관리에 짱짱하다</p>
-		       </a>
-		    </div>
-		  </div>
-		  </div>
-		  </div>
-		  
-		  
-		  <div class="col mb-4">
-		  <div style="width: 350px; height:350px;">
-		  <div class="card h-100">
-		   <a href="http://www.naver.com">
-		    <img src="../images/magazine3.png" 
-		    class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">심현관 질환에 좋은두부</h5>
-		      <p class="card-text">그 외의 숨겨진 효능들</p>
-		      </a>
-		    </div>
-		  </div>
-		  </div>
-		  </div>
-		   
-		  
-		  <div class="col mb-4">
-		  <div class="card h-100">
-		  <a href="http://www.naver.com">
-		    <img src="../images/magazine4.png" 
-		    class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">두뇌발달에 효과적인 달걀</h5>
-		      <p class="card-text">우리아이들에게 먹여보자</p>
-		       </a>
-		    </div>
-		  </div>
-		  </div>
-		  
-		  <div class="col mb-4">
-		  <div class="card h-100">
-		  <a href="http://www.naver.com">
-		    <img src="../images/magazine5.png" 
-		    class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">피부미용에 효과적인 과일</h5>
-		      <p class="card-text">간식은 과자대신 과일로!</p>
-		       </a>
-		    </div>
-		  </div>
-		  </div>
-		  
-		  <div class="col mb-4">
-		  <div class="card h-100">
-		  <a href="http://www.naver.com">
-		    <img src="../images/magazine6.png"
-		    class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">노화예방에는 등푸른생선이 제격!</h5>
-		      <p class="card-text">우리 부모님들에게 선물해보자</p>
-		       </a>
-		    </div>
-		  </div>
-		  </div>
-		  
-		  <div class="col mb-4">
-		  <div class="card h-100">
-		  <a href="http://www.naver.com">
-		    <img src="../images/magazine1.png"
-		    class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">노화예방에는 등푸른생선이 제격!</h5>
-		      <p class="card-text">우리 부모님들에게 선물해보자</p>
-		       </a>
-		    </div>
-		  </div>
-		  </div>
-		  
-		  <div class="col mb-4">
-		  <div class="card h-100">
-		  <a href="http://www.naver.com">
-		    <img src="../images/magazine1.png"
-		    class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">노화예방에는 등푸른생선이 제격!</h5>
-		      <p class="card-text">우리 부모님들에게 선물해보자</p>
-		       </a>
-		    </div>
-		  </div>
-		  </div>		  		  
-		  
-		  <div class="col mb-4">
-		  <div class="card h-100">
-		  <a href="http://www.naver.com">
-		    <img src="../images/magazine1.png"
-		    class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">노화예방에는 등푸른생선이 제격!</h5>
-		      <p class="card-text">우리 부모님들에게 선물해보자</p>
-		       </a>
-		    </div>
-		  </div>
-		  </div>		  
-		  
-		  <div class="col mb-4">
-		  <div class="card h-100">
-		  <a href="http://www.naver.com">
-		    <img src="../images/magazine1.png"
-		    class="card-img-top" alt="...">
-		    <div class="card-body">
-		      <h5 class="card-title">노화예방에는 등푸른생선이 제격!</h5>
-		      <p class="card-text">우리 부모님들에게 선물해보자</p>
-		       </a>
-		    </div>
-		  </div>
-		  </div>
-		  		  
-	<div class="col mb-4">
-		  <div class="card h-100">
-		    <a href="mag1.jsp">
-		    <img src="../images/magazine1.png" 
-		    class="card-img-top" alt="...">
-		    <div class="card-body" >
-		      <h5 class="card-title">우유가 성장기 아이들에게 좋다?</h5>
-		      <p class="card-text">맛도좋고 몸에좋은 우유!</p>
-		      </a>
-		    </div>
-		  </div>
-		  </div>
-		  
-	<div class="col mb-4">
-		  <div class="card h-100">
-		    <a href="mag1.jsp">
-		    <img src="../images/magazine1.png" 
-		    class="card-img-top" alt="...">
-		    <div class="card-body" >
-		      <h5 class="card-title">우유가 성장기 아이들에게 좋다?</h5>
-		      <p class="card-text">맛도좋고 몸에좋은 우유!</p>
-		      </a>
-		    </div>
-		  </div>
-		  </div>
-		  
-		  		
-		  </div>
-		  </div>
+	<div class="magazine_part" style="background-color: #d8d8d8;">
+		<div class="container">
+			<div class="pb-4"></div>
+			<div class="row_all p-3" style="border: 1px solid #dfdfdf; background-color: #f2f2f2;">
+			
+			<div class=" my-4">
+			  <h3 style="text-shadow: 2px 2px 4px gray;">매거진</h3>
+			</div>
+			
+				<div class="row">
+					<div class="col-sm my-4">
+						<div class="card-deck h-100">
+				  			<div class="card">
+				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
+				    				<img src="../images/one.png" class="card-img-top first_card" class="card-img-top" alt="...">
+							        <h5 class="card-title"><a href="mag1.jsp">자네 오늘은 우유한잔 어떤한가?</a></h5>
+							        <p class="card-text"><a href="mag1.jsp">맛도좋고 몸에좋은 우유????</a></p>
+							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+						        </div>
+				    		</div>
+				  		</div>
+				    </div>
+				    <div class="col-sm my-4">
+						<div class="card-deck h-100">
+				  			<div class="card">
+				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
+				    				<img src="../images/two.png" class="card-img-top" alt="...">
+							        <h5 class="card-title"><a href="mag1.jsp">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
+							        <p class="card-text"><a href="mag1.jsp">팥빙수가 짱이제</a></p>
+							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+						        </div>
+				    		</div>
+				  		</div>
+				    </div>
+				    <div class="col-sm my-4">
+						<div class="card-deck h-100">
+				  			<div class="card">
+				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
+				    				<img src="../images/three.png" class="card-img-top" alt="...">
+							        <h5 class="card-title"><a href="mag1.jsp">다시마 칼국수</a></h5>
+							        <p class="card-text"><a href="mag1.jsp">냠냠?</a></p>
+							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+						        </div>
+				    		</div>
+				  		</div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-sm my-4">
+						<div class="card-deck h-100">
+				  			<div class="card">
+				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
+				    				<img src="../images/one.png" class="card-img-top first_card"" class="card-img-top" alt="...">
+							        <h5 class="card-title"><a href="mag1.jsp">자네 오늘은 우유한잔 어떤한가?</a></h5>
+							        <p class="card-text"><a href="mag1.jsp">맛도좋고 몸에좋은 우유????</a></p>
+							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+						        </div>
+				    		</div>
+				  		</div>
+				    </div>
+				    <div class="col-sm my-4">
+						<div class="card-deck h-100">
+				  			<div class="card">
+				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
+				    				<img src="../images/two.png" class="card-img-top" alt="...">
+							        <h5 class="card-title"><a href="mag1.jsp">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
+							        <p class="card-text"><a href="mag1.jsp">팥빙수가 짱이제</a></p>
+							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+						        </div>
+				    		</div>
+				  		</div>
+				    </div>
+				    <div class="col-sm my-4">
+						<div class="card-deck h-100">
+				  			<div class="card">
+				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
+				    				<img src="../images/three.png" class="card-img-top" alt="...">
+							        <h5 class="card-title"><a href="mag1.jsp">다시마 칼국수</a></h5>
+							        <p class="card-text"><a href="mag1.jsp">냠냠?</a></p>
+							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+						        </div>
+				    		</div>
+				  		</div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-sm my-4">
+						<div class="card-deck h-100">
+				  			<div class="card">
+				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
+				    				<img src="../images/one.png" class="card-img-top first_card"" class="card-img-top" alt="...">
+							        <h5 class="card-title"><a href="mag1.jsp">자네 오늘은 우유한잔 어떤한가?</a></h5>
+							        <p class="card-text"><a href="mag1.jsp">맛도좋고 몸에좋은 우유????</a></p>
+							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+						        </div>
+				    		</div>
+				  		</div>
+				    </div>
+				    <div class="col-sm my-4">
+						<div class="card-deck h-100">
+				  			<div class="card">
+				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
+				    				<img src="../images/two.png" class="card-img-top" alt="...">
+							        <h5 class="card-title"><a href="mag1.jsp">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
+							        <p class="card-text"><a href="mag1.jsp">팥빙수가 짱이제</a></p>
+							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+						        </div>
+				    		</div>
+				  		</div>
+				    </div>
+				    <div class="col-sm my-4">
+						<div class="card-deck h-100">
+				  			<div class="card">
+				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
+				    				<img src="../images/three.png" class="card-img-top" alt="...">
+							        <h5 class="card-title"><a href="mag1.jsp">다시마 칼국수</a></h5>
+							        <p class="card-text"><a href="mag1.jsp">냠냠?</a></p>
+							        <p class="card-text"><a href="mag1.jsp"><small class="text-muted">Last updated 3 mins ago</small></a></p>
+						        </div>
+				    		</div>
+				  		</div>
+				    </div>
+				</div>
+			</div>
+			<div class="pt-4"></div>
 		</div>
-		
-			<!-- footer --> 
-		<%-- jsp:include(footer) --%>
-		<jsp:include page="../include/footer.jsp">
-			<jsp:param value="magazine" name="thisPage" />
-		</jsp:include>
-	<!-- footer end-->
 	</div>
+
+	<!-- footer --> 
+	<%-- jsp:include(footer) --%>
+	<jsp:include page="../include/footer.jsp">
+		<jsp:param value="magazine" name="thisPage" />
+	</jsp:include>
+	<!-- footer end-->
+	
 </body>
 </html>

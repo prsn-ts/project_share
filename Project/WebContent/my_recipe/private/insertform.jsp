@@ -35,7 +35,7 @@
 <body>
 
 	<%-- jsp:include(header) --%>
-	<jsp:include page="../include/header.jsp">
+	<jsp:include page="../../include/header.jsp">
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
     <!-- End of Topbar -->
@@ -53,6 +53,8 @@
 							
 								<form action="insert.jsp" method="post">
 									<hr class="two">
+									<%-- writer를 disabled로 설정했기 때문에 writer에 해당하는 value값을 hidden으로 전송하기 --%>
+									<input type="hidden" id="writer" name="writer" value="<%=dto.getId()%>"/>
 									<!-- 작성자 -->
 									<div class="form-group" style="margin-left: 1px">
 										<label for="writer">작성자:</label>
@@ -77,12 +79,30 @@
 										</div>
 										<input type="button" name="showImage" class="file_select btn btn-success btn-sm" value="대표 이미지 고르기">
 									</div>
+									<%if(dto.getProfile()==null && dto.getSaveFileName()==null){ %>
+										<img id="showImage" src="" alt="" />
+									<%}else{ %>
+										<img id="showImage" src="${pageContext.request.contextPath}<%=dto.getProfile() %>" alt="" />
+									<%} %>
 									<!-- 스마트에디터(content) 부분 -->
 									<div class="form-group ">
 										<textarea name="content" id="content" cols="30" rows="10" ></textarea>
 									</div>
 									<!-- 폼 제출 버튼 -->
 									<button type="submit" class="btn btn-outline-success" onclick="submitContents(this);">저장</button>
+								</form>
+								
+								<form action="show_image_upload.jsp" method="post" 
+									enctype="multipart/form-data" id="showImageForm">
+									<input type="file" name="image"
+										accept=".jpg, .jpeg, .png, .JPG, .JPEG" id="image"/>
+								</form>
+								
+								<form action="show_image_db_upload.jsp" method="post" id="showImageSave">
+									<%-- 대표 이미지 경로를 DB에 저장하기 위해 hidden type으로 설정. --%>
+									<input type="button" name="showImage_path" id="showImage_path" value="<%=dto.getProfile()%>"/>
+									<%-- 프로필 이미지의 실제 이름을 DB에 저장하기 위해 hidden type으로 설정. --%>
+									<input type="button" name="showImage" id="showImage" value="<%=dto.getSaveFileName() %>"/>
 								</form>
 							</div>
 						</div>
@@ -96,7 +116,7 @@
 	
 	<!-- footer --> 
 	<%-- jsp:include(footer) --%>
-	<jsp:include page="../include/footer.jsp">
+	<jsp:include page="../../include/footer.jsp">
 		<jsp:param value="magazine" name="thisPage" />
 	</jsp:include>
 	<!-- footer end-->
@@ -117,6 +137,34 @@
  --%>
 <!-- SmartEditor 에서 필요한 javascript 로딩  -->
 <script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
+<!-- jquery -->
+<script src="${pageContext.request.contextPath}/js/jquery-3.5.1.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.form.min.js"></script>
+<script>
+	//프로필 이미지를 클릭했을 때 프로필 수정에 대해 실행할 함수 등록
+	$(".file_select").on("click", function(){
+		//프로필 이미지를 눌렀을 때 input type="file" 을 강제 클릭하게 한다.
+		$("#image").click(); //파일 선택창이 뜰 수 있도록
+	});
+	
+	//이미지를 선택했을 때 변화를 감지되었을 때 동작할 함수 등록
+	$("#image").on("change", function(){ //기존 파일이 변경된 경우
+		//폼을 강제 제출한다.
+		$("#showImageForm").submit();
+	});
+	
+	//폼이 ajax 로 제출될 수 있도록 플러그인을 동작 시킨다.
+	$("#showImageForm").ajaxForm(function(data){
+		//프로필 이미지를 업데이트 한다. data => {imageSrc:"/upload/xxx.jpg","showImage":"xxx.jpg"}
+		$("#showImage")
+		.attr("src","${pageContext.request.contextPath}"+data.imageSrc);
+		//회원정보 수정폼 전송될 때 같이 프로필 정보도 같이 전송 되도록 한다.
+		$("#showImage_path").val(data.imageSrc); // input type="hidden"의 value값
+		//회원정보 수정폼 전송될 때 같이 프로필 정보도 같이 전송 되도록 한다.
+		$("#showImage").val(data.showImage); // input type="hidden"의 value값
+		
+	})
+</script>
 <script>
 	var oEditors = [];
 	

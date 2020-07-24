@@ -14,7 +14,7 @@ CREATE TABLE bbs_cafe (
     title VARCHAR2(100) NOT NULL, -- 글 제목
     writer VARCHAR2(100) NOT NULL,
     content CLOB, --글 내용
-    viewCount NUMBER
+    viewCount NUMBER, -- 조회수
     regdate DATE -- 작성일  
 );
 

@@ -61,7 +61,7 @@
 	//전체 row 의 갯수를 담을 변수 
 	int totalRow=0;
 	if(!keyword.equals("")){ //만일 키워드가 넘어온다면 
-		if(condition.equals("title_name")){
+		if(condition.equals("title_content")){
 			//검색 키워드를 FileDto 객체의 필드에 담는다. 
 			dto.setTitle(keyword);
 			dto.setContent(keyword);
@@ -166,30 +166,27 @@
 	<!-- 게시판 -->
 
 	<div class="container">
-		<div class = "row" style="justify-content: flex-end;">
-			<a href = "private/write.jsp" class="btn btn-primary">글쓰기</a>
-				<table class="table table-striped" style="text-align:center; border:1px solid #dddddd"> 
-					<thead>
+	
+		<div class = "row" style="justify-content: flex-end;" >			
+			<a href = "private/insertform.jsp" class="btn btn-primary">글쓰기</a>
+				<table class="table table-hover" style="text-align: center;"> 
+					<thead >
 						<tr>
-							<th style="background-color: #eeeeee; text-align: center;">번호</th>
-	
-							<th style="background-color: #eeeeee; text-align: center;">제목</th>
-	
-							<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-	
-							<th style="background-color: #eeeeee; text-align: center;">작성일</th>
-	
+							<th style="width: 100px;">번호</th>
+							<th style="width: 400px;">제목</th>
+							<th style="width: 100px;">작성자</th>
+							<th style="width: 200px;">작성일</th>
+							<th style="width: 100px;">조회수</th>
 						</tr>
-	
 					</thead>
-					
 					<tbody>
 					<%for(BbsDto tmp: list){ %>
 						<tr>
 							<td><%=tmp.getNum() %></td>
-							<td><a href="private/writemain.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a></td>
+							<td><a href="detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a></td>
 							<td><%=tmp.getWriter() %></td>
 							<td><%=tmp.getRegdate() %></td>
+							<td><%=tmp.getViewCount() %></td>
 						</tr>
 					<%} %>
 					</tbody>
@@ -215,7 +212,7 @@
 					<form action="list.jsp" method="get">
 						<label for="condition">검색조건</label>
 						<select name="condition" id="condition">
-							<option value="title_name" <%if(condition.equals("title_name")){ %>selected<%} %>>제목+내용</option>
+							<option value="title_content" <%if(condition.equals("title_content")){ %>selected<%} %>>제목+내용</option>
 							<option value="title" <%if(condition.equals("title")){ %>selected<%} %>>제목</option>
 							<option value="writer" <%if(condition.equals("writer")){ %>selected<%} %>>작성자</option>
 						</select>
@@ -240,7 +237,12 @@
 	<!-- 부트스트랩 JS  -->
 
 	<script src="../js/bootstrap.js"></script>
-
+	<!-- footer --> 
+		<%-- jsp:include(footer) --%>
+		<jsp:include page="../include/footer.jsp">
+			<jsp:param value="sub_myrecipe" name="thisPage"/>
+		</jsp:include>
+	<!-- footer end-->
 
 
 </body>

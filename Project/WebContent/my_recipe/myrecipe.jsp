@@ -142,9 +142,11 @@
 				      </div>  
 				    </div>
 				  </div>
-				  	<button type="submit" class="btn btn-outline-success" onclick="location.href='${pageContext.request.contextPath}/test/editor.jsp';">작성하기</button>
 				</div>
 				<!-- //.row -->
+				<div class="write_btn" style="width:100%; text-align: right;">
+				  	<button type="submit" class="btn btn-outline-success" onclick="location.href='${pageContext.request.contextPath}/test/editor.jsp';">작성하기</button>
+				</div>
 			</div>
 			<!-- //.row_all -->
 		<div class="pt-4"></div>

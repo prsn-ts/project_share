@@ -414,8 +414,8 @@ public class BbsDao {
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getContent());
-			pstmt.setInt(2, dto.getStartRowNum());
-			pstmt.setInt(3, dto.getEndRowNum());
+			pstmt.setInt(3, dto.getStartRowNum());
+			pstmt.setInt(4, dto.getEndRowNum());
 			//select 문 수행하고 결과 받아오기 
 			rs = pstmt.executeQuery();
 			//반복문 돌면서 결과 값 추출하기 

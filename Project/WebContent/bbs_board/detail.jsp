@@ -12,6 +12,7 @@
 	String id=(String)session.getAttribute("id");
 	//파라미터로 전달되는 글번호를 읽어와서
 	int num=Integer.parseInt(request.getParameter("num"));
+	String writer = request.getParameter("writer");
 	//글 하나의 정보를 DB 에서 읽어와서
 	BbsDto dto=BbsDao.getInstance().getData(num);
 	//3. 해당글의 조회수를 1 증가 시킨다.
@@ -101,7 +102,7 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>작성자 : <%=id %></td>
+							<td>작성자 : <%=dto.getWriter() %></td>
 						</tr>
 						<tr>
 							<td style="text-align: left;"><%=dto.getContent() %></td>

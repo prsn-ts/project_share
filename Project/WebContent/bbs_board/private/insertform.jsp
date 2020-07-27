@@ -124,7 +124,7 @@
 						</tr>
 						<tr>
 							<td><textarea class="form-control" placeholder="글 내용" name="content" id="content" cols="30" rows="10">
-								양식쓰는곳
+								
 							
 							
 							</textarea></td>

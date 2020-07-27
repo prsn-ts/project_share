@@ -23,6 +23,7 @@
 	        		<li class="nav-item"><a href="${pageContext.request.contextPath}/index.jsp" class="navbar-brand nav-link font-weight-bolder text-dark">요리</a></li> 
 	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/my_recipe/myrecipe.jsp" class="navbar-brand nav-link font-weight-bolder text-dark">나만의 조리법</a></li>
 	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/magazine/magazine.jsp" class="navbar-brand nav-link font-weight-bolder text-dark">매거진</a></li>
+	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/bbs_board/list.jsp" class="navbar-brand nav-link font-weight-bolder text-dark">게시판</a></li>
 	     	    </ul> 
 	        </div>
 	        <%if(id == null){ %>

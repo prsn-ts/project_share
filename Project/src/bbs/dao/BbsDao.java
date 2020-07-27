@@ -18,6 +18,64 @@ public class BbsDao {
 		}
 		return dao;
 	}
+	//글 목록을 리턴하는 메소드  ( ctrl + shift + o : auto import )
+		public List<BbsDto> getrandom(BbsDto dto){
+			List<BbsDto> list=new ArrayList<BbsDto>();
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			try {
+				conn = new DbcpBean().getConn();
+				/*
+					SELECT * 
+					FROM
+					    (SELECT result1.*, ROWNUM AS rnum
+					    FROM
+					        (SELECT num,writer,title,viewCount,regdate
+					        FROM board_cafe
+					        ORDER BY num DESC) result1)
+					WHERE rnum BETWEEN ? AND ?
+				*/
+				String sql="SELECT *"
+						+ " FROM"
+						+ " (SELECT result1.*, ROWNUM AS rnum"
+						+ " FROM"
+						+ " (SELECT num,writer,title,viewCount,regdate"
+						+ " FROM Bbs_cafe"
+						+ " ORDER BY num DESC) result1)"
+						+ " WHERE rnum = ?";
+				pstmt=conn.prepareStatement(sql);
+				// ? 에 값 바인딩 
+				pstmt.setInt(1, dto.getNum());
+				rs = pstmt.executeQuery();
+				while (rs.next()) {//반목문 돌면서
+					//select 된 row 의 정보를 CafeDto 객체에 담아서 
+					BbsDto tmp=new BbsDto();
+					tmp.setNum(rs.getInt("num"));
+					tmp.setWriter(rs.getString("writer"));
+					tmp.setTitle(rs.getString("title"));
+					tmp.setViewCount(rs.getInt("viewCount"));
+					tmp.setRegdate(rs.getString("regdate"));
+					//ArrayList 객체에 누적 시킨다.
+					list.add(tmp);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if (rs != null)
+						rs.close();
+					if (pstmt != null)
+						pstmt.close();
+					//connection pool 에 반납하기 
+					if (conn != null)
+						conn.close();
+				} catch (Exception e) {
+				}
+			}
+			return list;
+		}
+	
 	//글 하나의 정보를 삭제하는 메소드
 	public boolean delete(int num) {
 		Connection conn = null;

@@ -1,4 +1,5 @@
 
+<%@page import="java.util.Random"%>
 <%@page import="java.net.URLEncoder"%>
 <%@page import="bbs.dao.BbsDao"%>
 <%@page import="bbs.dto.BbsDto"%>
@@ -110,6 +111,8 @@
 	        		<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">요리</a></li> 
 	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/my_recipe/myrecipe.jsp" class="navbar-brand nav-link font-weight-bolder">나만의 조리법</a></li>
 	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/magazine/magazine.jsp" class="navbar-brand nav-link font-weight-bolder">매거진</a></li> 
+	       		    <li class="nav-item"><a href="${pageContext.request.contextPath}/bbs_board/list.jsp" class="navbar-brand nav-link font-weight-bolder">게시판</a></li> 
+	       		 	
 	     	    </ul> 
 	        </div>
 	        <%if(id == null){ %>
@@ -136,7 +139,7 @@
 	                <!-- Dropdown - User Information -->
 	                
 	                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-		                  <a class="dropdown-item" href="login/private/info.jsp">
+		                  <a class="dropdown-item" href="${pageContext.request.contextPath}/login/private/info.jsp">
 		                  	<%=id %>
 		                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 		                    Profile
@@ -160,7 +163,6 @@
            	<%} %>
 	    </div> 
     </nav>
-
 
 
 	<!-- 게시판 -->
@@ -225,14 +227,23 @@
 				</form>
 	
 	</div>
-
 	
 
+<%
 
-
-
-
-
+	Random random = new Random();
+	//int ran = random.nextInt(dto.getNum());
+	//System.out.println(ran);
+	//1. 전체 글의 갯수를 얻어온다  (15개) 
+	int count=7;
+	//2. 그 글의 갯수를 이용해서 랜덤한 정수 하나를 얻어낸다. (1~15 사이의 랜덤한 정수를 얻어낸다.)
+	int ran=random.nextInt(count)+1;
+	//3. 글을 정렬하고, rownum 을 부여해서 랜덤한 정수에 해당하는 rownum 을 가지고 있는 글 하나의 정보를 얻어낸다.
+ 	/* boolean rannum=BbsDao.getInstance().getrandom(dto); */
+	
+%>
+<%-- 	<a class="btn btn-primary" href="detail.jsp?num=<%=ran%>">랜덤 글</a>
+ --%>
 
 	<!-- 애니매이션 담당 JQUERY -->
 

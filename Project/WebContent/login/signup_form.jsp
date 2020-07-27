@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                   	<label for="pwd">비밀번호</label>
-                    <input type="text" class="form-control form-control-user" id="pwd" name="pwd" placeholder="Password">
+                    <input type="password" class="form-control form-control-user" id="pwd" name="pwd" placeholder="Password">
                   
                 </div>
                 

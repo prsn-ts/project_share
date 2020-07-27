@@ -11,6 +11,8 @@
 		<%} %>
 		<%if(save_par.equals("magazine") || save_par.equals("sub_magazine")){ %>
 			<h3 class="text-white">매거진</h3>
+		<%}if(save_par.equals("bbs") || save_par.equals("sub_bbs")){ %>
+			<h3 class="text-white">게시판</h3>
 		<%} %>
 		<p>Homepage is powered by 
 			<span class="text-white">3조</span> / Designed by 

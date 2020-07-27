@@ -108,7 +108,7 @@
 									<button type="submit" class="btn btn-outline-success" onclick="submitContents(this);">저장</button>
 								</form>
 								
-								<form action="show_image_upload.jsp" method="post" 
+								<form style="display:none;" action="show_image_upload.jsp" method="post" 
 									enctype="multipart/form-data" id="showImageForm">
 									<input type="file" name="image"
 										accept=".jpg, .jpeg, .png, .JPG, .JPEG" id="image"/>

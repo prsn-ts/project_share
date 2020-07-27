@@ -158,7 +158,7 @@
 	<!-- footer --> 
 		<%-- jsp:include(footer) --%>
 		<jsp:include page="../include/footer.jsp">
-			<jsp:param value="sub_myrecipe" name="thisPage"/>
+			<jsp:param value="sub_bbs" name="thisPage"/>
 		</jsp:include>
 	<!-- footer end-->
 </body>

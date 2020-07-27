@@ -36,3 +36,20 @@ CREATE TABLE my_recipe(
 
 CREATE SEQUENCE my_recipe_seq;  -- my_recipe 테이블의 num에서 사용할 시퀀스
 
+
+-- myrecipe 폴더에서 쓸 table --
+-- 임시 저장될 tmp_my_recipe 테이블 --
+CREATE TABLE tmp_my_recipe(
+	tmp_num NUMBER PRIMARY KEY, -- 글 번호
+	tmp_title VARCHAR2(100) NOT NULL, -- 글 제목
+	tmp_subTitle VARCHAR2(150), -- 해당 요리에 대한 간략한 설명
+	tmp_content CLOB NOT NULL, -- 글의 전체 내용
+	tmp_writer VARCHAR2(50), -- 작성자
+	tmp_regdate DATE, -- 작성일
+	tmp_imagePath VARCHAR2(200), -- 대표 이미지 경로
+	tmp_showImage VARCHAR2(150), -- 대표 이미지 실제 이름
+	tmp_viewCount NUMBER -- 조회수
+);
+
+CREATE SEQUENCE tmp_my_recipe_seq;  -- my_recipe 테이블의 num에서 사용할 시퀀스
+

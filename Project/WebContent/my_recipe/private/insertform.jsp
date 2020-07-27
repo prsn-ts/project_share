@@ -57,14 +57,17 @@
 							<div class="card-body">
 							<h2 class="card-title display-4 font-weight-bold text-success m-2">레시피 작성</h2>
 								<hr class="two">
-								<%-- 임시 저장된 내용 삭제 버튼 --%>
-								<a href="temp_delete.jsp?writer=<%dto.getId(); %>" class="temp_delete btn btn-outline-danger">임시 저장된 내용 삭제하기</a>
-								<%-- 임시 저장된 내용 불러오기 버튼 --%>
-								<button class="temp_lead btn btn-primary">임시 저장된 내용 불러오기</button>
-								
+								<div class="temp_btn_collrection" style="text-align: right;">
+									<%-- 임시 저장된 내용 불러오기 버튼 --%>
+									<button class="temp_lead btn btn-primary">임시 저장된 내용 불러오기</button>
+									<%-- 임시 저장된 내용 삭제 버튼 --%>
+									<a href="temp_delete.jsp?writer=<%dto.getId(); %>" class="temp_delete btn btn-outline-danger">임시 저장된 내용 삭제하기</a>
+								</div>
 								<form action="insert.jsp" method="post" id="submitForm">
-									<%-- 임시 저장 버튼 --%>
-									<button class="temp_save btn btn-outline-success">임시 저장</button>
+									<div style="margin-bottom: 30px;">
+										<%-- 임시 저장 버튼 --%>
+										<button class="temp_save btn btn-outline-success">임시 저장</button>
+									</div>
 									<%-- 대표 이미지 경로를 DB에 저장하기 위해 hidden type으로 설정. --%>
 									<input type="hidden" name="showImage_path" id="showImage_path" value="<%=recipe_dto.getImagePath() %>"/>
 									<%-- 프로필 이미지의 실제 이름을 DB에 저장하기 위해 hidden type으로 설정. --%>
@@ -95,8 +98,8 @@
 										</div>
 										<input type="button" name="showImage_btn" id="showImage_btn" class="file_select btn btn-success btn-sm" value="대표 이미지 고르기">
 									</div>
-									<%if(temp_dto == null){ %>
-										<img id="showImage" src="" alt="${pageContext.request.contextPath}/images/noprofile.jpg" />
+									<%if(temp_dto == null || temp_dto.getImagePath() == null){ %>
+										<img id="showImage" src="" alt="" />
 									<%}else if(temp_dto.getImagePath() != null){ %>
 										<img id="showImage" src="" alt="" />
 									<%} %>
@@ -108,7 +111,7 @@
 									<button type="submit" class="btn btn-outline-success" onclick="submitContents(this);">저장</button>
 								</form>
 								
-								<form action="show_image_upload.jsp" method="post" 
+								<form style="display:none;" action="show_image_upload.jsp" method="post" 
 									enctype="multipart/form-data" id="showImageForm">
 									<input type="file" name="image"
 										accept=".jpg, .jpeg, .png, .JPG, .JPEG" id="image"/>

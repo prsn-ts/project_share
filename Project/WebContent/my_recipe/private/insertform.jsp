@@ -1,14 +1,20 @@
+<%@page import="temp.myrecipe.dao.TempMyrecipeDao"%>
+<%@page import="temp.myrecipe.dto.TempMyrecipeDto"%>
+<%@page import="myrecipe.dto.MyrecipeDto"%>
+<%@page import="myrecipe.dao.MyrecipeDao"%>
 <%@page import="test.login.dao.LoginDao"%>
 <%@page import="test.login.dto.LoginDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-   
-   <%
+<%
 	//1. GET 방식 파라미터로 전달되는 글번호를 읽어온다.
 	String id=(String)session.getAttribute("id");
 	//2. DB 에서 해당 글 정보를 얻어온다.
 	LoginDto dto=LoginDao.getInstance().getData(id);
-
+	//이미지 표시할 준비를 한다.
+	MyrecipeDto recipe_dto = MyrecipeDao.getInstance().getWriteData(id);
+	//임시 저장된 내용을 표시할 준비를 한다.
+	TempMyrecipeDto temp_dto = TempMyrecipeDao.getInstance().getTempWriteData(id);
 %>  
   
 <!DOCTYPE html>
@@ -17,7 +23,7 @@
 <meta charset="UTF-8">
 <title>/test/editor.jsp</title>
 
-<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -50,9 +56,19 @@
 						<div class="card m-5">
 							<div class="card-body">
 							<h2 class="card-title display-4 font-weight-bold text-success m-2">레시피 작성</h2>
-							
-								<form action="insert.jsp" method="post">
-									<hr class="two">
+								<hr class="two">
+								<%-- 임시 저장된 내용 삭제 버튼 --%>
+								<a href="temp_delete.jsp?writer=<%dto.getId(); %>" class="temp_delete btn btn-outline-danger">임시 저장된 내용 삭제하기</a>
+								<%-- 임시 저장된 내용 불러오기 버튼 --%>
+								<button class="temp_lead btn btn-primary">임시 저장된 내용 불러오기</button>
+								
+								<form action="insert.jsp" method="post" id="submitForm">
+									<%-- 임시 저장 버튼 --%>
+									<button class="temp_save btn btn-outline-success">임시 저장</button>
+									<%-- 대표 이미지 경로를 DB에 저장하기 위해 hidden type으로 설정. --%>
+									<input type="hidden" name="showImage_path" id="showImage_path" value="<%=recipe_dto.getImagePath() %>"/>
+									<%-- 프로필 이미지의 실제 이름을 DB에 저장하기 위해 hidden type으로 설정. --%>
+									<input type="hidden" name="showImage_hidden" id="showImage_hidden" value="<%=recipe_dto.getShowImage() %>"/>
 									<%-- writer를 disabled로 설정했기 때문에 writer에 해당하는 value값을 hidden으로 전송하기 --%>
 									<input type="hidden" id="writer" name="writer" value="<%=dto.getId()%>"/>
 									<!-- 작성자 -->
@@ -62,14 +78,14 @@
 									</div>
 									<!-- 제목 -->
 									<div class="form-group" style="margin-left: 1px">
-										<input type="text" name="title" id="title" placeholder="제목"/>
+										<input type="text" name="title" id="title" value="" placeholder="제목"/>
 									</div>
 									<!-- 서브 타이틀 -->
 									<div class="input-group input-group-sm mb-3">
 										<div class="input-group-prepend">
 										  <span class="input-group-text" id="inputGroup-sizing-sm">서브 타이틀</span>
 										</div>
-										<input class=" col" type="text" name="subTitle" aria-label="Sizing example input"
+										<input class=" col" type="text" name="subTitle" id="subTitle" value="" aria-label="Sizing example input"
 											aria-describedby="inputGroup-sizing-sm" placeholder="해당 요리에 대한 간략한 설명을 적어주세요."/>
 									</div>
 									<!-- 대표 이미지 -->
@@ -77,16 +93,16 @@
 										<div class="input-group-prepend">
 										  <span class="input-group-text" id="inputGroup-sizing-sm">대표 이미지 설정</span>
 										</div>
-										<input type="button" name="showImage" class="file_select btn btn-success btn-sm" value="대표 이미지 고르기">
+										<input type="button" name="showImage_btn" id="showImage_btn" class="file_select btn btn-success btn-sm" value="대표 이미지 고르기">
 									</div>
-									<%if(dto.getProfile()==null && dto.getSaveFileName()==null){ %>
+									<%if(temp_dto == null){ %>
+										<img id="showImage" src="" alt="${pageContext.request.contextPath}/images/noprofile.jpg" />
+									<%}else if(temp_dto.getImagePath() != null){ %>
 										<img id="showImage" src="" alt="" />
-									<%}else{ %>
-										<img id="showImage" src="${pageContext.request.contextPath}<%=dto.getProfile() %>" alt="" />
 									<%} %>
 									<!-- 스마트에디터(content) 부분 -->
 									<div class="form-group ">
-										<textarea name="content" id="content" cols="30" rows="10" ></textarea>
+										<textarea name="content" id="content" cols="30" rows="10"></textarea>
 									</div>
 									<!-- 폼 제출 버튼 -->
 									<button type="submit" class="btn btn-outline-success" onclick="submitContents(this);">저장</button>
@@ -96,13 +112,6 @@
 									enctype="multipart/form-data" id="showImageForm">
 									<input type="file" name="image"
 										accept=".jpg, .jpeg, .png, .JPG, .JPEG" id="image"/>
-								</form>
-								
-								<form action="show_image_db_upload.jsp" method="post" id="showImageSave">
-									<%-- 대표 이미지 경로를 DB에 저장하기 위해 hidden type으로 설정. --%>
-									<input type="button" name="showImage_path" id="showImage_path" value="<%=dto.getProfile()%>"/>
-									<%-- 프로필 이미지의 실제 이름을 DB에 저장하기 위해 hidden type으로 설정. --%>
-									<input type="button" name="showImage" id="showImage" value="<%=dto.getSaveFileName() %>"/>
 								</form>
 							</div>
 						</div>
@@ -121,6 +130,12 @@
 	</jsp:include>
 	<!-- footer end-->
 
+
+<!-- SmartEditor 에서 필요한 javascript 로딩  -->
+<script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
+<!-- jquery -->
+<script src="${pageContext.request.contextPath}/js/jquery-3.5.1.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.form.min.js"></script>
 <%--
 	[ SmartEditor 를 사용하기 위한 설정 ]
 	
@@ -134,13 +149,58 @@
 	5. textarea 의 크기가 SmartEditor  의 크기가 된다.
 	6. 폼을 제출하고 싶으면  submitContents(this) 라는 javascript 가 
 	      폼 안에 있는 버튼에서 실행되면 된다.
- --%>
-<!-- SmartEditor 에서 필요한 javascript 로딩  -->
-<script src="${pageContext.request.contextPath }/SmartEditor/js/HuskyEZCreator.js"></script>
-<!-- jquery -->
-<script src="${pageContext.request.contextPath}/js/jquery-3.5.1.js"></script>
-<script src="${pageContext.request.contextPath}/js/jquery.form.min.js"></script>
+--%>
 <script>
+	//이미지 경로와 이미지 실제 이름을 선언.
+	var showImage_path = null;
+	var showImage_hidden = null;
+	
+	//주기적으로 폼 안에 내용이 바뀐 값들을 저장한다.
+	$("#submitForm").find("*").on("propertychange change keyup paste input", function() {
+		//아이디가 title,subTitle인 input 값 가져오기
+	    var title = $("#title").val();
+	    var subTitle = $("#subTitle").val();
+	    //바뀐 내용을 value값에 다시 대입.
+	    $("#title").val(title);
+	    $("#subTitle").val(subTitle);
+	});
+	
+	//임시 저장 버튼을 클릭했을 대 이벤트 발생.
+	$(".temp_save").on("click", function(){
+		//temp_save 버튼을 눌렀을 때 폼 액션 값을 temp_save.jsp 바꿔준다.
+		$("#submitForm").attr("action", "temp_save.jsp");
+		//스마트 에디터 내용과 함께 다른 value값을 temp_save.jsp 페이지로 보낸다.
+		submitContents(this);
+	});
+	
+	$(".temp_lead").on("click", function(){
+		//ajax 요청 처리를 한다.
+		$.ajax({
+			method:"get",
+			url:"temp_lead.jsp", //요청 파라미터가 없으면 전달 안해도 된다.
+			success:function(data){
+				/*
+					temp_lead.jsp 페이지에서 contentType 을 application/json
+					이라고 정확히 명시 했기 때문에 jquery 가 응답된 문자열을
+					object 로 바꿔서 전달을 해준다.
+				*/
+				console.log(data); //json으로 응답할 것이라 응답페이지에 명시 되있기 때문에 전달 받은 data 인자값은 object 타입이다.
+				//타이틀 값을 불러온다.
+				$("#title").val(data.title);
+				//서브 타이틀 값을 불러온다.
+				$("#subTitle").val(data.subTitle);
+				//대표 이미지를 불러온다.
+				$("#showImage")
+				.attr("src","${pageContext.request.contextPath}"+data.imagePath);
+				//대표 이미지를 불러올 때 value 값도 다시 세팅한다(글을 실제로 저장(등록)하려고할 때 이미지 경로와 이미지 실제 이름을 넘겨주어야한다.)
+				$("#showImage_path").val(data.imagePath);
+				$("#showImage_hidden").val(data.showImage);
+				//스마트 에디터에 내용을 불러온다.
+				oEditors.getById["content"].exec("PASTE_HTML", [data.content]);
+			}
+		});
+	});
+	
 	//프로필 이미지를 클릭했을 때 프로필 수정에 대해 실행할 함수 등록
 	$(".file_select").on("click", function(){
 		//프로필 이미지를 눌렀을 때 input type="file" 을 강제 클릭하게 한다.
@@ -149,6 +209,7 @@
 	
 	//이미지를 선택했을 때 변화를 감지되었을 때 동작할 함수 등록
 	$("#image").on("change", function(){ //기존 파일이 변경된 경우
+		console.log("실행순서 들어옴!");
 		//폼을 강제 제출한다.
 		$("#showImageForm").submit();
 	});
@@ -161,11 +222,12 @@
 		//회원정보 수정폼 전송될 때 같이 프로필 정보도 같이 전송 되도록 한다.
 		$("#showImage_path").val(data.imageSrc); // input type="hidden"의 value값
 		//회원정보 수정폼 전송될 때 같이 프로필 정보도 같이 전송 되도록 한다.
-		$("#showImage").val(data.showImage); // input type="hidden"의 value값
-		
+		$("#showImage_hidden").val(data.showImage); // input type="hidden"의 value값
+		//이미지 경로와 실제 이름을 showImage_path, showImage_hidden 변수에 저장
+		showImage_path = $("#showImage_path").val();
+	    showImage_hidden = $("#showImage_hidden").val();
 	})
-</script>
-<script>
+
 	var oEditors = [];
 	
 	//추가 글꼴 목록
@@ -204,10 +266,9 @@
 	//<button type="submit" onclick="submitContents(this);">저장</button>	
 	function submitContents(elClickedObj) {
 		oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
-		
 		// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("content").value를 이용해서 처리하면 됩니다.
 		try {
-			elClickedObj.form.submit();//폼 강제 제출 
+			elClickedObj.form.submit();//폼 강제 제출
 		} catch(e) {}
 	}
 	

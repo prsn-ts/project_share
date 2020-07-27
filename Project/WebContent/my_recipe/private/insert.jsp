@@ -9,8 +9,10 @@
 	String title = request.getParameter("title");
 	//서브 타이틀 파라미터 가져오기
 	String subTitle = request.getParameter("subTitle");
-	//대표 이미지 파라미터 가져오기
-	String showImage = request.getParameter("showImage");
+	//대표 이미지 경로 파라미터 가져오기
+	String imagePath = request.getParameter("showImage_path");
+	//대표 이미지 경로 파라미터 가져오기
+	String showImage = request.getParameter("showImage_hidden");
 	//스마트 에디터(content) 파라미터 가져오기
 	String content = request.getParameter("content");
 	
@@ -19,6 +21,7 @@
 	dto.setWriter(writer);
 	dto.setTitle(title);
 	dto.setSubTitle(subTitle);
+	dto.setImagePath(imagePath);
 	dto.setShowImage(showImage);
 	dto.setContent(content);
 	

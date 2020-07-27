@@ -145,7 +145,7 @@
 				</div>
 				<!-- //.row -->
 				<div class="write_btn" style="width:100%; text-align: right;">
-				  	<button type="submit" class="btn btn-outline-success" onclick="location.href='${pageContext.request.contextPath}/test/editor.jsp';">작성하기</button>
+				  	<button type="submit" class="btn btn-outline-success" onclick="location.href='${pageContext.request.contextPath}/my_recipe/private/insertform.jsp';">작성하기</button>
 				</div>
 			</div>
 			<!-- //.row_all -->

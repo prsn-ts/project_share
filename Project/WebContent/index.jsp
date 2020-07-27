@@ -27,10 +27,15 @@
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
 	
-	<div class="container">
-		<div class="carousel_all">
+	<div style="background-color: #d8d8d8;">
+	<div class="container" >
+	
+	<div class="pb-4"  ></div>
+		<div class="row_all p-3" style="border: 1px solid white; background-color: white;">
+	
+		<div class="carousel_all" >
 			<div class="carousel_title">
-				<a href="#">카루셀테스트</a>
+				<div style="color: black;">카루셀테스트</div>
 			</div>
 			<div id="carouselExampleCaptions" class="carousel slide mb-4" data-ride="carousel">
 				<ol class="carousel-indicators">
@@ -72,27 +77,33 @@
 			</div>
 		</div>
 	</div>
+	</div>
+	
 	<div class="container">
+	
+	<div class="pb-4"></div>
+		<div class="row_all p-3" style="border: 1px solid #dfdfdf; background-color: #f2f2f2;">
+	
 		<div class="card-deck mb-4 h-100">
 			<div class="card">
-				<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="card-img-top first_card" class="card-img-top" alt="...">
-				<div class="card-body">
+				<img src="images/cook1.png" class="card-img-top first_card" class="card-img-top" alt="...">
+				<div class="card-body" style="cursor: pointer;" onclick="location.href='cook/cooking1.jsp';">
 					<h5 class="card-title">자네 오늘은 쭈꾸미 볶음 어떤가?</h5>
 					<p class="card-text">쭈꾸미볶음 + 콜라 = 기적의 맛.</p>
 					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 				</div>
 			</div>
 		    <div class="card">
-				<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
+				<img src="images/index1.png" class="card-img-top" alt="...">
+				<div class="card-body" style="cursor: pointer;" onclick="location.href='cook/cooking2.jsp';">
 					<h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
 					<p class="card-text">팥빙수가 짱이제</p>
 					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 				</div>
 		    </div>
 			<div class="card">
-				<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/29/70e9d1b6edcf0c81e377b6f01bfee06f1.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
+				<img src="images/index2.png" class="card-img-top" alt="...">
+				<div class="card-body" style="cursor: pointer;" onclick="location.href='cook/cooking3.jsp';">
 					<h5 class="card-title">다시마 칼국수</h5>
 					<p class="card-text">냠냠?</p>
 					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -101,31 +112,34 @@
 		</div>
 		<div class="card-deck mb-4 h-100">
 			<div class="card">
-				<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="card-img-top first_card" class="card-img-top" alt="...">
+				<img src="images/index3.png" class="card-img-top first_card" class="card-img-top" alt="...">
 				<div class="card-body">
-					<h5 class="card-title">자네 오늘은 쭈꾸미 볶음 어떤가?</h5>
-					<p class="card-text">쭈꾸미볶음 + 콜라 = 기적의 맛.</p>
+					<h5 class="card-title">차가운 물냉면 어떠십니까</h5>
+					<p class="card-text">비냉보만 물냉이지</p>
 					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 				</div>
 			</div>
 		    <div class="card">
-				<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="card-img-top" alt="...">
+				<img src="images/index4.png" class="card-img-top" alt="...">
 				<div class="card-body">
-					<h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
-					<p class="card-text">팥빙수가 짱이제</p>
+					<h5 class="card-title">바삭바삭한 돈까스</h5>
+					<p class="card-text">남녀노소 모두 좋아하는 돈까스</p>
 					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 				</div>
 		    </div>
 			<div class="card">
-				<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/29/70e9d1b6edcf0c81e377b6f01bfee06f1.jpg" class="card-img-top" alt="...">
+				<img src="images/index5.png" class="card-img-top" alt="...">
 				<div class="card-body">
-					<h5 class="card-title">다시마 칼국수</h5>
-					<p class="card-text">냠냠?</p>
+					<h5 class="card-title">원기회복엔 삼계탕</h5>
+					<p class="card-text">복날엔 역시 삼계탕이지</p>
 					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 				</div>
 			</div>
 		</div>
 	</div>
+	</div>
+	</div>
+  	
 	<footer>
 		<div class="row">
 		    <div class="col-md intro">
@@ -176,6 +190,8 @@
 				로고 이미지
 	    	</div>
   		</div>
+  		</div>
+  
 	</footer>
 </body>
 </html>

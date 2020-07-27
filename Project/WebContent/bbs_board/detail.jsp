@@ -147,6 +147,14 @@
 		});
 		</script>
 
+
+
+
+
+
+
+
+
 	<!-- footer --> 
 		<%-- jsp:include(footer) --%>
 		<jsp:include page="../include/footer.jsp">

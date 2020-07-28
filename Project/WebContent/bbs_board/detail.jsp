@@ -6,8 +6,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<<<<<<< HEAD
-<title>Insert title here</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
 <title>jsp 게시판 웹사이트</title><!-- CSS -->
@@ -20,12 +18,6 @@
 <!-- 아이콘 관련 -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome-4.7.0/css/font-awesome.min.css">
 <!-- JS -->
-=======
-<title>게시판</title>
-<link rel="stylesheet" href="css/bootstrap.css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
->>>>>>> refs/remotes/origin/Lee
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

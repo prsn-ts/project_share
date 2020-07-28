@@ -199,8 +199,21 @@
 				//대표 이미지를 불러올 때 value 값도 다시 세팅한다(글을 실제로 저장(등록)하려고할 때 이미지 경로와 이미지 실제 이름을 넘겨주어야한다.)
 				$("#showImage_path").val(data.imagePath);
 				$("#showImage_hidden").val(data.showImage);
+			}
+		});
+		//ajax 요청 처리를 한다.(img 태그의 쌍따옴표로인한 json 형식의 저장이 원활히 되지 않기 때문에 content 부분만 따로 요청)
+		$.ajax({
+			method:"get",
+			url:"temp_lead_content.jsp", //요청 파라미터가 없으면 전달 안해도 된다.
+			success:function(data){
+				/*
+					temp_lead.jsp 페이지에서 contentType 을 application/json
+					이라고 정확히 명시 했기 때문에 jquery 가 응답된 문자열을
+					object 로 바꿔서 전달을 해준다.
+				*/
+				console.log(data); //확인용.
 				//스마트 에디터에 내용을 불러온다.
-				oEditors.getById["content"].exec("PASTE_HTML", [data.content]);
+				oEditors.getById["content"].exec("PASTE_HTML", [data]);
 			}
 		});
 		

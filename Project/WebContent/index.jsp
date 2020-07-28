@@ -27,7 +27,7 @@
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
 	
-	<div style="background-color: #d8d8d8;">
+	<div style="background-color: #E6E6E6;">
 	<div class="container" >
 	
 	<div class="pb-4"  ></div>
@@ -45,24 +45,18 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="d-block w-100" style="height: 400px" alt="...">
+						<img src="images/ad1.png" class="d-block w-100" style="height: 400px" alt="...">
 						<div class="carousel-caption d-none d-md-block">
-							<h5>First slide label</h5>
-							<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="https://recipe1.ezmember.co.kr/cache/recipe/2020/06/15/9c9e2d09deeb39e5590f1f8f7ee9b3161.jpg" class="d-block w-100" style="height: 400px"  alt="...">
+						<img src="images/ad2.png" class="d-block w-100" style="height: 400px"  alt="...">
 						<div class="carousel-caption d-none d-md-block">
-							<h5>Second slide label</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img src="https://recipe1.ezmember.co.kr/cache/data/goods/19/05/19/1000001272/1000001272_list_069.jpg" class="d-block w-100" style="height: 400px" alt="...">
+						<img src="images/ad3.png" class="d-block w-100" style="height: 400px" alt="...">
 						<div class="carousel-caption d-none d-md-block">
-							<h5>Third slide label</h5>
-							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
 						</div>
 					</div>
 				</div>

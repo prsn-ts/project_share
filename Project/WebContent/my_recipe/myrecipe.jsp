@@ -34,16 +34,10 @@
 			<div class="row_all p-3" style="border: 1px solid #dfdfdf; background-color: #f2f2f2;">
 			
 			<div class=" my-4">
-			  <h3 style="text-shadow: 2px 2px 4px gray;">나만의 레시피</h3>
-		
-			  
-			  
+			  <h3 style="text-shadow: 2px 2px 4px gray;">나만의 레시피</h3>			  
 			</div>
 			
-			
-			
-			
-	
+
 				<!-- Page Features -->
 				<div class="row text-center">
 				

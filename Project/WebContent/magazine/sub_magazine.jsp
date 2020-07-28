@@ -28,7 +28,7 @@
 						</div>
 						<div class="card h-100">
 							<div align="center">
-								<img class="img-fluid" src="../images/mag1.png" style="width: 600px; height:600px;" >
+								<img class="img-fluid" src="../images/mag1.png" style="width: 700px; height:600px;" >
 							</div>
 							<div class="card-body" >	
 								<h5 class="card-title">키 성장에 아주 중요해요!</h5>
@@ -49,7 +49,7 @@
 					<div class="col mb-4">	
 						<div class="card h-100">
 							<div align="center">
-								<img class="img-fluid" src="../images/mag2.png" style="width: 600px; height:600px;" >
+								<img class="img-fluid" src="../images/mag2.png" style="width: 700px; height:600px;" >
 							</div>
 							<div class="card-body" >	
 								<h5 class="card-title">골다골증을 예방해줘요!</h5>
@@ -72,7 +72,7 @@
 					<div class="col mb-4">	
 						<div class="card h-100">
 							<div align="center">
-								<img class="img-fluid" src="../images/mag2.png" style="width: 600px; height:600px;" >
+								<img class="img-fluid" src="../images/mag3.png" style="width: 700px; height:600px;" >
 							</div>
 							<div class="card-body" >	
 								<h5 class="card-title">두뇌가 발달한다!</h5>

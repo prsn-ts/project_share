@@ -32,7 +32,7 @@
 						<div class="card-deck h-100">
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
-				    				<img src="../images/one.png" class="card-img-top first_card" class="card-img-top" alt="...">
+				    				<img src="../images/magazine1.png" class="card-img-top first_card" class="card-img-top" alt="...">
 							        <h5 class="card-title">자네 오늘은 우유한잔 어떤한가?</a></h5>
 							        <p class="card-text">맛도좋고 몸에좋은 우유????</a></p>
 							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
@@ -44,9 +44,9 @@
 						<div class="card-deck h-100">
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
-				    				<img src="../images/two.png" class="card-img-top" alt="...">
-							        <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
-							        <p class="card-text">팥빙수가 짱이제</a></p>
+				    				<img src="../images/magazine2.png" class="card-img-top" alt="...">
+							        <h5 class="card-title">음료수대신 녹차가 대세</a></h5>
+							        <p class="card-text">맛도좋고 건강에도 좋은 녹차</a></p>
 							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
@@ -56,9 +56,9 @@
 						<div class="card-deck h-100">
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
-				    				<img src="../images/three.png" class="card-img-top" alt="...">
-							        <h5 class="card-title">다시마 칼국수</a></h5>
-							        <p class="card-text">냠냠?</a></p>
+				    				<img src="../images/magazine3.png" class="card-img-top" alt="...">
+							        <h5 class="card-title">고소한 맛이 일품인 두부</a></h5>
+							        <p class="card-text">오늘저녁으로 두부 어떠세요?</a></p>
 							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
@@ -70,9 +70,9 @@
 						<div class="card-deck h-100">
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
-				    				<img src="../images/one.png" class="card-img-top first_card"" class="card-img-top" alt="...">
-							        <h5 class="card-title">자네 오늘은 우유한잔 어떤한가?</a></h5>
-							        <p class="card-text">맛도좋고 몸에좋은 우유????</a></p>
+				    				<img src="../images/magazine4.png" class="card-img-top first_card"" class="card-img-top" alt="...">
+							        <h5 class="card-title">완전식품의 대명사 계란</a></h5>
+							        <p class="card-text">영양과 맛 두마리의 토끼를 잡았다!</a></p>
 							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
@@ -82,9 +82,9 @@
 						<div class="card-deck h-100">
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
-				    				<img src="../images/two.png" class="card-img-top" alt="...">
-							        <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
-							        <p class="card-text">팥빙수가 짱이제</a></p>
+				    				<img src="../images/magazine5.png" class="card-img-top" alt="...">
+							        <h5 class="card-title">알록달록 오색빛깔 과일</a></h5>
+							        <p class="card-text">간식으로 과자말고 과일어떠신가요?</a></p>
 							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
@@ -94,9 +94,9 @@
 						<div class="card-deck h-100">
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
-				    				<img src="../images/three.png" class="card-img-top" alt="...">
-							        <h5 class="card-title">다시마 칼국수</a></h5>
-							        <p class="card-text">냠냠?</a></p>
+				    				<img src="../images/magazine6.png" class="card-img-top" alt="...">
+							        <h5 class="card-title">기억력에 좋다는 등푸른 생선</a></h5>
+							        <p class="card-text">수험생의 우리아이에게 추천!</a></p>
 							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
@@ -108,9 +108,9 @@
 						<div class="card-deck h-100">
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
-				    				<img src="../images/one.png" class="card-img-top first_card"" class="card-img-top" alt="...">
-							        <h5 class="card-title">자네 오늘은 우유한잔 어떤한가?</a></h5>
-							        <p class="card-text">맛도좋고 몸에좋은 우유????</a></p>
+				    				<img src="../images/magazine7.png" class="card-img-top first_card"" class="card-img-top" alt="...">
+							        <h5 class="card-title">노화방지에는 블루베리지!</a></h5>
+							        <p class="card-text">우리 부모님에게 선물로 드려요!</a></p>
 							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
@@ -120,9 +120,9 @@
 						<div class="card-deck h-100">
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
-				    				<img src="../images/two.png" class="card-img-top" alt="...">
-							        <h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</a></h5>
-							        <p class="card-text">팥빙수가 짱이제</a></p>
+				    				<img src="../images/magazine8.png" class="card-img-top" alt="...">
+							        <h5 class="card-title">암세포에 대적하는 오미자</a></h5>
+							        <p class="card-text">건강에도좋고 맛도좋고!</a></p>
 							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>
@@ -132,9 +132,9 @@
 						<div class="card-deck h-100">
 				  			<div class="card">
 				  				<div class="card-body" style="cursor: pointer;" onclick="location.href='sub_magazine.jsp';">
-				    				<img src="../images/three.png" class="card-img-top" alt="...">
-							        <h5 class="card-title">다시마 칼국수</a></h5>
-							        <p class="card-text">냠냠?</a></p>
+				    				<img src="../images/magazine9.png" class="card-img-top" alt="...">
+							        <h5 class="card-title">면역력을 증가시켜주는 옥수수</a></h5>
+							        <p class="card-text">옥수수 드시고 여름철 무기력을 극복하자! </a></p>
 							        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></a></p>
 						        </div>
 				    		</div>

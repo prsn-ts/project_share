@@ -27,117 +27,115 @@
 		<jsp:param value="index" name="thisPage"/>
 	</jsp:include>
 	
-	<div style="background-color: #E6E6E6;">
-	<div class="container" >
-	
-	<div class="pb-4"  ></div>
-		<div class="row_all p-3" style="border: 1px solid white; background-color: white;">
-	
-		<div class="carousel_all" >
-			<div class="carousel_title">
-				<div style="color: black;">카루셀테스트</div>
+	<div class="container_outer" style="background-color: #E6E6E6;">
+		<div class="container" >
+			<div class="pb-4"></div>
+			<div class="row_all p-3" style="border: 1px solid #f2f2f2; background-color: #f2f2f2;">
+				<div>
+					<div class="carousel_title">
+						<div style="color: black;">요리</div>
+					</div>
+					<div id="carouselExampleCaptions" class="carousel slide mb-4" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+							<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner border border-warning">
+							<div class="carousel-item active">
+								<img src="images/ad1.png" class="d-block w-100" style="height: 400px" alt="...">
+								<div class="carousel-caption d-none d-md-block">
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="images/ad2.png" class="d-block w-100" style="height: 400px"  alt="...">
+								<div class="carousel-caption d-none d-md-block">
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img src="images/ad3.png" class="d-block w-100" style="height: 400px" alt="...">
+								<div class="carousel-caption d-none d-md-block">
+								</div>
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
 			</div>
-			<div id="carouselExampleCaptions" class="carousel slide mb-4" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-					<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="images/ad1.png" class="d-block w-100" style="height: 400px" alt="...">
-						<div class="carousel-caption d-none d-md-block">
+			<div class="pt-4"></div>
+		</div>
+	
+		<div class="container">
+			<div class="pb-4"></div>
+			<div class="row_all p-3" style="border: 1px solid #dfdfdf; background-color: #f2f2f2;">
+				<div class="card-deck mb-4 h-100">
+					<div class="card">
+						<img src="images/cook1.png" class="card-img-top first_card" class="card-img-top" alt="...">
+						<div class="card-body" style="cursor: pointer;" onclick="location.href='cook/cooking1.jsp';">
+							<h5 class="card-title">자네 오늘은 쭈꾸미 볶음 어떤가?</h5>
+							<p class="card-text">쭈꾸미볶음 + 콜라 = 기적의 맛.</p>
+							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 						</div>
 					</div>
-					<div class="carousel-item">
-						<img src="images/ad2.png" class="d-block w-100" style="height: 400px"  alt="...">
-						<div class="carousel-caption d-none d-md-block">
+				    <div class="card">
+						<img src="images/index1.png" class="card-img-top" alt="...">
+						<div class="card-body" style="cursor: pointer;" onclick="location.href='cook/cooking2.jsp';">
+							<h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
+							<p class="card-text">팥빙수가 짱이제</p>
+							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						</div>
+				    </div>
+					<div class="card">
+						<img src="images/index2.png" class="card-img-top" alt="...">
+						<div class="card-body" style="cursor: pointer;" onclick="location.href='cook/cooking3.jsp';">
+							<h5 class="card-title">다시마 칼국수</h5>
+							<p class="card-text">냠냠?</p>
+							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 						</div>
 					</div>
-					<div class="carousel-item">
-						<img src="images/ad3.png" class="d-block w-100" style="height: 400px" alt="...">
-						<div class="carousel-caption d-none d-md-block">
+				</div>
+				<div class="card-deck mb-4 h-100">
+					<div class="card">
+						<img src="images/index3.png" class="card-img-top first_card" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">차가운 물냉면 어떠십니까</h5>
+							<p class="card-text">비냉보만 물냉이지</p>
+							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						</div>
+					</div>
+				    <div class="card">
+						<img src="images/index4.png" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">바삭바삭한 돈까스</h5>
+							<p class="card-text">남녀노소 모두 좋아하는 돈까스</p>
+							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+						</div>
+				    </div>
+					<div class="card">
+						<img src="images/index5.png" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5 class="card-title">원기회복엔 삼계탕</h5>
+							<p class="card-text">복날엔 역시 삼계탕이지</p>
+							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 						</div>
 					</div>
 				</div>
-				<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true" style="width: 40px; height:40px;"></span>
-					<span class="sr-only">Next</span>
-				</a>
 			</div>
+			<div class="pt-4"></div>
 		</div>
-	</div>
-	</div>
-	
-	<div class="container">
-	
-	<div class="pb-4"></div>
-		<div class="row_all p-3" style="border: 1px solid #dfdfdf; background-color: #f2f2f2;">
-	
-		<div class="card-deck mb-4 h-100">
-			<div class="card">
-				<img src="images/cook1.png" class="card-img-top first_card" class="card-img-top" alt="...">
-				<div class="card-body" style="cursor: pointer;" onclick="location.href='cook/cooking1.jsp';">
-					<h5 class="card-title">자네 오늘은 쭈꾸미 볶음 어떤가?</h5>
-					<p class="card-text">쭈꾸미볶음 + 콜라 = 기적의 맛.</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		    <div class="card">
-				<img src="images/index1.png" class="card-img-top" alt="...">
-				<div class="card-body" style="cursor: pointer;" onclick="location.href='cook/cooking2.jsp';">
-					<h5 class="card-title">여름에 시원한 빙수 요리 보실렵니까?</h5>
-					<p class="card-text">팥빙수가 짱이제</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-		    </div>
-			<div class="card">
-				<img src="images/index2.png" class="card-img-top" alt="...">
-				<div class="card-body" style="cursor: pointer;" onclick="location.href='cook/cooking3.jsp';">
-					<h5 class="card-title">다시마 칼국수</h5>
-					<p class="card-text">냠냠?</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div>
-		<div class="card-deck mb-4 h-100">
-			<div class="card">
-				<img src="images/index3.png" class="card-img-top first_card" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">차가운 물냉면 어떠십니까</h5>
-					<p class="card-text">비냉보만 물냉이지</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		    <div class="card">
-				<img src="images/index4.png" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">바삭바삭한 돈까스</h5>
-					<p class="card-text">남녀노소 모두 좋아하는 돈까스</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-		    </div>
-			<div class="card">
-				<img src="images/index5.png" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">원기회복엔 삼계탕</h5>
-					<p class="card-text">복날엔 역시 삼계탕이지</p>
-					<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
 	</div>
   	
 	<footer>
+	<div class="container">
 		<div class="row">
 		    <div class="col-md intro">
-		    	<div class="container">
 			    	<p class="f_link">
 			    		<a href="#">회사소개</a>
 			    		<span>|</span>
@@ -163,10 +161,8 @@
 			    	<p class="f_info">
 			    		Copyright 2020 김아무개. All Rights Reserved.
 			    	</p>
-		    	</div>
 		    </div>
 		    <div class="col-md banner">
-		    	<div class="container">
 			    	<div class="up_banner">
 			    		SNS 공유
 			    	</div>
@@ -178,12 +174,12 @@
 			    		<div><a href="http://www.quora.com"><i class="fa fa-quora fa-3x" aria-hidden="true"></i><br /><span class="sns_text">쿼라</span></a></div>
 			    		<div><a href="http://www.medium.com/"><i class="fa fa-medium fa-3x" aria-hidden="true"></i><br /><span class="sns_text">미디엄</span></a></div>
 			    	</div>
-		    	</div>
 		    </div>
 		    <div class="col-md logo_part">
 				로고 이미지
 	    	</div>
   		</div>
+  	</div>
 	</footer>
 </body>
 </html>

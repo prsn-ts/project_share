@@ -35,85 +35,75 @@
 </head>
 <body>
 
- <!-- Page Content -->
-	 
-	 <%-- jsp:include(header) --%>
+ 	<%-- header --%>
+	<%-- jsp:include(header) --%>
 	<jsp:include page="../include/header.jsp"></jsp:include>
 	<%-- //header --%>
 	
-	<!-- 게시판 -->
-
+	<%-- 본문 내용 --%>
 	<div class="container">
 		<div class="form-group" style="text-align: right;">
-		
-				<table class="table table-striped"
-					style="text-align: center; border: 1px solid #dddddd">
-					<thead>
-						<tr>
-							<th colspan="2"
-								style="background-color: #eeeeee; text-align: center;"><%=dto.getTitle() %></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>작성자 : <%=dto.getWriter() %></td>
-						</tr>
-						<tr>
-							<td style="text-align: left;"><%=dto.getContent() %></td>
-						</tr>
-					</tbody>
-				</table>
+			<table class="table table-striped"
+				style="text-align: center; border: 1px solid #dddddd">
+				<thead>
+					<tr>
+						<th colspan="2"
+							style="background-color: #eeeeee; text-align: center;"><%=dto.getTitle() %></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>작성자 : <%=dto.getWriter() %></td>
+					</tr>
+					<tr>
+						<td style="text-align: left;"><%=dto.getContent() %></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 		
 	<%-- 
 		글 작성자와 로그인 된 아이디가 같을때만 기능을 제공해 준다. 
 		즉, 본인이 작성한 글만 수정할수 있도록 하기 위해
 	--%>
-	<div align="right">
-	<a href="list.jsp" style="float: left;"  class="btn btn-primary" >목록</a>
-	<%if(dto.getWriter().equals(id)){ %>
-		<a class="btn btn-outline-warning" href="private/updateform.jsp?num=<%=dto.getNum() %>">
-		<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
- 		 	<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
- 			 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-		</svg>
-			수정
-		</a>
-		<a id="delete_btn" class="btn btn-outline-danger" href="private/delete.jsp?num=<%=dto.getNum() %>">
-		<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  			<path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
-		</svg>
-			삭제
-		</a>
-	<%} %>
+		<div>
+			<a href="list.jsp" class="btn btn-primary">목록</a>
+			<%if(dto.getWriter().equals(id)){ %>
+				<a id="delete_btn" class="btn btn-outline-danger" href="private/delete.jsp?num=<%=dto.getNum() %>" style="float:right;">
+				<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		  			<path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+				</svg>
+					삭제
+				</a>
+				<a class="btn btn-outline-warning" href="private/updateform.jsp?num=<%=dto.getNum() %>" style="float:right; margin-right: 10px;">
+				<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		 		 	<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+		 			 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+				</svg>
+					수정
+				</a>
+			<%} %>
+		</div>
 	</div>
-	</div>
+	<%-- //본문 내용 --%>
 		
-		<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
-		<script>
-		$("#delete_btn").click(function(){
-		    if(confirm("정말 삭제하시겠습니까 ?") == true){
-		        alert("삭제되었습니다");
-		    }
-		    else{
-		        return ;
-		    }
-		});
-		</script>
-
-
-
-
-
-
-
-
-
 	<!-- footer --> 
 		<%-- jsp:include(footer) --%>
 		<jsp:include page="../include/footer.jsp">
 			<jsp:param value="sub_bbs" name="thisPage"/>
 		</jsp:include>
 	<!-- footer end-->
+
+<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+<script>
+	$("#delete_btn").click(function(){
+	    if(confirm("정말 삭제하시겠습니까 ?") == true){
+	        alert("삭제되었습니다");
+	    }
+	    else{
+	        return ;
+	    }
+	});
+</script>	
 </body>
 </html>

@@ -15,7 +15,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>게시판</title>
-<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,11 +25,6 @@
 <style>
 </style>
 <body>
- 	<%-- jsp:include(header) --%>
-	<jsp:include page="../include/header.jsp"></jsp:include>
-	<%-- //header --%>
-
-	
 <% 
 	
 	//로그인 된 아이디 읽어오기 (로그인을 하지 않으면 null 이다)
@@ -108,13 +103,17 @@
 		endPageNum=totalPageCount; //보정해준다. 
 	}
 %>
- <!-- Page Content -->
+	<%-- jsp:include(header) --%>
+	<jsp:include page="../include/header.jsp"></jsp:include>
+	<%-- //header --%>
+	
+	<!-- Page Content -->
 	
 	<!-- 게시판 -->
 	<div class="container">
 		
 		<div style="text-align:center; margin-top: 30px;">
-			<h3>나만의 레시피 등록 게시판</h3>	
+			<h3>자유 게시판 글 목록</h3>	
 		</div>	
 		<div style="text-align:right;">
 			<a href = "private/insertform.jsp" class="btn btn-primary" >글쓰기</a>
@@ -190,9 +189,10 @@
 	<!-- footer --> 
 		<%-- jsp:include(footer) --%>
 		<jsp:include page="../include/footer.jsp">
-			<jsp:param value="sub_myrecipe" name="thisPage"/>
+			<jsp:param value="sub_bbs" name="thisPage"/>
 		</jsp:include>
 	<!-- footer end--> 
+	
 </body>
 
 </html>

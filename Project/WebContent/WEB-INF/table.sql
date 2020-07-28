@@ -1,3 +1,5 @@
+
+
 -- 사용자(회원) 정보를 저장할 테이블 
 CREATE TABLE login(
 	id VARCHAR2(100) PRIMARY KEY,

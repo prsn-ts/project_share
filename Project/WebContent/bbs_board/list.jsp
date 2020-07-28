@@ -114,13 +114,21 @@
 	<div class="container">
 		
 		<div style="text-align:center;">
-			<h3>나만의 레시피 등록 게시판</h3>	
+			<h3></h3>	
 		</div>	
 		<div style="text-align:right;">
 			<a href = "private/insertform.jsp" class="btn btn-primary" >글쓰기</a>
 		</div>
 			<table class="table table-hover" style="text-align: center;"> 
 				<thead >
+					<tr>
+						<th style="width: 100px;">공지사항</th>
+						<th style="width: 400px;">자유게시판 입니다.</th>
+						<th style="width: 100px;">관리자</th>
+						<th style="width: 200px;"></th>
+						<th style="width: 100px;"></th>
+
+					</tr>
 					<tr>
 						<th style="width: 100px;">번호</th>
 						<th style="width: 400px;">제목</th>
@@ -191,7 +199,7 @@
 	<!-- footer --> 
 		<%-- jsp:include(footer) --%>
 		<jsp:include page="../include/footer.jsp">
-			<jsp:param value="sub_myrecipe" name="thisPage"/>
+			<jsp:param value="sub_bbs" name="thisPage"/>
 		</jsp:include>
 	<!-- footer end--> 
 

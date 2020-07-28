@@ -8,7 +8,7 @@
 	String id=(String)session.getAttribute("id");
 %>
 	<!-- index header -->
-		<div class="jumbotron py-5 text-center mb-0"> 
+		<div class="jumbotron py-5 text-center mb-0 "> 
 		<a href="${pageContext.request.contextPath}/index.jsp" >
 			<h1>오늘의 레시피</h1> 
 			<p>오늘의 레시피는 과연?</p>

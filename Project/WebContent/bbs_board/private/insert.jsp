@@ -1,5 +1,6 @@
-<%@page import="test.bbs.dao.BbsDao"%>
-<%@page import="test.bbs.dto.BbsDto"%>
+
+<%@page import="bbs.dao.BbsDao"%>
+<%@page import="bbs.dto.BbsDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -29,14 +30,13 @@
 	<%if(isSuccess == true){%>
 		<script>
 			alert("<%=writer%> 님 글이 등록되었습니다.");
-			location.href="${pageContext.request.contextPath}/board_gallery/bbs.jsp";
+			location.href="../list.jsp";
 		</script>
 	<%}else{ %>
 		<script>
 			alert("글 등록이 실패했습니다.");
-			location.href="${pageContext.request.contextPath}/board_gallery/private/write.jsp";
+			location.href="${pageContext.request.contextPath}/bbs_board/private/insertform.jsp";
 		</script>
 	<%} %>
-</script>
 </body>
 </html>

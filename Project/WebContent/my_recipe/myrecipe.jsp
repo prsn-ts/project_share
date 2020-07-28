@@ -8,16 +8,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>나만의 레시피</title>
-<!-- CSS -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
+<link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<!-- customize css -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
-<!-- 글씨체 관련 -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<!-- 아이콘 관련 -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome-4.7.0/css/font-awesome.min.css">
-<!-- JS -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -34,12 +27,13 @@
 			<div class="row_all p-3" style="border: 1px solid #dfdfdf; background-color: #f2f2f2;">
 			
 			<div class=" my-4">
+
 			  <h3 style="text-shadow: 2px 2px 4px gray;">나만의 레시피</h3>			  
+
 			</div>
-			
 
 				<!-- Page Features -->
-				<div class="row text-center">
+				<div class="row text-center" >
 				
 				  <div class="card_one col-lg-3 col-md-6 mb-4">
 				    <div class="card h-100">
@@ -144,9 +138,11 @@
 				      </div>  
 				    </div>
 				  </div>
-				  <button style="margin-left:1000px;" type="submit button" class="btn btn-outline-success" onclick="location.href='${pageContext.request.contextPath}/test/editor.jsp';">작성하기</button>
 				</div>
 				<!-- //.row -->
+				<div class="write_btn" style="width:100%; text-align: right;">
+				  	<button type="submit" class="btn btn-outline-success" onclick="location.href='${pageContext.request.contextPath}/my_recipe/private/insertform.jsp';">작성하기</button>
+				</div>
 			</div>
 			<!-- //.row_all -->
 		<div class="pt-4"></div>

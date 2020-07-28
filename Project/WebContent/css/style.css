@@ -4,10 +4,21 @@
 }
 nav {
 	background: #1DD8A8;
+	height:80px;
 }
 nav .nav-profile{
 	border-radius: 50%!important;
 	width: 60px; height: 60px;
+}
+nav .login_btn{
+	background-color: #ffffff;
+	border-color: #28a745;
+	color: #28a745;
+}
+nav .signup_btn{
+	background-color: #ffffff;
+	border-color: #28a745;
+	color: #28a745;
 }
 
 /* content 부분 */

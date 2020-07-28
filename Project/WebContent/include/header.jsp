@@ -30,8 +30,8 @@
 	        	<ul class="navbar-nav ml-auto">
 	            	<li class="nav-item dropdown no-arrow">     
 	                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-	                  <a href="${pageContext.request.contextPath}/login/login_form.jsp">로그인</a>
-	                  <a href="${pageContext.request.contextPath}/login/signup_form.jsp">회원가입</a>
+		                  <a class="login_btn btn btn-outline-success" href="${pageContext.request.contextPath}/login/login_form.jsp">로그인</a>
+		                  <a class="signup_btn btn btn-outline-success" href="${pageContext.request.contextPath}/login/signup_form.jsp">회원가입</a>
 	                  </span>            
 	                </li>
 	            </ul>

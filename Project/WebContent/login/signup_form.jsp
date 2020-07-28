@@ -3,17 +3,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Register</title>
-  <!-- Custom fonts for this template-->
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="${pageContext.request.contextPath}/css/sb-admin-2.min.css" rel="stylesheet">
-
+<meta charset="utf-8">
+<title>Register</title>
+<!-- Custom fonts for this template-->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<!-- Custom styles for this template-->
+<link href="${pageContext.request.contextPath}/css/sb-admin-2.min.css" rel="stylesheet">
+<style>
+	.bg-register-image {
+	  width: 45%;
+ 	 /* Link to your background image using in the property below! */
+ 	 background: scroll center url('http://foodtravel.co.kr/wp-content/uploads/2016/05/i2.wp.comolivem.co_.krwp-contentuploads2016050512-vegtfood2-e9e896510470b81997f150e2f0fe528f59c25e3b.jpg');
+ 	 background-size: cover;
+	}
+</style>
 </head>
-
 <body class="bg-gradient-primary">
 
   <div class="container">
@@ -36,9 +41,16 @@
                 </div>
                 <div class="form-group">
                   	<label for="pwd">비밀번호</label>
-                    <input type="password" class="form-control form-control-user" id="pwd" name="pwd" placeholder="Password">
-                  
+                    <input type="password"  class="pw form-control form-control-user" id="pwd" name="pwd" placeholder="Password">
+         
                 </div>
+                <div class="form-group">
+                  	<label for="pwd">비밀번호 확인</label>
+                    <input type="password"  class="pw form-control form-control-user" id="pwd2" name="pwd2" placeholder="Password">
+                    <span id="alert-success" style="display: none;" class="text-success">비밀번호가 일치합니다.</span>
+   					<span id="alert-danger" style="display: none; color: #d92742; font-weight: bold; ">비밀번호가 일치하지 않습니다.</span>
+                </div>
+                
                 
                 <div class="form-group">
                   <label for="email">이메일</label>
@@ -67,6 +79,26 @@
 
   </div>
 <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+<script>
+    $('.pw').focusout(function () {
+        var pwd1 = $("#pwd").val();
+        var pwd2 = $("#pwd2").val();
+ 
+        if ( pwd1 != '' && pwd2 == '' ) {
+            null;
+        } else if (pwd1 != "" || pwd2 != "") {
+            if (pwd1 == pwd2) {		
+                $("#alert-success").css('display', 'inline-block');
+                $("#alert-danger").css('display', 'none');
+            } else {
+                alert("비밀번호가 일치하지 않습니다. 비밀번호를 재확인해주세요.");
+                $("#alert-success").css('display', 'none');
+                $("#alert-danger").css('display', 'inline-block');
+            }
+        }
+    });
+</script>
+
 <script>
 	//아이디 중복확인을 통과 했는지 여부
 	var canUseId=false;

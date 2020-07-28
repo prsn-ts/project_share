@@ -65,19 +65,19 @@ nav .signup_btn{
 
 /* 푸터 부분 */
 footer{
-	background:#292929;
+	background:#289F5D;
 	font-family: 'Roboto', sans-serif;
 }
 footer .row .intro .f_link a{
 	font-size:12px; 
-	color:#999; 
+	color:white; 
 	text-decoration: none;
 }
 footer .intro .f_link span{
 	color:#ddd;
 }
 .f_info {
-	color:#999; 
+	color:white; 
 	font-size:12px;
 }
 footer .banner .up_banner{
@@ -94,7 +94,7 @@ footer .banner .down_banner i{
 }
 footer .banner .down_banner div .sns_text {
 	font-size: 12px;
-	color:gray;
+	color:white;
 }
 footer .banner .down_banner div a:hover {
 	text-decoration: none;

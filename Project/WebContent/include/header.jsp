@@ -3,15 +3,16 @@
 <%@page import="test.login.dao.LoginDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Brush+Script&family=Ranchers&display=swap" rel="stylesheet">   
 <%
 	//id 라는 키값으로 세션에 저장된 문자열이 있는지 읽어와 본다.
 	String id=(String)session.getAttribute("id");
 %>
 	<!-- index header -->
-		<div class="jumbotron py-5 text-center mb-0"> 
+		<div class="jumbotron py-5 text-center mb-0" style="font-family: 'Nanum Brush Script', cursive;"> 
 		<a href="${pageContext.request.contextPath}/index.jsp" >
-			<h1>오늘의 레시피</h1> 
-			<p>오늘의 레시피는 과연?</p>
+			<p style="font-size:70px;">오늘의 레시피</p> 
+			<p style="font-size:30px;">오늘의 레시피는 과연?</p>
 		</a> 
 		</div>
 	

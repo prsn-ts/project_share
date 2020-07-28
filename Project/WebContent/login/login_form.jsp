@@ -2,22 +2,25 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>SB Admin 2 - Login</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>SB Admin 2 - Login</title>
+<!-- Custom fonts for this template-->
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<!-- Custom styles for this template-->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
+<style>
+	.bg-login-image {
+	  width: 45%;
+ 	 /* Link to your background image using in the property below! */
+ 	 background: scroll center url('http://img.hani.co.kr/imgdb/resize/2019/0531/00502615_20190531.JPG');
+ 	 background-size: cover;
+	}
+</style>
 </head>
 
 <body class="bg-gradient-primary">
@@ -27,6 +30,29 @@
 	if(url==null){//목적지 정보가 없다면
 		String cPath=request.getContextPath();
 		url=cPath+"/index.jsp"; //로그인후 인덱스 페이지로 가도록 하기 위해 
+	}
+%>
+<%
+	//쿠키에 저장된 아이디와 비밀번호를 담을 변수
+	String savedId="";
+	String savedPwd="";
+	//쿠키에 저장된 값을 위의 변수에 저장하는 코드를 작성해 보세요.
+	Cookie[] cooks=request.getCookies();
+	if(cooks!=null){
+		//반복문 돌면서 쿠키객체를 하나씩 참조해서 
+		for(Cookie tmp: cooks){
+			//저장된 키값을 읽어온다.
+			String key=tmp.getName();
+			//만일 키값이 savedId 라면 
+			if(key.equals("savedId")){
+				//쿠키 value 값을 savedId 라는 지역변수에 저장
+				savedId=tmp.getValue();
+			}
+			if(key.equals("savedPwd")){
+				savedPwd=tmp.getValue();
+			}
+			
+		}
 	}
 %>
   <div class="container">
@@ -48,26 +74,27 @@
                   </div>
                   <form class="user" action="login.jsp" method="post">
                  	 <%-- 원래 가려던 목적지 정보를 url 이라는 파라미터 명으로 가지고 간다 --%>
+                 	
 					<input type="hidden" name="url" value="<%=url %>" />
                     <div class="form-group">
                 	  <label for="id">아이디</label>
-                      <input type="text" class="form-control form-control-user" name="id" id="id"  placeholder="Enter id...">
+                      <input value="<%=savedId %>" type="text" class="form-control form-control-user" name="id" id="id"  placeholder="Enter id...">
                     </div>
                     <div class="form-group">
                       <label for="pwd">비밀번호</label>
-                      <input type="password" class="form-control form-control-user"  name="pwd" id="pwd" placeholder="Password">
+                      <input value="<%=savedPwd %>" type="password" class="form-control form-control-user"  name="pwd" id="pwd" placeholder="Password">
                     </div>
                     <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                      </div>
+                      
+                        <input type="checkbox" name="isSave" value="yes"/>
+                        <label >Remember Me</label>
+                 
                     </div>
                     <button type="submit" class="btn btn-primary btn-user btn-block">
                       Login
                     </button>
                    
-                    
+         
                   </form>
                   <hr>
                   

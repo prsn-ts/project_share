@@ -177,6 +177,7 @@
 	});
 	
 	$(".temp_lead").on("click", function(){
+		console.log("ok");
 		//ajax 요청 처리를 한다.
 		$.ajax({
 			method:"get",
@@ -202,6 +203,7 @@
 				oEditors.getById["content"].exec("PASTE_HTML", [data.content]);
 			}
 		});
+		
 	});
 	
 	//프로필 이미지를 클릭했을 때 프로필 수정에 대해 실행할 함수 등록

@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>Insert title here</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width">
@@ -19,6 +20,12 @@
 <!-- 아이콘 관련 -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome-4.7.0/css/font-awesome.min.css">
 <!-- JS -->
+=======
+<title>게시판</title>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
+>>>>>>> refs/remotes/origin/Lee
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -26,6 +33,7 @@
 	String id=(String)session.getAttribute("id");
 	//파라미터로 전달되는 글번호를 읽어와서
 	int num=Integer.parseInt(request.getParameter("num"));
+	String writer = request.getParameter("writer");
 	//글 하나의 정보를 DB 에서 읽어와서
 	BbsDto dto=BbsDao.getInstance().getData(num);
 	//3. 해당글의 조회수를 1 증가 시킨다.
@@ -36,12 +44,10 @@
 <body>
 
  <!-- Page Content -->
-	
-    <%-- jsp:include(header) --%>
-	<jsp:include page="../include/header.jsp">
-		<jsp:param value="index" name="thisPage"/>
-	</jsp:include>
-	<%-- //jsp:include(header) --%>
+	 
+	 <%-- jsp:include(header) --%>
+	<jsp:include page="../include/header.jsp"></jsp:include>
+	<%-- //header --%>
 	
 	<!-- 게시판 -->
 
@@ -103,10 +109,18 @@
 		});
 		</script>
 
+
+
+
+
+
+
+
+
 	<!-- footer --> 
 		<%-- jsp:include(footer) --%>
 		<jsp:include page="../include/footer.jsp">
-			<jsp:param value="sub_myrecipe" name="thisPage"/>
+			<jsp:param value="sub_bbs" name="thisPage"/>
 		</jsp:include>
 	<!-- footer end-->
 </body>

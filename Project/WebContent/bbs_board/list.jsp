@@ -1,4 +1,5 @@
 
+<%@page import="java.util.Random"%>
 <%@page import="java.net.URLEncoder"%>
 <%@page import="bbs.dao.BbsDao"%>
 <%@page import="bbs.dto.BbsDto"%>
@@ -9,21 +10,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>jsp 게시판 웹사이트</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>게시판</title>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <style>
 </style>
 <body>
+ 	<%-- jsp:include(header) --%>
+	<jsp:include page="../include/header.jsp"></jsp:include>
+	<%-- //header --%>
+
+	
 <% 
 	
 	//로그인 된 아이디 읽어오기 (로그인을 하지 않으면 null 이다)
 	String id=(String)session.getAttribute("id");
 	
 	//한 페이지에 나타낼 row 의 갯수
-	final int PAGE_ROW_COUNT=5;
+	final int PAGE_ROW_COUNT=10;
 	//하단 디스플레이 페이지 갯수
 	final int PAGE_DISPLAY_COUNT=5;
 
@@ -97,152 +110,92 @@
 %>
  <!-- Page Content -->
 	
-    <!-- header --> 
-	<div class="jumbotron py-5 text-center mb-0"> 
-		<h1>나만의 레시피</h1> 
-		<p>나만의 레시피를 등록하고 공유 해봐요!</p> 
-	</div> 
-	<!-- Topbar 네이바-->
-    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-3 static-top shadow">
-    	<div class="container">
-	        <div class="collapse navbar-collapse" id="collapsibleNavbar"> 
-	       	 	<ul class="navbar-nav"> 
-	        		<li class="nav-item"><a href="#" class="navbar-brand nav-link font-weight-bolder">요리</a></li> 
-	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/my_recipe/myrecipe.jsp" class="navbar-brand nav-link font-weight-bolder">나만의 조리법</a></li>
-	       		 	<li class="nav-item"><a href="${pageContext.request.contextPath}/magazine/magazine.jsp" class="navbar-brand nav-link font-weight-bolder">매거진</a></li> 
-	     	    </ul> 
-	        </div>
-	        <%if(id == null){ %>
-	        	<ul class="navbar-nav ml-auto">
-	            	<li class="nav-item dropdown no-arrow">     
-	                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-	                  <a href="${pageContext.request.contextPath}/login/login_form.jsp">로그인</a>
-	                  <a href="${pageContext.request.contextPath}/login/signup_form.jsp">회원가입</a>
-	                  </span>            
-	                </li>
-	            </ul>
-	        <%} %>
-	        <!-- Topbar Navbar -->
-	        <%if(id != null){ %>
-	        <ul class="navbar-nav ml-auto">
-	            	
-	            	<!-- Nav Item - User Information -->
-	            	<li class="nav-item dropdown no-arrow">
-	                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%=id %></span>
-	                  <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-	                </a>
-	            
-	                <!-- Dropdown - User Information -->
-	                
-	                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-		                  <a class="dropdown-item" href="login/private/info.jsp">
-		                  	<%=id %>
-		                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-		                    Profile
-		                  </a>
-		                  <a class="dropdown-item" href="#">
-		                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-		                    Settings
-		                  </a>
-		                  <a class="dropdown-item" href="#">
-		                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-		                    Activity Log
-		                  </a>
-	                  <div class="dropdown-divider"></div>
-		                  <a class="dropdown-item" href="${pageContext.request.contextPath}/login/logout.jsp">
-		                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-		                    Logout
-		                  </a>
-	               	</div>
-	            </li>
-	        </ul>
-           	<%} %>
-	    </div> 
-    </nav>
-
-
-
 	<!-- 게시판 -->
-
 	<div class="container">
-	
-		<div class = "row" style="justify-content: flex-end;" >			
-			<a href = "private/insertform.jsp" class="btn btn-primary">글쓰기</a>
-				<table class="table table-hover" style="text-align: center;"> 
-					<thead >
-						<tr>
-							<th style="width: 100px;">번호</th>
-							<th style="width: 400px;">제목</th>
-							<th style="width: 100px;">작성자</th>
-							<th style="width: 200px;">작성일</th>
-							<th style="width: 100px;">조회수</th>
-						</tr>
-					</thead>
-					<tbody>
-					<%for(BbsDto tmp: list){ %>
-						<tr>
-							<td><%=tmp.getNum() %></td>
-							<td><a href="detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a></td>
-							<td><%=tmp.getWriter() %></td>
-							<td><%=tmp.getRegdate() %></td>
-							<td><%=tmp.getViewCount() %></td>
-						</tr>
-					<%} %>
-					</tbody>
-				</table>
-					<div class="page-display">
-						<ul class="pagination pagination-sm">
-						<%if(startPageNum != 1){ %>
-							<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=startPageNum-1 %>&condition=<%=condition %>&keyword=<%=encodedK %>">Prev</a></li>
-						<%} %>
-						<%for(int i=startPageNum; i<=endPageNum; i++){ %>
-							<%if(i==pageNum){ %>
-								<li class="page-item active"><a class="page-link" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a></li>
-							<%}else{%>
-								<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a></li>
-							<%} %>
-						<%} %>	
-						<%if(endPageNum < totalPageCount){ %>
-							<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=endPageNum+1 %>&condition=<%=condition %>&keyword=<%=encodedK %>">Next</a></li>
-						<%} %>
-						</ul>
-					</div>
-					<hr style="clear:left;"/>
-					<form action="list.jsp" method="get">
-						<label for="condition">검색조건</label>
-						<select name="condition" id="condition">
-							<option value="title_content" <%if(condition.equals("title_content")){ %>selected<%} %>>제목+내용</option>
-							<option value="title" <%if(condition.equals("title")){ %>selected<%} %>>제목</option>
-							<option value="writer" <%if(condition.equals("writer")){ %>selected<%} %>>작성자</option>
-						</select>
-						<input value="<%=keyword %>" type="text" name="keyword" placeholder="검색어..."/>
-						<button class="btn-primary" type="submit">검색</button>
-					</form>
+		
+		<div style="text-align:center;">
+			<h3>나만의 레시피 등록 게시판</h3>	
+		</div>	
+		<div style="text-align:right;">
+			<a href = "private/insertform.jsp" class="btn btn-primary" >글쓰기</a>
 		</div>
+			<table class="table table-hover" style="text-align: center;"> 
+				<thead >
+					<tr>
+						<th style="width: 100px;">번호</th>
+						<th style="width: 400px;">제목</th>
+						<th style="width: 100px;">작성자</th>
+						<th style="width: 200px;">작성일</th>
+						<th style="width: 100px;">조회수</th>
+					</tr>
+				</thead>
+				<tbody>
+				<%for(BbsDto tmp: list){ %>
+					<tr>
+						<td><%=tmp.getNum() %></td>
+						<td><a href="detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a></td>
+						<td><%=tmp.getWriter() %></td>
+						<td><%=tmp.getRegdate() %></td>
+						<td><%=tmp.getViewCount() %></td>
+					</tr>
+				<%} %>
+				</tbody>
+			</table>
+				<div class="page-display">
+					<ul class="pagination pagination-sm">
+					<%if(startPageNum != 1){ %>
+						<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=startPageNum-1 %>&condition=<%=condition %>&keyword=<%=encodedK %>">Prev</a></li>
+					<%} %>
+					<%for(int i=startPageNum; i<=endPageNum; i++){ %>
+						<%if(i==pageNum){ %>
+							<li class="page-item active"><a class="page-link" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a></li>
+						<%}else{%>
+							<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a></li>
+						<%} %>
+					<%} %>	
+					<%if(endPageNum < totalPageCount){ %>
+						<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=endPageNum+1 %>&condition=<%=condition %>&keyword=<%=encodedK %>">Next</a></li>
+					<%} %>
+					</ul>
+				</div>
+				<hr style="clear:left;"/>
+				<form action="list.jsp" method="get">
+					<label for="condition">검색조건</label>
+					<select name="condition" id="condition">
+						<option value="title_content" <%if(condition.equals("title_content")){ %>selected<%} %>>제목+내용</option>
+						<option value="title" <%if(condition.equals("title")){ %>selected<%} %>>제목</option>
+						<option value="writer" <%if(condition.equals("writer")){ %>selected<%} %>>작성자</option>
+					</select>
+					<input value="<%=keyword %>" type="text" name="keyword" placeholder="검색어..."/>
+					<button class="btn-primary" type="submit">검색</button>
+				</form>
+	
 	</div>
-
 	
 
+<%
+
+	Random random = new Random();
+	//int ran = random.nextInt(dto.getNum());
+	//System.out.println(ran);
+	//1. 전체 글의 갯수를 얻어온다  (15개) 
+	int count=7;
+	//2. 그 글의 갯수를 이용해서 랜덤한 정수 하나를 얻어낸다. (1~15 사이의 랜덤한 정수를 얻어낸다.)
+	int ran=random.nextInt(count)+1;
+	//3. 글을 정렬하고, rownum 을 부여해서 랜덤한 정수에 해당하는 rownum 을 가지고 있는 글 하나의 정보를 얻어낸다.
+ 	/* boolean rannum=BbsDao.getInstance().getrandom(dto); */
+	
+%>
 
 
-
-
-
-
-	<!-- 애니매이션 담당 JQUERY -->
-
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-	<!-- 부트스트랩 JS  -->
-
-	<script src="../js/bootstrap.js"></script>
 	<!-- footer --> 
 		<%-- jsp:include(footer) --%>
 		<jsp:include page="../include/footer.jsp">
 			<jsp:param value="sub_myrecipe" name="thisPage"/>
 		</jsp:include>
-	<!-- footer end-->
+	<!-- footer end--> 
+
+
 
 
 </body>

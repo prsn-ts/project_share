@@ -7,16 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>오늘의 레시피</title>
-<!-- CSS -->
 <link rel="stylesheet" href="css/bootstrap.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<!-- customize css -->
-<link rel="stylesheet" href="css/style.css" />
-<!-- 글씨체 관련 -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<!-- 아이콘 관련 -->
-<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-<!-- JS -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

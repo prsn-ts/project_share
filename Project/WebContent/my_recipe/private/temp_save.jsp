@@ -24,6 +24,7 @@
 	dto.setImagePath(imagePath);
 	dto.setShowImage(showImage);
 	dto.setContent(content);
+	System.out.println("dto.getContent() : "+dto.getContent());
 	
 	//tmp_my_recipe 테이블에 임시 저장된 값이 있는지 확인한다.
 	boolean isSuccess = TempMyrecipeDao.getInstance().temp_insert_Confirm(dto.getWriter());

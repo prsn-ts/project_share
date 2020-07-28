@@ -123,7 +123,11 @@
 							<td><input type="text" class="form-control" placeholder="글 제목" name="title" id="title"/></td>
 						</tr>
 						<tr>
-							<td><textarea class="form-control" placeholder="글 내용" name="content" id="content" cols="30" rows="10"></textarea></td>
+							<td><textarea class="form-control" placeholder="글 내용" name="content" id="content" cols="30" rows="10">
+								
+							
+							
+							</textarea></td>
 						</tr>
 					</tbody>
 				</table>

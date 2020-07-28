@@ -9,12 +9,10 @@
 	String id=(String)session.getAttribute("id");
 %>
 	<!-- index header -->
-		<div class="jumbotron py-5 text-center mb-0" style="font-family: 'Nanum Brush Script', cursive;"> 
-		<a href="${pageContext.request.contextPath}/index.jsp" >
-			<p style="font-size:70px;">오늘의 레시피</p> 
-			<p style="font-size:30px;">오늘의 레시피는 과연?</p>
-		</a> 
-		</div>
+	<div class="jumbotron py-5 text-center mb-0" style="font-family: 'Nanum Brush Script', cursive;"> 
+		<a class="main_title" href="${pageContext.request.contextPath}/index.jsp">오늘의 레시피</a>
+		<a class="sub_title" href="${pageContext.request.contextPath}/index.jsp">오늘의 레시피는 과연?</a>
+	</div>
 	
 	<!-- Topbar -->
     <nav class="navbar navbar-expand navbar-light topbar static-top shadow">

@@ -180,7 +180,7 @@
 			    	</div>
 		    	</div>
 		    </div>
-		    <div class="col-md">
+		    <div class="col-md logo_part">
 				로고 이미지
 	    	</div>
   		</div>

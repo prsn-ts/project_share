@@ -113,63 +113,63 @@
 	<!-- 게시판 -->
 	<div class="container">
 		
-		<div style="text-align:center;">
+		<div style="text-align:center; margin-top: 30px;">
 			<h3>나만의 레시피 등록 게시판</h3>	
 		</div>	
 		<div style="text-align:right;">
 			<a href = "private/insertform.jsp" class="btn btn-primary" >글쓰기</a>
 		</div>
-			<table class="table table-hover" style="text-align: center;"> 
-				<thead >
-					<tr>
-						<th style="width: 100px;">번호</th>
-						<th style="width: 400px;">제목</th>
-						<th style="width: 100px;">작성자</th>
-						<th style="width: 200px;">작성일</th>
-						<th style="width: 100px;">조회수</th>
-					</tr>
-				</thead>
-				<tbody>
-				<%for(BbsDto tmp: list){ %>
-					<tr>
-						<td><%=tmp.getNum() %></td>
-						<td><a href="detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a></td>
-						<td><%=tmp.getWriter() %></td>
-						<td><%=tmp.getRegdate() %></td>
-						<td><%=tmp.getViewCount() %></td>
-					</tr>
+		<table class="table table-hover" style="text-align: center;"> 
+			<thead >
+				<tr>
+					<th style="width: 100px;">번호</th>
+					<th style="width: 400px;">제목</th>
+					<th style="width: 100px;">작성자</th>
+					<th style="width: 200px;">작성일</th>
+					<th style="width: 100px;">조회수</th>
+				</tr>
+			</thead>
+			<tbody>
+			<%for(BbsDto tmp: list){ %>
+				<tr>
+					<td><%=tmp.getNum() %></td>
+					<td><a href="detail.jsp?num=<%=tmp.getNum()%>"><%=tmp.getTitle() %></a></td>
+					<td><%=tmp.getWriter() %></td>
+					<td><%=tmp.getRegdate() %></td>
+					<td><%=tmp.getViewCount() %></td>
+				</tr>
+			<%} %>
+			</tbody>
+		</table>
+		<div class="search_form" style="float:right;">
+			<form action="list.jsp" method="get">
+				<label for="condition">검색조건</label>
+				<select name="condition" id="condition">
+					<option value="title_content" <%if(condition.equals("title_content")){ %>selected<%} %>>제목+내용</option>
+					<option value="title" <%if(condition.equals("title")){ %>selected<%} %>>제목</option>
+					<option value="writer" <%if(condition.equals("writer")){ %>selected<%} %>>작성자</option>
+				</select>
+				<input value="<%=keyword %>" type="text" name="keyword" placeholder="검색어..."/>
+				<button class="btn-primary" type="submit">검색</button>
+			</form>
+		</div>
+		<div class="page-display">
+			<ul class="pagination pagination-sm">
+			<%if(startPageNum != 1){ %>
+				<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=startPageNum-1 %>&condition=<%=condition %>&keyword=<%=encodedK %>">Prev</a></li>
+			<%} %>
+			<%for(int i=startPageNum; i<=endPageNum; i++){ %>
+				<%if(i==pageNum){ %>
+					<li class="page-item active"><a class="page-link" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a></li>
+				<%}else{%>
+					<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a></li>
 				<%} %>
-				</tbody>
-			</table>
-				<div class="page-display">
-					<ul class="pagination pagination-sm">
-					<%if(startPageNum != 1){ %>
-						<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=startPageNum-1 %>&condition=<%=condition %>&keyword=<%=encodedK %>">Prev</a></li>
-					<%} %>
-					<%for(int i=startPageNum; i<=endPageNum; i++){ %>
-						<%if(i==pageNum){ %>
-							<li class="page-item active"><a class="page-link" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a></li>
-						<%}else{%>
-							<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=i %>&condition=<%=condition %>&keyword=<%=encodedK %>"><%=i %></a></li>
-						<%} %>
-					<%} %>	
-					<%if(endPageNum < totalPageCount){ %>
-						<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=endPageNum+1 %>&condition=<%=condition %>&keyword=<%=encodedK %>">Next</a></li>
-					<%} %>
-					</ul>
-				</div>
-				<hr style="clear:left;"/>
-				<form action="list.jsp" method="get">
-					<label for="condition">검색조건</label>
-					<select name="condition" id="condition">
-						<option value="title_content" <%if(condition.equals("title_content")){ %>selected<%} %>>제목+내용</option>
-						<option value="title" <%if(condition.equals("title")){ %>selected<%} %>>제목</option>
-						<option value="writer" <%if(condition.equals("writer")){ %>selected<%} %>>작성자</option>
-					</select>
-					<input value="<%=keyword %>" type="text" name="keyword" placeholder="검색어..."/>
-					<button class="btn-primary" type="submit">검색</button>
-				</form>
-	
+			<%} %>	
+			<%if(endPageNum < totalPageCount){ %>
+				<li class="page-item"><a class="page-link" href="list.jsp?pageNum=<%=endPageNum+1 %>&condition=<%=condition %>&keyword=<%=encodedK %>">Next</a></li>
+			<%} %>
+			</ul>
+		</div>
 	</div>
 	
 
@@ -187,17 +187,12 @@
 	
 %>
 
-
 	<!-- footer --> 
 		<%-- jsp:include(footer) --%>
 		<jsp:include page="../include/footer.jsp">
 			<jsp:param value="sub_myrecipe" name="thisPage"/>
 		</jsp:include>
 	<!-- footer end--> 
-
-
-
-
 </body>
 
 </html>

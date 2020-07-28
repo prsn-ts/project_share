@@ -20,6 +20,16 @@ nav .signup_btn{
 	border-color: #28a745;
 	color: #28a745;
 }
+.jumbotron .main_title{
+	font-size:70px;
+	text-decoration: none; 
+	display: block; color: #289F5D;
+}
+.jumbotron .sub_title{
+	font-size:30px; 
+	text-decoration: none; 
+	color: #289F5D;
+}
 
 /* content 부분 */
 .carousel_all{
@@ -98,4 +108,7 @@ footer .banner .down_banner div .sns_text {
 }
 footer .banner .down_banner div a:hover {
 	text-decoration: none;
+}
+footer .logo_part {
+	color: white;
 }

@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>오늘의 레시피</title>
 <!-- CSS -->
-<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <!-- customize css -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />

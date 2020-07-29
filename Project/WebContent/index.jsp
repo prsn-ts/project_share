@@ -33,7 +33,7 @@
 			<div class="row_all p-3" style="border: 1px solid #f2f2f2; background-color: #f2f2f2;">
 				<div>
 					<div class="carousel_title">
-						<div style="color: black;">요리</div>
+						<div style="color: black; font-size: 20px; padding:10px;">요리</div>
 					</div>
 					<div id="carouselExampleCaptions" class="carousel slide mb-4" data-ride="carousel">
 						<ol class="carousel-indicators">

@@ -235,7 +235,7 @@ public class MyrecipeDao {
 			//혹시 row 가 하나도 없으면 null 이 얻어와 지기때문에  null 인 경우 0 으로 
 			//바꿔 줘야 한다.
 			String sql = "SELECT NVL(MAX(ROWNUM), 0) AS num"
-					+ " FROM bbs_cafe";
+					+ " FROM my_recipe";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
 
@@ -262,7 +262,7 @@ public class MyrecipeDao {
 	}
 	
 	//타이틀,내용 검색결과  row 의 갯수를 리턴해주는 메소드
-	public int getCountTC(BbsDto dto) {
+	public int getCountTC(MyrecipeDto dto) {
 		//전체 row  의 갯수를 담을 지역 변수 
 		int count=0;
 		//필요한 객체의 참조값을 담을 지역변수 만들기 
@@ -276,7 +276,7 @@ public class MyrecipeDao {
 			//혹시 row 가 하나도 없으면 null 이 얻어와 지기때문에  null 인 경우 0 으로 
 			//바꿔 줘야 한다.
 			String sql = "SELECT NVL(MAX(ROWNUM), 0) AS num"
-					+ " FROM bbs_cafe"
+					+ " FROM my_recipe"
 					+ " WHERE title LIKE '%'||?||'%' OR content LIKE '%'||?||'%'";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
@@ -305,7 +305,7 @@ public class MyrecipeDao {
 	}
 	
 	//타이틀 검색결과  row 의 갯수를 리턴해주는 메소드
-	public int getCountT(BbsDto dto) {
+	public int getCountT(MyrecipeDto dto) {
 		//전체 row  의 갯수를 담을 지역 변수 
 		int count=0;
 		//필요한 객체의 참조값을 담을 지역변수 만들기 
@@ -319,7 +319,7 @@ public class MyrecipeDao {
 			//혹시 row 가 하나도 없으면 null 이 얻어와 지기때문에  null 인 경우 0 으로 
 			//바꿔 줘야 한다.
 			String sql = "SELECT NVL(MAX(ROWNUM), 0) AS num"
-					+ " FROM bbs_cafe"
+					+ " FROM my_recipe"
 					+ " WHERE title LIKE '%'||?||'%'";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
@@ -347,7 +347,7 @@ public class MyrecipeDao {
 	}
 	
 	//작성자 검색결과  row 의 갯수를 리턴해주는 메소드
-	public int getCountW(BbsDto dto) {
+	public int getCountW(MyrecipeDto dto) {
 		//전체 row  의 갯수를 담을 지역 변수 
 		int count=0;
 		//필요한 객체의 참조값을 담을 지역변수 만들기 
@@ -361,7 +361,7 @@ public class MyrecipeDao {
 			//혹시 row 가 하나도 없으면 null 이 얻어와 지기때문에  null 인 경우 0 으로 
 			//바꿔 줘야 한다.
 			String sql = "SELECT NVL(MAX(ROWNUM), 0) AS num"
-					+ " FROM bbs_cafe"
+					+ " FROM my_recipe"
 					+ " WHERE writer LIKE '%'||?||'%'";
 			pstmt = conn.prepareStatement(sql);
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
@@ -389,62 +389,66 @@ public class MyrecipeDao {
 	}		
 	
 	//게시판 목록을 리턴해주는 메소드
-		public List<BbsDto> getList(BbsDto dto){
-			//파일 목록을 담을 ArrayList  객체 생성 
-			List<BbsDto> list=new ArrayList<>();
-			//필요한 객체의 참조값을 담을 지역변수 만들기 
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			try {
-				//Connection 객체의 참조값 얻어오기 
-				conn = new DbcpBean().getConn();
-				//실행할 sql 문 준비하기
-				String sql="SELECT *"
-						+ " FROM"
-						+ " (SELECT result1.*, ROWNUM AS rnum"
-						+ " FROM"
-						+ " (SELECT num,writer,title,regdate,viewCount"
-						+ " FROM bbs_cafe"
-						+ " ORDER BY num DESC) result1)"
-						+ " WHERE rnum BETWEEN ? AND ?";
-				pstmt = conn.prepareStatement(sql);
-				//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
-				pstmt.setInt(1, dto.getStartRowNum());
-				pstmt.setInt(2, dto.getEndRowNum());
-				//select 문 수행하고 결과 받아오기 
-				rs = pstmt.executeQuery();
-				//반복문 돌면서 결과 값 추출하기 
-				while (rs.next()) { 
-					BbsDto tmp=new BbsDto();
-					tmp.setNum(rs.getInt("num"));
-					tmp.setWriter(rs.getString("writer"));
-					tmp.setTitle(rs.getString("title"));
-					tmp.setRegdate(rs.getString("regdate"));
-					tmp.setViewCount(rs.getInt("viewCount"));
-					//ArrayList 객체에 누적 시킨다. 
-					list.add(tmp);
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					if (rs != null)
-						rs.close();
-					if (pstmt != null)
-						pstmt.close();
-					if (conn != null)
-						conn.close();
-				} catch (Exception e) {
-				}
+	public List<MyrecipeDto> getList(MyrecipeDto dto){
+		//파일 목록을 담을 ArrayList  객체 생성 
+		List<MyrecipeDto> list=new ArrayList<>();
+		//필요한 객체의 참조값을 담을 지역변수 만들기 
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			//Connection 객체의 참조값 얻어오기 
+			conn = new DbcpBean().getConn();
+			//실행할 sql 문 준비하기
+			String sql="SELECT *"
+					+ " FROM"
+					+ " (SELECT result1.*, ROWNUM AS rnum"
+					+ " FROM"
+					+ " (SELECT num,title,subTitle,content,writer,regdate,imagePath,showImage,viewCount"
+					+ " FROM my_recipe"
+					+ " ORDER BY num DESC) result1)"
+					+ " WHERE rnum BETWEEN ? AND ?";
+			pstmt = conn.prepareStatement(sql);
+			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
+			pstmt.setInt(1, dto.getStartRowNum());
+			pstmt.setInt(2, dto.getEndRowNum());
+			//select 문 수행하고 결과 받아오기 
+			rs = pstmt.executeQuery();
+			//반복문 돌면서 결과 값 추출하기 
+			while (rs.next()) { 
+				MyrecipeDto tmp=new MyrecipeDto();
+				tmp.setNum(rs.getInt("num"));
+				tmp.setTitle(rs.getString("title"));
+				tmp.setSubTitle(rs.getString("subTitle"));
+				tmp.setContent(rs.getString("content"));
+				tmp.setWriter(rs.getString("writer"));
+				tmp.setRegdate(rs.getString("regdate"));
+				tmp.setImagePath(rs.getString("imagePath"));
+				tmp.setShowImage(rs.getString("showImage"));
+				tmp.setViewCount(rs.getInt("viewCount"));
+				//ArrayList 객체에 누적 시킨다. 
+				list.add(tmp);
 			}
-			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
 		}
+		return list;
+	}
 	
 	//타이틀, 내용을 리턴해주는 메소드
-	public List<BbsDto> getListTC(BbsDto dto){
+	public List<MyrecipeDto> getListTC(MyrecipeDto dto){
 		//파일 목록을 담을 ArrayList  객체 생성 
-		List<BbsDto> list=new ArrayList<>();
+		List<MyrecipeDto> list=new ArrayList<>();
 		//필요한 객체의 참조값을 담을 지역변수 만들기 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -456,8 +460,8 @@ public class MyrecipeDao {
 			String sql = "SELECT *"
 					+ " FROM"
 					+ "     (SELECT result1.*, ROWNUM AS rnum"
-					+ "      FROM (SELECT num,title,content,writer,regdate,viewCount"
-					+ "            FROM bbs_cafe"
+					+ "      FROM (SELECT num,title,subTitle,content,writer,regdate,imagePath,showImage,viewCount"
+					+ "            FROM my_recipe"
 					+ "            WHERE title LIKE '%'||?||'%' OR content LIKE '%'||?||'%'"
 					+ "            ORDER BY num DESC) result1)"
 					+ " WHERE rnum BETWEEN ? AND ?";
@@ -465,19 +469,22 @@ public class MyrecipeDao {
 			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getContent());
-			pstmt.setInt(2, dto.getStartRowNum());
-			pstmt.setInt(3, dto.getEndRowNum());
+			pstmt.setInt(3, dto.getStartRowNum());
+			pstmt.setInt(4, dto.getEndRowNum());
 			//select 문 수행하고 결과 받아오기 
 			rs = pstmt.executeQuery();
 			//반복문 돌면서 결과 값 추출하기 
 			while (rs.next()) { 
-				BbsDto tmp=new BbsDto();
+				MyrecipeDto tmp=new MyrecipeDto();
 				tmp.setNum(rs.getInt("num"));
 				tmp.setTitle(rs.getString("title"));
+				tmp.setSubTitle(rs.getString("subTitle"));
 				tmp.setContent(rs.getString("content"));
 				tmp.setWriter(rs.getString("writer"));
 				tmp.setRegdate(rs.getString("regdate"));
-				dto.setViewCount(rs.getInt("viewCount"));
+				tmp.setImagePath(rs.getString("imagePath"));
+				tmp.setShowImage(rs.getString("showImage"));
+				tmp.setViewCount(rs.getInt("viewCount"));
 				//ArrayList 객체에 누적 시킨다. 
 				list.add(tmp);
 			}
@@ -498,62 +505,8 @@ public class MyrecipeDao {
 	}
 	
 	//타이틀 검색메소드
-		public List<BbsDto> getListT(BbsDto dto){
-			List<BbsDto> list=new ArrayList<>();
-			//필요한 객체의 참조값을 담을 지역변수 만들기 
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			try {
-				//Connection 객체의 참조값 얻어오기 
-				conn = new DbcpBean().getConn();
-				//실행할 sql 문 준비하기
-				String sql = "SELECT *"
-						+ " FROM"
-						+ "     (SELECT result1.*, ROWNUM AS rnum"
-						+ "      FROM (SELECT num,title,content,writer,regdate,viewCount"
-						+ "            FROM bbs_cafe"
-						+ "            WHERE title LIKE '%'||?||'%'"
-						+ "            ORDER BY num DESC) result1)"
-						+ " WHERE rnum BETWEEN ? AND ?";
-				pstmt = conn.prepareStatement(sql);
-				//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
-				pstmt.setString(1, dto.getTitle());
-				pstmt.setInt(2, dto.getStartRowNum());
-				pstmt.setInt(3, dto.getEndRowNum());
-				//select 문 수행하고 결과 받아오기 
-				rs = pstmt.executeQuery();
-				// 결과 값 추출하기 
-				while (rs.next()) {
-					BbsDto tmp=new BbsDto();
-					tmp.setNum(rs.getInt("num"));
-					tmp.setTitle(rs.getString("title"));
-					tmp.setContent(rs.getString("content"));
-					tmp.setWriter(rs.getString("writer"));
-					tmp.setRegdate(rs.getString("regdate"));
-					tmp.setViewCount(rs.getInt("viewCount"));
-					//ArrayList 객체에 누적 시킨다. 
-					list.add(tmp);
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					if (rs != null)
-						rs.close();
-					if (pstmt != null)
-						pstmt.close();
-					if (conn != null)
-						conn.close();
-				} catch (Exception e) {
-				}
-			}
-			return list;
-		}
-	
-	//작성자 검색메소드
-	public List<BbsDto> getListW(BbsDto dto){
-		List<BbsDto> list=new ArrayList<>();
+	public List<MyrecipeDto> getListT(MyrecipeDto dto){
+		List<MyrecipeDto> list=new ArrayList<>();
 		//필요한 객체의 참조값을 담을 지역변수 만들기 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -565,8 +518,65 @@ public class MyrecipeDao {
 			String sql = "SELECT *"
 					+ " FROM"
 					+ "     (SELECT result1.*, ROWNUM AS rnum"
-					+ "      FROM (SELECT num,title,content,writer,regdate,viewCount"
-					+ "            FROM bbs_cafe"
+					+ "      FROM (SELECT num,title,subTitle,content,writer,regdate,imagePath,showImage,viewCount"
+					+ "            FROM my_recipe"
+					+ "            WHERE title LIKE '%'||?||'%'"
+					+ "            ORDER BY num DESC) result1)"
+					+ " WHERE rnum BETWEEN ? AND ?";
+			pstmt = conn.prepareStatement(sql);
+			//sql 문에 ? 에 바인딩할 값이 있으면 바인딩하고 
+			pstmt.setString(1, dto.getTitle());
+			pstmt.setInt(2, dto.getStartRowNum());
+			pstmt.setInt(3, dto.getEndRowNum());
+			//select 문 수행하고 결과 받아오기 
+			rs = pstmt.executeQuery();
+			// 결과 값 추출하기 
+			while (rs.next()) {
+				MyrecipeDto tmp=new MyrecipeDto();
+				tmp.setNum(rs.getInt("num"));
+				tmp.setTitle(rs.getString("title"));
+				tmp.setSubTitle(rs.getString("subTitle"));
+				tmp.setContent(rs.getString("content"));
+				tmp.setWriter(rs.getString("writer"));
+				tmp.setRegdate(rs.getString("regdate"));
+				tmp.setImagePath(rs.getString("imagePath"));
+				tmp.setShowImage(rs.getString("showImage"));
+				tmp.setViewCount(rs.getInt("viewCount"));
+				//ArrayList 객체에 누적 시킨다. 
+				list.add(tmp);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		return list;
+	}
+	
+	//작성자 검색메소드
+	public List<MyrecipeDto> getListW(MyrecipeDto dto){
+		List<MyrecipeDto> list=new ArrayList<>();
+		//필요한 객체의 참조값을 담을 지역변수 만들기 
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			//Connection 객체의 참조값 얻어오기 
+			conn = new DbcpBean().getConn();
+			//실행할 sql 문 준비하기
+			String sql = "SELECT *"
+					+ " FROM"
+					+ "     (SELECT result1.*, ROWNUM AS rnum"
+					+ "      FROM (SELECT num,title,subTitle,content,writer,regdate,imagePath,showImage,viewCount"
+					+ "            FROM my_recipe"
 					+ "            WHERE writer LIKE '%'||?||'%'"
 					+ "            ORDER BY num DESC) result1)"
 					+ " WHERE rnum BETWEEN ? AND ?";
@@ -579,12 +589,15 @@ public class MyrecipeDao {
 			rs = pstmt.executeQuery();
 			// 결과 값 추출하기 
 			while (rs.next()) {
-				BbsDto tmp=new BbsDto();
+				MyrecipeDto tmp=new MyrecipeDto();
 				tmp.setNum(rs.getInt("num"));
 				tmp.setTitle(rs.getString("title"));
+				tmp.setSubTitle(rs.getString("subTitle"));
 				tmp.setContent(rs.getString("content"));
 				tmp.setWriter(rs.getString("writer"));
 				tmp.setRegdate(rs.getString("regdate"));
+				tmp.setImagePath(rs.getString("imagePath"));
+				tmp.setShowImage(rs.getString("showImage"));
 				tmp.setViewCount(rs.getInt("viewCount"));
 				//ArrayList 객체에 누적 시킨다. 
 				list.add(tmp);

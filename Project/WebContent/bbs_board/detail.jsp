@@ -44,7 +44,7 @@
 	<%-- 본문 내용 --%>
 	
 	<div class="container">
-		<div class="form-group" style="text-align: right;">
+		<div class="form-group" style="text-align: right; margin-top:30px;">
 			<table class="table table-striped"
 				style="text-align: center; border: 1px solid #dddddd">
 				<thead>

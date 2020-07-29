@@ -142,7 +142,6 @@
 		</table>
 		<div class="search_form" style="float:right;">
 			<form action="list.jsp" method="get">
-				<label for="condition">검색조건</label>
 				<select name="condition" id="condition">
 					<option value="title_content" <%if(condition.equals("title_content")){ %>selected<%} %>>제목+내용</option>
 					<option value="title" <%if(condition.equals("title")){ %>selected<%} %>>제목</option>

@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <!-- customize css -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
+<link href="${pageContext.request.contextPath}/css/stickyfooter.css" rel="stylesheet">
 <!-- 글씨체 관련 -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <!-- 아이콘 관련 -->
@@ -34,13 +35,14 @@
 %>
 </head>
 <body>
-
+	<div class="wrapper">
  	<%-- header --%>
 	<%-- jsp:include(header) --%>
 	<jsp:include page="../include/header.jsp"></jsp:include>
 	<%-- //header --%>
 	
 	<%-- 본문 내용 --%>
+	
 	<div class="container">
 		<div class="form-group" style="text-align: right;">
 			<table class="table table-striped"
@@ -87,12 +89,15 @@
 	</div>
 	<%-- //본문 내용 --%>
 		
-	<!-- footer --> 
-		<%-- jsp:include(footer) --%>
-		<jsp:include page="../include/footer.jsp">
-			<jsp:param value="sub_bbs" name="thisPage"/>
-		</jsp:include>
-	<!-- footer end-->
+	<footer class="footer">
+	<div class="jumbotron text-center mb-0" style="background-color: #289f5d;"> 
+	<h3 class="text-white">게시판</h3>
+		<p>Homepage is powered by 
+			<span class="text-white">3조</span> / Designed by 
+			<span class="text-white">3조</span>
+		</p> 
+	</div>
+	</footer>
 
 <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
 <script>
@@ -104,6 +109,7 @@
 	        return ;
 	    }
 	});
-</script>	
+</script>
+</div>	
 </body>
 </html>

@@ -43,7 +43,9 @@
 						</ol>
 						<div class="carousel-inner border border-warning">
 							<div class="carousel-item active">
+								<a href="">
 								<img src="images/ad1.png" class="d-block w-100" style="height: 400px" alt="...">
+								</a>
 								<div class="carousel-caption d-none d-md-block">
 								</div>
 							</div>

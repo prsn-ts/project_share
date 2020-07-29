@@ -5,6 +5,8 @@
 	String thisPage = request.getParameter("thisPage");
 	String save_par = thisPage;
 %>
+
+  	<footer class="footer">
 	<div class="jumbotron text-center mb-0" style="background-color: #289f5d;"> 
 		<%if(save_par.equals("myrecipe") || save_par.equals("sub_myrecipe")){ %>
 			<h3 class="text-white">나만의 레시피</h3>
@@ -19,3 +21,4 @@
 			<span class="text-white">3조</span>
 		</p> 
 	</div>
+	</footer>

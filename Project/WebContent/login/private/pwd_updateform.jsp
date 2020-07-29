@@ -32,11 +32,13 @@
 		</div>
 		<div class="form-group">
 			<label for="newPwd">새 비밀번호</label>
-			<input type="password" class="form-control form-control-user" name="newPwd" id="newPwd" placeholder="NewPassword"/>
+			<input type="password" class="pw form-control form-control-user" name="newPwd" id="newPwd" placeholder="NewPassword"/>
 		</div>
 		<div class="form-group">
 			<label for="newPwd2">새 비밀번호 확인</label>
-			<input type="password" class="form-control form-control-user" name="newPwd2" id="newPwd2" placeholder="NewPassword"/>
+			<input type="password" class="pw form-control form-control-user" name="newPwd2" id="newPwd2" placeholder="NewPassword"/>
+			<span id="alert-success" style="display: none;" class="text-success">새 비밀번호가 일치합니다.</span>
+   			<span id="alert-danger" style="display: none; color: #d92742; font-weight: bold; ">새 비밀번호가 일치하지 않습니다.</span>
 		</div>
 		<button type="submit" class="btn btn-primary btn-user btn-block">수정하기</button>
 	</form>
@@ -49,6 +51,26 @@
 
 
 <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
+<script>
+	$('.pw').focusout(function () {
+	    var pwd1 = $("#newPwd").val();
+	    var pwd2 = $("#newPwd2").val();
+	
+	    if ( pwd1 != '' && pwd2 == '' ) {
+	        null;
+	    } else if (pwd1 != "" || pwd2 != "") {
+	        if (pwd1 == pwd2) {		
+	            $("#alert-success").css('display', 'inline-block');
+	            $("#alert-danger").css('display', 'none');
+	        } else {
+	            
+	            $("#alert-success").css('display', 'none');
+	            $("#alert-danger").css('display', 'inline-block');
+	        }
+	        
+	    }
+	});
+</script>
 <script>
 	//id 가 myForm  인 곳에 submit 이벤트가 일어 났을때 실행할 함수 등록 
 	$("#myForm").on("submit", function(){

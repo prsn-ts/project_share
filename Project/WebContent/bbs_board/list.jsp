@@ -140,15 +140,15 @@
 			<%} %>
 			</tbody>
 		</table>
-		<div class="search_form" style="float:right;">
+		<div class="search_form form-inline" style="float:right;">
 			<form action="list.jsp" method="get">
-				<select name="condition" id="condition">
+				<select name="condition" id="condition" class="form-control form-control-sm">
 					<option value="title_content" <%if(condition.equals("title_content")){ %>selected<%} %>>제목+내용</option>
 					<option value="title" <%if(condition.equals("title")){ %>selected<%} %>>제목</option>
 					<option value="writer" <%if(condition.equals("writer")){ %>selected<%} %>>작성자</option>
 				</select>
-				<input value="<%=keyword %>" type="text" name="keyword" placeholder="검색어..."/>
-				<button class="btn-primary" type="submit">검색</button>
+				<input class="form-control" value="<%=keyword %>" type="text" name="keyword" placeholder="검색어..."/>
+				<button class="btn btn-primary" type="submit">검색</button>
 			</form>
 		</div>
 		<div class="page-display">

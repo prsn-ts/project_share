@@ -47,8 +47,7 @@
                 <div class="form-group">
                   	<label for="pwd">비밀번호 확인</label>
                     <input type="password"  class="pw form-control form-control-user" id="pwd2" name="pwd2" placeholder="Password">
-                    <span id="alert-success" style="display: none;" class="text-success">비밀번호가 일치합니다.</span>
-   					<span id="alert-danger" style="display: none; color: #d92742; font-weight: bold; ">비밀번호가 일치하지 않습니다.</span>
+                    <span id="checkPassword"></span>
                 </div>
                 
                 
@@ -84,18 +83,22 @@
         var pwd1 = $("#pwd").val();
         var pwd2 = $("#pwd2").val();
  
-        if ( pwd1 != '' && pwd2 == '' ) {
-            null;
+        //비밀번호 입력칸이 비어있지 않고 비밀번호 확인칸이 비어있을 때
+        if ((pwd1 != '' && pwd2 == '') || (pwd1 == '' && pwd2 != '')) {
+        	$("#checkPassword").text("비밀번호, 비밀번호 확인칸 모두 입력해주세요.").removeClass("text-success").css({'color':'#d92742','font-weight':'bold'});
         } else if (pwd1 != "" || pwd2 != "") {
             if (pwd1 == pwd2) {		
-                $("#alert-success").css('display', 'inline-block');
-                $("#alert-danger").css('display', 'none');
+                $("#checkPassword").text("비밀번호가 일치합니다.").addClass("text-success");
             } else {
-                
-                $("#alert-success").css('display', 'none');
-                $("#alert-danger").css('display', 'inline-block');
+            	$("#checkPassword").text("비밀번호가 일치하지 않습니다.").removeClass("text-success").css({'color':'#d92742','font-weight':'bold'});
             }
         }
+      	//비밀번호 입력칸과 비밀번호 확인칸에 아무것도 입력하지않고 뗐을 시 중복확인 문자 사라지게 하기
+		if(pwd1.length == 0 && pwd2.length == 0){
+			$("#checkPassword").text("");
+			//form 안에 있는 일반 버튼을 눌러도 폼이 전송 되기 때문에 폼 전송을 막아준다.
+			return false;
+		}
     });
     
     //회원가입 버튼을 눌렀을 때
@@ -151,7 +154,7 @@
 		return false;
 	});
 	//폼에 submit 이벤트가 일어났을때 호출될 함수 등록 
-	$("#myForm").on("submit", function(){
+	$(".user").on("submit", function(){
 		
 		if(!canUseId){//사용 불가한 아이디 이면 
 			alert("아이디 중복을 확인 하세요");

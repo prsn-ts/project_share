@@ -69,9 +69,9 @@
 										<button class="temp_save btn btn-outline-success">임시 저장</button>
 									</div>
 									<%-- 대표 이미지 경로를 DB에 저장하기 위해 hidden type으로 설정. --%>
-									<input type="hidden" name="showImage_path" id="showImage_path" value="<%=recipe_dto.getImagePath() %>"/>
+									<input type="hidden" name="showImage_path" id="showImage_path" value=""/>
 									<%-- 프로필 이미지의 실제 이름을 DB에 저장하기 위해 hidden type으로 설정. --%>
-									<input type="hidden" name="showImage_hidden" id="showImage_hidden" value="<%=recipe_dto.getShowImage() %>"/>
+									<input type="hidden" name="showImage_hidden" id="showImage_hidden" value=""/>
 									<%-- writer를 disabled로 설정했기 때문에 writer에 해당하는 value값을 hidden으로 전송하기 --%>
 									<input type="hidden" id="writer" name="writer" value="<%=dto.getId()%>"/>
 									<!-- 작성자 -->

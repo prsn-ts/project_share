@@ -88,6 +88,7 @@
 		</div>
 	</div>
 	<%-- //본문 내용 --%>
+	<div style="padding-top:30px;"></div>
 		
 	<footer class="footer">
 	<div class="jumbotron text-center mb-0" style="background-color: #289f5d;"> 

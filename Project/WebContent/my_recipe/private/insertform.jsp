@@ -69,9 +69,9 @@
 										<button class="temp_save btn btn-outline-success">임시 저장</button>
 									</div>
 									<%-- 대표 이미지 경로를 DB에 저장하기 위해 hidden type으로 설정. --%>
-									<input type="hidden" name="showImage_path" id="showImage_path" value=""/>
+									<input type="hidden" name="showImage_path" id="showImage_path"/>
 									<%-- 프로필 이미지의 실제 이름을 DB에 저장하기 위해 hidden type으로 설정. --%>
-									<input type="hidden" name="showImage_hidden" id="showImage_hidden" value=""/>
+									<input type="hidden" name="showImage_hidden" id="showImage_hidden"/>
 									<%-- writer를 disabled로 설정했기 때문에 writer에 해당하는 value값을 hidden으로 전송하기 --%>
 									<input type="hidden" id="writer" name="writer" value="<%=dto.getId()%>"/>
 									<!-- 작성자 -->
@@ -194,11 +194,14 @@
 				//서브 타이틀 값을 불러온다.
 				$("#subTitle").val(data.subTitle);
 				//대표 이미지를 불러온다.
-				$("#showImage")
-				.attr("src","${pageContext.request.contextPath}"+data.imagePath);
-				//대표 이미지를 불러올 때 value 값도 다시 세팅한다(글을 실제로 저장(등록)하려고할 때 이미지 경로와 이미지 실제 이름을 넘겨주어야한다.)
-				$("#showImage_path").val(data.imagePath);
-				$("#showImage_hidden").val(data.showImage);
+				//임시 저장된 이미지 경로와 실제이름을 불러올 때 DB에 값이 있는 경우에만 value 값을 읽어오기(없을 때 읽어오면 문자열 null이 value에 들어가면서 이미지 출력이 안됨.) 
+				if(data.imagePath != "null"){
+					$("#showImage")
+					.attr("src","${pageContext.request.contextPath}"+data.imagePath);
+					//대표 이미지를 불러올 때 value 값도 다시 세팅한다(글을 실제로 저장(등록)하려고할 때 이미지 경로와 이미지 실제 이름을 넘겨주어야한다.)
+					$("#showImage_path").val(data.imagePath);
+					$("#showImage_hidden").val(data.showImage);
+				}
 			}
 		});
 		//ajax 요청 처리를 한다.(img 태그의 쌍따옴표로인한 json 형식의 저장이 원활히 되지 않기 때문에 content 부분만 따로 요청)

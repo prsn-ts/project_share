@@ -42,6 +42,12 @@
 	    height: 50%;
 	    margin: auto;
 	}
+	.bg-updateform-image {
+	  width: 45%;
+ 	 /* Link to your background image using in the property below! */
+ 	 background: scroll center url('https://ppss.kr/wp-content/uploads/2017/11/20171108024157592_IBYNSQCZ.jpg');
+ 	 background-size: cover;
+	}
 </style>
 <!-- Custom fonts for this template-->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -57,7 +63,7 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-5 d-none d-lg-block bg-updateform-image"></div>
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center clearfix" style="position:relative;">

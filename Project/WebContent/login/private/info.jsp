@@ -33,6 +33,12 @@
 	    height: 50%;
 	    margin: auto;
 	}
+	.bg-info-image {
+	  width: 45%;
+ 	 /* Link to your background image using in the property below! */
+ 	 background: scroll center url('https://img1.daumcdn.net/thumb/R720x0/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fliveboard%2Fdailylife%2F75fa2dd2ea934d009052fb8867b6bb8c.jpg');
+ 	 background-size: cover;
+	}
 </style>
 <!-- Custom fonts for this template-->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -52,7 +58,7 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block bg-info-image"></div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center clearfix" style="position:relative;">

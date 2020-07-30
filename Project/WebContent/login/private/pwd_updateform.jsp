@@ -5,11 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>/users/private/pwd_updateform.jsp</title>
+
 <!-- Custom fonts for this template-->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css" />
+<style>
+	.bg-update-image {
+	  width: 45%;
+ 	 /* Link to your background image using in the property below! */
+ 	 background: scroll center url('https://img1.daumcdn.net/thumb/R720x0/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fliveboard%2Fdailylife%2Ff74fc9b2636944b19b888e1cd34efafa.JPG');
+ 	 background-size: cover;
+	}
+</style>
 </head>
 <body class="bg-gradient-primary">
 
@@ -19,7 +28,7 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-5 d-none d-lg-block bg-update-image "></div>
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">

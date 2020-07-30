@@ -57,7 +57,7 @@
                   <input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Email Address">
                 </div>
                 
-                <button type="submit" class="btn btn-primary btn-user btn-block">
+                <button type="submit" class="signup_btn btn btn-primary btn-user btn-block">
                   Register Account
                 </button>
                 
@@ -97,9 +97,22 @@
             }
         }
     });
-</script>
-
-<script>
+    
+    //회원가입 버튼을 눌렀을 때
+    $(".signup_btn").on("click", function(){
+    	//비밀번호 입력된 값을 가져온다.
+    	var pwd1 = $("#pwd").val();
+        var pwd2 = $("#pwd2").val();
+        
+        //비밀번호 입력칸과 비밀번호 확인칸이 일치하지 않을 때
+        if(pwd1 != pwd2){
+        	//알림을 띄우고
+        	alert("비밀번호, 비밀번호 확인이 일치하지 않습니다.");
+        	//폼 제출을 막는다.
+        	return false;
+        }
+    })
+    
 	//아이디 중복확인을 통과 했는지 여부
 	var canUseId=false;
 	//중복 확인 버튼을 눌렀을때 실행할 함수 등록

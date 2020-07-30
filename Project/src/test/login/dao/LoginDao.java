@@ -247,7 +247,7 @@ public class LoginDao {
 				//Connection 객체의 참조값 얻어오기 
 				conn = new DbcpBean().getConn();
 				//실행할 sql 문 준비하기
-				String sql = "SELECT pwd,email,profile,saveFileName,regdate"
+				String sql = "SELECT pwd,email,profile,saveFileName,TO_CHAR(regdate,'YYYY-MM-DD') AS regdate"
 						+ " FROM login"
 						+ " WHERE id=?";
 				pstmt = conn.prepareStatement(sql);

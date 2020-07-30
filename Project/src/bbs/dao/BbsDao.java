@@ -40,7 +40,7 @@ public class BbsDao {
 						+ " FROM"
 						+ " (SELECT result1.*, ROWNUM AS rnum"
 						+ " FROM"
-						+ " (SELECT num,writer,title,viewCount,regdate"
+						+ " (SELECT num,writer,title,viewCount,TO_CHAR(regdate,'YYYY-MM-DD') AS regdate"
 						+ " FROM Bbs_cafe"
 						+ " ORDER BY num DESC) result1)"
 						+ " WHERE rnum = ?";
@@ -189,7 +189,7 @@ public class BbsDao {
 			//실행할 sql 문 준비하기
 			String sql = "SELECT result1.*"
 					+ " FROM"
-					+ "     (SELECT num,writer,title,content,regdate,viewCount,"
+					+ "     (SELECT num,writer,title,content,TO_CHAR(regdate,'YYYY-MM-DD') AS regdate,viewCount,"
 					+ "      LAG(num,1,0) OVER (ORDER BY num DESC) AS prevNum,"
 					+ "      LEAD(num,1,0) OVER (ORDER BY num DESC) AS nextNum"
 					+ "      FROM bbs_cafe) result1"
@@ -411,7 +411,7 @@ public class BbsDao {
 						+ " FROM"
 						+ " (SELECT result1.*, ROWNUM AS rnum"
 						+ " FROM"
-						+ " (SELECT num,writer,title,regdate,viewCount"
+						+ " (SELECT num,writer,title,TO_CHAR(regdate,'YYYY-MM-DD') AS regdate,viewCount"
 						+ " FROM bbs_cafe"
 						+ " ORDER BY num DESC) result1)"
 						+ " WHERE rnum BETWEEN ? AND ?";
@@ -463,7 +463,7 @@ public class BbsDao {
 			String sql = "SELECT *"
 					+ " FROM"
 					+ "     (SELECT result1.*, ROWNUM AS rnum"
-					+ "      FROM (SELECT num,title,content,writer,regdate,viewCount"
+					+ "      FROM (SELECT num,title,content,writer,TO_CHAR(regdate,'YYYY-MM-DD') AS regdate,viewCount"
 					+ "            FROM bbs_cafe"
 					+ "            WHERE title LIKE '%'||?||'%' OR content LIKE '%'||?||'%'"
 					+ "            ORDER BY num DESC) result1)"
@@ -518,7 +518,7 @@ public class BbsDao {
 				String sql = "SELECT *"
 						+ " FROM"
 						+ "     (SELECT result1.*, ROWNUM AS rnum"
-						+ "      FROM (SELECT num,title,content,writer,regdate,viewCount"
+						+ "      FROM (SELECT num,title,content,writer,TO_CHAR(regdate,'YYYY-MM-DD') AS regdate,viewCount"
 						+ "            FROM bbs_cafe"
 						+ "            WHERE title LIKE '%'||?||'%'"
 						+ "            ORDER BY num DESC) result1)"
@@ -572,7 +572,7 @@ public class BbsDao {
 			String sql = "SELECT *"
 					+ " FROM"
 					+ "     (SELECT result1.*, ROWNUM AS rnum"
-					+ "      FROM (SELECT num,title,content,writer,regdate,viewCount"
+					+ "      FROM (SELECT num,title,content,writer,TO_CHAR(regdate,'YYYY-MM-DD') AS regdate,viewCount"
 					+ "            FROM bbs_cafe"
 					+ "            WHERE writer LIKE '%'||?||'%'"
 					+ "            ORDER BY num DESC) result1)"
@@ -619,10 +619,10 @@ public class BbsDao {
 		int flag = 0;
 		try {
 			conn = new DbcpBean().getConn();
-			//실행할 sql 문 준비하기 
+			//실행할 sql 문 준비하기 	
 			String sql = "INSERT INTO bbs_cafe"
 					+ " (num,title,content,writer,viewCount,regdate)"
-					+ " VALUES(bbs_cafe_seq.NEXTVAL, ?, ?,?,0, SYSDATE)";
+					+ " VALUES(bbs_cafe_seq.NEXTVAL, ?, ?,?,0, sysdate)";
 			pstmt = conn.prepareStatement(sql);
 			//? 에 바인딩 할 값이 있으면 바인딩한다.
 			pstmt.setString(1, dto.getTitle());
@@ -647,4 +647,6 @@ public class BbsDao {
 			return false;
 		}
 	}
+	
+
 }

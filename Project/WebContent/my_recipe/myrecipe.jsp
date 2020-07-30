@@ -120,7 +120,11 @@
 				<%for(MyrecipeDto tmp: list){ %>
 				  <div class="card_one col-lg-3 col-md-6 mb-4" style=" cursor: pointer;" onclick="location.href='sub_myrecipe.jsp?num=<%=tmp.getNum()%>';">
 				    <div class="card h-100">
+				    <%if(tmp.getImagePath() != null){ %>
 				      <img class="card-img-top" src="${pageContext.request.contextPath}<%=tmp.getImagePath() %>" alt="">
+				    <%}else if(tmp.getImagePath() == null){ %>
+				      <img class="card-img-top" src="${pageContext.request.contextPath}/images/basic_img.png" alt="">
+				    <%} %>
 				      <div class="card-body">
 				        <h4 class="card-title"><%=tmp.getTitle() %></h4>
 				        <p class="card-text"><%=tmp.getSubTitle() %> </p>

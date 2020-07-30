@@ -128,6 +128,7 @@
 				      <div class="card-body">
 				        <h4 class="card-title"><%=tmp.getTitle() %></h4>
 				        <p class="card-text"><%=tmp.getSubTitle() %> </p>
+				        <p class="card-text">작성일자 : <%=tmp.getRegdate() %> </p>
 				      </div>
 				      <div class="card-footer">
 				        <a href="sub_myrecipe.jsp?num=<%=tmp.getNum()%>" class="btn btn-primary">레시피 보러가기!</a>

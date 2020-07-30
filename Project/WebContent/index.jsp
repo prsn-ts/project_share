@@ -20,6 +20,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+// 랜덤으로 생성할 링크들을 설정 하세요
+var link_random = new Array();
+link_random[0]="recipe/recipe1.jsp";
+link_random[1]="recipe/recipe2.jsp";
+link_random[2]="recipe/recipe3.jsp";
+// 밑으로 더 늘려도 됩니다. [숫자] 를 늘려서 하세요.
+
+function linkrandom(){
+ 	window.location=link_random[Math.floor(Math.random()*link_random.length)];
+}
+</script>
 </head>
 <body>
 	<%-- jsp:include(header) --%>
@@ -43,14 +55,14 @@
 						</ol>
 						<div class="carousel-inner border border-warning">
 							<div class="carousel-item active">
-								<a href="">
-								<img src="images/indexbg1.jpg" class="d-block w-100" style="height: 400px" alt="...">
+								<a href="javascript:linkrandom()">
+								<img  src="images/indexbg1.jpg" class="d-block w-100" style="height: 400px" alt="...">
 								</a>
 								<div class="carousel-caption d-none d-md-block">
 								</div>
 							</div>
 							<div class="carousel-item">
-								<img src="images/ad2.png" class="d-block w-100" style="height: 400px"  alt="...">
+								<img src="https://i.ytimg.com/vi/QmYtkgL5JAA/maxresdefault.jpg" class="d-block w-100" style="height: 400px"  alt="...">
 								<div class="carousel-caption d-none d-md-block">
 								</div>
 							</div>

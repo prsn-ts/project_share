@@ -46,8 +46,7 @@
 		<div class="form-group">
 			<label for="newPwd2">새 비밀번호 확인</label>
 			<input type="password" class="pw form-control form-control-user" name="newPwd2" id="newPwd2" placeholder="NewPassword"/>
-			<span id="alert-success" style="display: none;" class="text-success">새 비밀번호가 일치합니다.</span>
-   			<span id="alert-danger" style="display: none; color: #d92742; font-weight: bold; ">새 비밀번호가 일치하지 않습니다.</span>
+			<span id="checkPassword"></span>
 		</div>
 		<button type="submit" class="btn btn-primary btn-user btn-block">수정하기</button>
 	</form>
@@ -65,19 +64,22 @@
 	    var pwd1 = $("#newPwd").val();
 	    var pwd2 = $("#newPwd2").val();
 	
-	    if ( pwd1 != '' && pwd2 == '' ) {
-	        null;
-	    } else if (pwd1 != "" || pwd2 != "") {
-	        if (pwd1 == pwd2) {		
-	            $("#alert-success").css('display', 'inline-block');
-	            $("#alert-danger").css('display', 'none');
-	        } else {
-	            
-	            $("#alert-success").css('display', 'none');
-	            $("#alert-danger").css('display', 'inline-block');
-	        }
-	        
-	    }
+	  //비밀번호 입력칸이 비어있지 않고 비밀번호 확인칸이 비어있을 때
+        if ((pwd1 != '' && pwd2 == '') || (pwd1 == '' && pwd2 != '')) {
+        	$("#checkPassword").text("비밀번호, 비밀번호 확인칸 모두 입력해주세요.").removeClass("text-success").css({'color':'#d92742','font-weight':'bold'});
+        } else if (pwd1 != "" || pwd2 != "") {
+            if (pwd1 == pwd2) {		
+                $("#checkPassword").text("비밀번호가 일치합니다.").addClass("text-success");
+            } else {
+            	$("#checkPassword").text("비밀번호가 일치하지 않습니다.").removeClass("text-success").css({'color':'#d92742','font-weight':'bold'});
+            }
+        }
+      	//비밀번호 입력칸과 비밀번호 확인칸에 아무것도 입력하지않고 뗐을 시 중복확인 문자 사라지게 하기
+		if(pwd1.length == 0 && pwd2.length == 0){
+			$("#checkPassword").text("");
+			//form 안에 있는 일반 버튼을 눌러도 폼이 전송 되기 때문에 폼 전송을 막아준다.
+			return false;
+		}
 	});
 </script>
 <script>
@@ -89,7 +91,7 @@
 		//만일 일치하지 않으면 
 		if(pwd1 != pwd2){
 			//알림을 띄우고 
-			alert("새로운 비밀번호가 일치 하지 않아요");
+			alert("새로운 비밀번호가 일치 하지 않습니다.");
 			//비밀번호 입력란을 초기화 하고 포커스도 주고 
 			$("#newPwd").val("").focus();
 			$("#newPwd2").val("");

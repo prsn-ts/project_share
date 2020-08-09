@@ -34,22 +34,23 @@
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
               <form class="user" action="signup.jsp" method="post">
-                <div class="form-group">
+                <div class="form-group" style="margin-bottom: 5px;">
                   <label for="id">아이디</label>
                   <input type="text" class="form-control form-control-user" id="id" name="id" placeholder="id">
-				  <span id="checkResult"></span>
+				  <span id="checkResult" style="display: inline-block;"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-bottom: 25px;">
                   	<label for="pwd">비밀번호</label>
                     <input type="password"  class="pw form-control form-control-user" id="pwd" name="pwd" placeholder="Password">
-         
+         			<small id="passwordHelpInline" class="text-muted">
+						비밀번호는 숫자+영문자+특수문자 조합으로 8자리 이상 써야합니다.
+				    </small>
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin-bottom: 5px;">
                   	<label for="pwd">비밀번호 확인</label>
                     <input type="password"  class="pw form-control form-control-user" id="pwd2" name="pwd2" placeholder="Password">
-                    <span id="checkPassword"></span>
+                    <span id="checkPassword" style="display: inline-block;"></span>
                 </div>
-                
                 
                 <div class="form-group">
                   <label for="email">이메일</label>
@@ -59,17 +60,12 @@
                 <button type="submit" class="signup_btn btn btn-primary btn-user btn-block">
                   Register Account
                 </button>
-                
-               
               </form>
               <hr>
-            
               <div class="text-center">
                 <a class="small" href="login_form.jsp">Already have an account? Login!</a>
               </div>
-              
               <hr>
-              
             </div>
           </div>
         </div>
@@ -79,14 +75,19 @@
   </div>
 <script src="${pageContext.request.contextPath }/js/jquery-3.5.1.js"></script>
 <script>
-    $('.pw').focusout(function () {
+	//한글이 포함되는지 검사하는 정규표현식
+	var reg_hangle = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+	//비밀번호 유효성 정규표현식(숫자+영문자+특수문자 조합으로 8자리 이상)
+	var reg_pwd = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
+	
+    $('.pw').blur(function () {
         var pwd1 = $("#pwd").val();
         var pwd2 = $("#pwd2").val();
  
         //비밀번호 입력칸이 비어있지 않고 비밀번호 확인칸이 비어있을 때
         if ((pwd1 != '' && pwd2 == '') || (pwd1 == '' && pwd2 != '')) {
         	$("#checkPassword").text("비밀번호, 비밀번호 확인칸 모두 입력해주세요.").removeClass("text-success").css({'color':'#d92742','font-weight':'bold'});
-        } else if (pwd1 != "" || pwd2 != "") {
+        } else if (pwd1 != "" && pwd2 != "") {
             if (pwd1 == pwd2) {		
                 $("#checkPassword").text("비밀번호가 일치합니다.").addClass("text-success");
             } else {
@@ -113,6 +114,17 @@
         	alert("비밀번호, 비밀번호 확인이 일치하지 않습니다.");
         	//폼 제출을 막는다.
         	return false;
+        }else if(pwd1 == pwd2){ //비밀번호 입력칸과 비밀번호 확인칸이 일치할 때
+            //비밀번호가 유효하지 않은 경우
+            if(!(reg_pwd.test(pwd1) && reg_pwd.test(pwd2))){
+            	//알림을 띄우고
+                alert('영문자+숫자+특수문자 조합으로 8자리 이상 적어주세요.');
+            	//포커스 잡아주고
+                $('#pwd').val("").focus();
+                $('#pwd2').val("");
+             	//폼 제출을 막는다.
+                return false;
+            } 
         }
     })
     
